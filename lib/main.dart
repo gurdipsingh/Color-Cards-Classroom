@@ -1,5 +1,5 @@
-import 'package:e_learning/screens/homescreen.dart';
 import 'package:flutter/material.dart';
+import 'screens/startScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'E-Learning App',
-      home: HomeScreen(),
+      home: StartScreen(),
     );
   }
 }
