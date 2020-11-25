@@ -1,3 +1,6 @@
+import 'package:e_learning/components/indexCard.dart';
+import 'package:e_learning/components/wigetIndexCard.dart';
+import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 class Game extends StatefulWidget {
@@ -6,6 +9,25 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {
+  int _counter = 0;
+
+  void _onButtonTapped() {
+    setState(() {
+      //_pressButton = !_pressButton;
+      _counter += 1;
+    });
+  }
+
+  Color _changeColor() {
+    if (_counter % 3 == 0) {
+      return secondaryColor;
+    } else if (_counter % 3 == 1) {
+      return Colors.red;
+    } else {
+      return Colors.blue;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -16,12 +38,11 @@ class _GameState extends State<Game> {
       crossAxisCount: 3,
       children: <Widget>[
         RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
+          color: _changeColor(),
+          onPressed: () => _onButtonTapped(),
           icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
+          label: Text('Click'),
+          onLongPress: () => print("Long Press!"),
         ),
         RaisedButton.icon(
           onPressed: () {
@@ -29,7 +50,7 @@ class _GameState extends State<Game> {
           },
           icon: Icon(Icons.add),
           label: Text('hi'),
-          color: Colors.blueGrey,
+          color: secondaryColor,
         ),
         RaisedButton.icon(
           onPressed: () {
@@ -37,7 +58,7 @@ class _GameState extends State<Game> {
           },
           icon: Icon(Icons.add),
           label: Text('hi'),
-          color: Colors.blueGrey,
+          color: secondaryColor,
         ),
         RaisedButton.icon(
           onPressed: () {
@@ -45,7 +66,7 @@ class _GameState extends State<Game> {
           },
           icon: Icon(Icons.add),
           label: Text('hi'),
-          color: Colors.blueGrey,
+          color: secondaryColor,
         ),
         RaisedButton.icon(
           onPressed: () {
@@ -53,7 +74,7 @@ class _GameState extends State<Game> {
           },
           icon: Icon(Icons.add),
           label: Text('hi'),
-          color: Colors.blueGrey,
+          color: secondaryColor,
         ),
         RaisedButton.icon(
           onPressed: () {
@@ -61,7 +82,7 @@ class _GameState extends State<Game> {
           },
           icon: Icon(Icons.add),
           label: Text('hi'),
-          color: Colors.blueGrey,
+          color: secondaryColor,
         ),
         RaisedButton.icon(
           onPressed: () {
@@ -69,24 +90,9 @@ class _GameState extends State<Game> {
           },
           icon: Icon(Icons.add),
           label: Text('hi'),
-          color: Colors.blueGrey,
+          color: secondaryColor,
         ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
+        wigetIndexCard(),
       ],
     );
   }

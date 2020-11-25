@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: primaryColor,
       ),
       body: Center(
-        child: Text("Home Screen!"),
+        child: Game(),
       ),
     );
   }
