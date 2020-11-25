@@ -1,7 +1,4 @@
-import 'package:e_learning/screens/help.dart';
-import 'package:e_learning/screens/homescreen.dart';
-import 'package:e_learning/screens/settings.dart';
-import 'package:e_learning/screens/statistic.dart';
+import 'package:e_learning/route_generator.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -16,7 +13,7 @@ class MyButtomNavigationBar extends StatefulWidget {
 }
 
 class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex =  RouteGenerator.getIndex();
 
   void _onItemTapped(int index) {
     setState(() {
@@ -24,54 +21,18 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
     });
     switch (index) {
       case 0:
-        Navigator.of(context).push(_createRouteHome());
+        Navigator.of(context).pushNamed("/");
         break;
       case 1:
-        Navigator.of(context).push(_createRouteStatistic());
+        Navigator.of(context).pushNamed("/statistic");
         break;
       case 2:
-        Navigator.of(context).push(_createRouteHelp());
+        Navigator.of(context).pushNamed("/help");
         break;
       case 3:
-        Navigator.of(context).push(_createRouteSetting());
+        Navigator.of(context).pushNamed("/settings");
         break;
     }
-  }
-
-  Route _createRouteHome() {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => HomeScreen(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return child;
-      },
-    );
-  }
-
-  Route _createRouteStatistic() {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => Statistic(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return child;
-      },
-    );
-  }
-
-  Route _createRouteHelp() {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => Help(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return child;
-      },
-    );
-  }
-
-  Route _createRouteSetting() {
-    return PageRouteBuilder(
-      pageBuilder: (context, animation, secondaryAnimation) => Settings(),
-      transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return child;
-      },
-    );
   }
 
   @override
@@ -100,7 +61,8 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
         ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: secondaryColor,
+      selectedItemColor: contentColor,
+      unselectedItemColor: secondaryColor,
       onTap: _onItemTapped,
     );
   }

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:e_learning/constants.dart';
 
 import '../constants.dart';
-import 'homescreen.dart';
 
 
 class StartScreen extends StatelessWidget {
@@ -44,8 +43,7 @@ ElevatedButton continueButton(context){
     child: Text("Continue"),
     onPressed: () {
       entry = userNameController.text;
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.of(context).pushReplacementNamed("/");
     },
   );
 }
