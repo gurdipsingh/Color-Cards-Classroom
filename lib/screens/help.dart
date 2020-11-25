@@ -1,12 +1,14 @@
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class Help extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("The Help Page"),
-        backgroundColor: Colors.yellow,
+        title: Text("Help"),
+        backgroundColor: primaryColor,
       ),
       body: Center(
         child: Text('Here is the Help Guide'),

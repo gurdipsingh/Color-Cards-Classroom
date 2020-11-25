@@ -4,6 +4,8 @@ import 'package:e_learning/screens/settings.dart';
 import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class MyButtomNavigationBar extends StatefulWidget {
   const MyButtomNavigationBar({
     Key key,
@@ -79,23 +81,26 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
+          backgroundColor: primaryColor,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.stacked_bar_chart),
           label: 'Statistic',
+          backgroundColor: primaryColor,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.help),
           label: 'Help',
+          backgroundColor: primaryColor,
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
           label: 'Settings',
+          backgroundColor: primaryColor,
         ),
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: Colors.green[900],
-      unselectedItemColor: Colors.green[100],
+      selectedItemColor: secondaryColor,
       onTap: _onItemTapped,
     );
   }
