@@ -1,8 +1,10 @@
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/bubbleSort.dart';
+import 'package:e_learning/Modules/GL1/gl1GameModeSelection.dart';
 import 'package:e_learning/Modules/GL1/gl1Mode.dart';
 import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
 import 'package:e_learning/constants.dart';
+import 'package:e_learning/screens/game.dart';
 import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/settings.dart';
@@ -40,6 +42,12 @@ class RouteGenerator{
         return _createRoute(Gl1SubThemes());
         case '/bubbleSort':
         return _createRoute(BubbleSort());
+      case '/gl1GameSelectionMode':
+        return _createRoute(BubbleSort());
+        case '/gl1Abfragen':
+        return _createRoute(Gl1GameModeSelection());
+        case '/game':
+        return _createRoute(Game());
         default:
         return _errorRoute();
     }

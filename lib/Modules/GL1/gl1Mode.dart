@@ -26,7 +26,7 @@ class Gl1Mode extends StatelessWidget {
         ,
     Container(
       color: secondaryColor,
-      child: RouteGenerator.createElevatedButton(context, "Abfragen","/gl1Mode"),
+      child: RouteGenerator.createElevatedButton(context, "Abfragen","/gl1Abfragen"),
         ),
       ],
     )
