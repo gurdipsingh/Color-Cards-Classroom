@@ -1,3 +1,6 @@
+import 'package:e_learning/Modules/GL1/gl1Mode.dart';
+import 'package:e_learning/Modules/GL1/gl1Themes.dart';
+import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/settings.dart';
@@ -27,6 +30,10 @@ class RouteGenerator{
       case '/settings':
         RouteGenerator.index = 3;
         return _createRoute(Settings());
+      case '/gl1Themes':
+        return _createRoute(Gl1Themes());
+      case ('/gl1Mode'):
+        return _createRoute(Gl1Mode());
       default:
         return _errorRoute();
     }
@@ -45,10 +52,34 @@ class RouteGenerator{
     return index;
   }
 
+  static ElevatedButton createElevatedButton(context, String labelName,String routingPageName){
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: secondaryColor, shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(16.0))),),
+      child: Text(labelName),
+      onPressed: () {
+        Navigator.of(context).pushNamed(routingPageName);
+      },
+    );
+  }
+
+  static RaisedButton createRaisedButton(context, String labelName, String routingPageName){
+    return RaisedButton(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20.0))),
+      onPressed: () {
+        Navigator.of(context).pushNamed(routingPageName);
+      },
+      child: Text(labelName, style: TextStyle(color: contentColor, fontSize: 20),),
+      color: secondaryColor,
+    );
+  }
+
   static Route<dynamic> _errorRoute(){
     return MaterialPageRoute(builder: (_){
       return Scaffold(
         appBar: AppBar(
+          backgroundColor: primaryColor,
           title: Text("Error"),
         ),
         body: Center(

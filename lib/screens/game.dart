@@ -13,7 +13,7 @@ class _GameState extends State<Game> {
       padding: const EdgeInsets.all(20),
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      crossAxisCount: 3,
+      crossAxisCount: 2,
       children: <Widget>[
         RaisedButton.icon(
           onPressed: () {
