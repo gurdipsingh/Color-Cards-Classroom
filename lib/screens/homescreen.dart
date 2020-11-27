@@ -1,6 +1,6 @@
-import 'package:e_learning/components/Modules.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/material.dart';
+import 'game.dart';
 
 import '../constants.dart';
 
@@ -13,7 +13,9 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home Screen'),
         backgroundColor: primaryColor,
       ),
-      body: Modules()
+      body: Center(
+        child: Game(),
+      ),
     );
   }
 }

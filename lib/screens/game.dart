@@ -1,3 +1,4 @@
+import 'package:e_learning/components/indexCard.dart';
 import 'package:flutter/material.dart';
 
 class Game extends StatefulWidget {
@@ -13,81 +14,8 @@ class _GameState extends State<Game> {
       padding: const EdgeInsets.all(20),
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
-      crossAxisCount: 2,
-      children: <Widget>[
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 2");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-        RaisedButton.icon(
-          onPressed: () {
-            print("Buttom 1");
-          },
-          icon: Icon(Icons.add),
-          label: Text('hi'),
-          color: Colors.blueGrey,
-        ),
-      ],
+      crossAxisCount: 3,
+      children: IndexCard.createIndexCardWigetList(IndexCard.indexCardList),
     );
   }
 }
