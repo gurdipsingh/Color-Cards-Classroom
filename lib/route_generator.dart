@@ -1,4 +1,6 @@
+import 'package:e_learning/Modules/GL1/Gl1Subthemes/bubbleSort.dart';
 import 'package:e_learning/Modules/GL1/gl1Mode.dart';
+import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
 import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/help.dart';
@@ -32,9 +34,13 @@ class RouteGenerator{
         return _createRoute(Settings());
       case '/gl1Themes':
         return _createRoute(Gl1Themes());
-      case ('/gl1Mode'):
+      case '/gl1Mode':
         return _createRoute(Gl1Mode());
-      default:
+      case '/gl1Lernen':
+        return _createRoute(Gl1SubThemes());
+        case '/bubbleSort':
+        return _createRoute(BubbleSort());
+        default:
         return _errorRoute();
     }
   }
@@ -54,7 +60,7 @@ class RouteGenerator{
 
   static ElevatedButton createElevatedButton(context, String labelName,String routingPageName){
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: secondaryColor, shape: RoundedRectangleBorder(
+      style:ElevatedButton.styleFrom(primary: secondaryColor,textStyle: TextStyle(fontSize: 15), shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(16.0))),),
       child: Text(labelName),
       onPressed: () {
