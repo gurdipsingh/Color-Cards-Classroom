@@ -14,12 +14,13 @@ class Gl1SubThemes extends StatelessWidget {
           backgroundColor: primaryColor,
         ),
         body: ListView(
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           children: [
-            RouteGenerator.createElevatedButton(context,"Bubblesort", "/gl1Mode"),
-            RouteGenerator.createElevatedButton(context, "Insertionsort","/gl1Mode"),
-            RouteGenerator.createElevatedButton(context, "Selectionsort","/gl1Mode"),
-            RouteGenerator.createElevatedButton(context, "Quicksort","/gl1Mode"),
-            RouteGenerator.createElevatedButton(context, "Mergesort","/gl1Mode"),
+            RouteGenerator.createElevatedButton(context,"Bubblesort", "/bubbleSort"),
+            RouteGenerator.createElevatedButton(context, "Insertionsort","/bubbleSort"),
+            RouteGenerator.createElevatedButton(context, "Selectionsort","/bubbleSort"),
+            RouteGenerator.createElevatedButton(context, "Quicksort","/bubbleSort"),
+            RouteGenerator.createElevatedButton(context, "Mergesort","/bubbleSort"),
           ],
         )
     );

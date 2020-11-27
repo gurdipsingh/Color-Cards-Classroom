@@ -20,23 +20,29 @@ class Gl1Themes extends StatelessWidget {
           backgroundColor: primaryColor,
         ),
         body: ListView(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(20),
+
           children:<Widget> [
             Container(
-              height: 50,
+              height: 80,
+                padding: const EdgeInsets.all(15),
                 child: RouteGenerator.createElevatedButton(context,"Sortieralgorithmen", "/gl1Mode")
             ),
             Container(
-              height: 50,
+              height: 80,
+              padding: const EdgeInsets.all(15),
             child: RouteGenerator.createElevatedButton(context, "Graphenalgorithmen","/gl1Mode"),),
             Container(
-            height:50,
+                height: 80,
+                padding: const EdgeInsets.all(15),
             child: RouteGenerator.createElevatedButton(context, "Dynamische Programmierung","/gl1Mode")),
             Container(
-            height:50,
+              height: 80,
+              padding: const EdgeInsets.all(15),
             child: RouteGenerator.createElevatedButton(context, "Custom","/gl1Mode"),),
             Container(
-            height: 50,
+              height: 80,
+              padding: const EdgeInsets.all(15),
             child: RouteGenerator.createElevatedButton(context, "Alles","/gl1Mode"),
     )
     ],
