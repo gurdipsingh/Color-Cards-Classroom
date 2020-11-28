@@ -1,8 +1,10 @@
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:e_learning/constants.dart';
 
 import '../constants.dart';
+import 'homescreen.dart';
 
 class StartScreen extends StatelessWidget {
   final userNameController = TextEditingController();
@@ -28,12 +30,13 @@ class StartScreen extends StatelessWidget {
   }
 
   ElevatedButton continueButton(context) {
+    const passingArgument = PassingArgument("Jordan", {});
     return ElevatedButton(
       style: ElevatedButton.styleFrom(primary: secondaryColor),
       child: Text("Continue"),
       onPressed: () {
         entry = userNameController.text;
-        Navigator.of(context).pushReplacementNamed("/");
+        Navigator.of(context).pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
       },
     );
   }

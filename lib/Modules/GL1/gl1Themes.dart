@@ -1,3 +1,4 @@
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/route_generator.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,8 +9,11 @@ import 'package:e_learning/constants.dart';
 
 class Gl1Themes extends StatelessWidget {
 
+  final PassingArgument passingArgument;
 
-
+  Gl1Themes({
+    Key key,
+    @required this.passingArgument,}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +30,24 @@ class Gl1Themes extends StatelessWidget {
             Container(
               height: 80,
                 padding: const EdgeInsets.all(15),
-                child: RouteGenerator.createElevatedButton(context,"Sortieralgorithmen", "/gl1Mode")
+                child: RouteGenerator.createElevatedButton(context,"Sortieralgotithmen","/gl1Mode", passingArgument)
             ),
             Container(
               height: 80,
               padding: const EdgeInsets.all(15),
-            child: RouteGenerator.createElevatedButton(context, "Graphenalgorithmen","/gl1Mode"),),
+            child: RouteGenerator.createElevatedButton(context, "Graphenalgorithmen","/gl1Mode",passingArgument),),
             Container(
                 height: 80,
                 padding: const EdgeInsets.all(15),
-            child: RouteGenerator.createElevatedButton(context, "Dynamische Programmierung","/gl1Mode")),
+            child: RouteGenerator.createElevatedButton(context, "Dynamische Programmierung","/gl1Mode",passingArgument)),
             Container(
               height: 80,
               padding: const EdgeInsets.all(15),
-            child: RouteGenerator.createElevatedButton(context, "Custom","/gl1Mode"),),
+            child: RouteGenerator.createElevatedButton(context, "Custom","/gl1Mode",passingArgument),),
             Container(
               height: 80,
               padding: const EdgeInsets.all(15),
-            child: RouteGenerator.createElevatedButton(context, "Alles","/gl1Mode"),
+            child: RouteGenerator.createElevatedButton(context, "Alles","/gl1Mode",passingArgument),
     )
     ],
     )

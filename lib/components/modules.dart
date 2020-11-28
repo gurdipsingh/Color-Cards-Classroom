@@ -1,12 +1,16 @@
 import 'package:e_learning/route_generator.dart';
 import 'package:flutter/material.dart';
 
-class Modules extends StatefulWidget {
-  @override
-  _Modules createState() => _Modules();
-}
+import 'PassingArgument.dart';
 
-class _Modules extends State<Modules> {
+class Modules extends StatelessWidget {
+
+  final PassingArgument passingArgument;
+
+  Modules({
+    Key key,
+    @required this.passingArgument,}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -16,10 +20,10 @@ class _Modules extends State<Modules> {
       mainAxisSpacing: 20,
       crossAxisCount: 2,
       children: <Widget>[
-        RouteGenerator.createRaisedButton(context, "Gl1", "/gl1Themes"),
-        RouteGenerator.createRaisedButton(context, "HWR", "/none"),
-        RouteGenerator.createRaisedButton(context, "PRG1", "/none"),
-        RouteGenerator.createRaisedButton(context, "Mathe1", "/none"),
+        RouteGenerator.createRaisedButton(context, "Gl1", "/gl1Themes", passingArgument),
+        RouteGenerator.createRaisedButton(context, "HWR", "/none",passingArgument),
+        RouteGenerator.createRaisedButton(context, "PRG1", "/none",passingArgument),
+        RouteGenerator.createRaisedButton(context, "Mathe1", "/none",passingArgument),
 
       ],
     );

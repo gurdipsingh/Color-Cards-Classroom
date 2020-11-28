@@ -1,12 +1,16 @@
 import 'package:e_learning/route_generator.dart';
 import 'package:flutter/material.dart';
 
-class GameSelectionMode extends StatefulWidget {
-  @override
-  _GameSelectionMode createState() => _GameSelectionMode();
-}
+import 'PassingArgument.dart';
 
-class _GameSelectionMode extends State<GameSelectionMode> {
+class GameSelectionMode extends StatelessWidget {
+
+  final PassingArgument passingArgument;
+
+  GameSelectionMode({
+    Key key,
+    @required this.passingArgument,}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -16,9 +20,9 @@ class _GameSelectionMode extends State<GameSelectionMode> {
       mainAxisSpacing: 20,
       crossAxisCount: 2,
       children: <Widget>[
-        RouteGenerator.createRaisedButton(context, "Unbewertet", "/game"),
-        RouteGenerator.createRaisedButton(context, "Bewertet", "/game"),
-        RouteGenerator.createRaisedButton(context, "Zeit", "/game"),
+        RouteGenerator.createRaisedButton(context, "Unbewertet", "/game", passingArgument),
+        RouteGenerator.createRaisedButton(context, "Bewertet", "/game",passingArgument),
+        RouteGenerator.createRaisedButton(context, "Zeit", "/game",passingArgument),
               ],
     );
   }

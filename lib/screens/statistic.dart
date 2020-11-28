@@ -1,9 +1,16 @@
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
 
 class Statistic extends StatelessWidget {
+  final PassingArgument passingArgument;
+
+  Statistic({
+    Key key,
+    @required this.passingArgument,}) : super(key: key);
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -11,7 +18,7 @@ class Statistic extends StatelessWidget {
         backgroundColor: primaryColor,
       ),
       body: Center(
-        child: Text('Statistic'),
+        child: Text('Statistic of ${passingArgument.name}'),
       ),
       bottomNavigationBar: MyButtomNavigationBar(),
     );

@@ -3,6 +3,7 @@ import 'package:e_learning/Modules/GL1/gl1GameModeSelection.dart';
 import 'package:e_learning/Modules/GL1/gl1Mode.dart';
 import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/game.dart';
 import 'package:e_learning/screens/help.dart';
@@ -12,22 +13,35 @@ import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
 
+import 'screens/homescreen.dart';
+
+
+
 class RouteGenerator{
 
   static int index = 0;
+  static String name;
 
   static Route<dynamic> generateRoute(RouteSettings settings){
-    final args = settings.arguments;
+
+    final _passingArgument = settings.arguments;
 
     switch (settings.name){
-      case '/':
+      case HomeScreen.route:
         RouteGenerator.index = 0;
-        return _createRoute(HomeScreen());
+        if(_passingArgument is PassingArgument){
+          name = _passingArgument.name;
+        return _createRoute(HomeScreen(passingArgument: _passingArgument,));
+        }
+        return _errorRoute(_passingArgument);
       case '/startScreen':
         return MaterialPageRoute(builder: (_)=> StartScreen());
       case '/statistic':
         RouteGenerator.index = 1;
-        return _createRoute(Statistic());
+        if(name != null){
+          return _createRoute(Statistic(passingArgument: PassingArgument(name,{}))); //  TODO: Muss ausgewechselt werden!
+        }
+        return _errorRoute(_passingArgument);
       case '/help':
         RouteGenerator.index = 2;
         return _createRoute(Help());
@@ -35,11 +49,20 @@ class RouteGenerator{
         RouteGenerator.index = 3;
         return _createRoute(Settings());
       case '/gl1Themes':
-        return _createRoute(Gl1Themes());
+        if(_passingArgument is PassingArgument){
+          return _createRoute(Gl1Themes(passingArgument: _passingArgument));
+              }
+         return _errorRoute(_passingArgument);
       case '/gl1Mode':
-        return _createRoute(Gl1Mode());
+        if(_passingArgument is PassingArgument){
+          return _createRoute(Gl1Mode(passingArgument: _passingArgument));
+        }
+        return _errorRoute(_passingArgument);
       case '/gl1Lernen':
-        return _createRoute(Gl1SubThemes());
+        if(_passingArgument is PassingArgument){
+          return _createRoute(Gl1SubThemes(passingArgument: _passingArgument));
+        }
+        return _errorRoute(_passingArgument);
         case '/bubbleSort':
         return _createRoute(BubbleSort());
       case '/gl1GameSelectionMode':
@@ -49,7 +72,7 @@ class RouteGenerator{
         case '/game':
         return _createRoute(Game());
         default:
-        return _errorRoute();
+        return _errorRoute(_passingArgument);
     }
   }
 
@@ -66,30 +89,30 @@ class RouteGenerator{
     return index;
   }
 
-  static ElevatedButton createElevatedButton(context, String labelName,String routingPageName){
+  static ElevatedButton createElevatedButton(context, String labelName,String routingPageName, PassingArgument passingArgument){
     return ElevatedButton(
       style:ElevatedButton.styleFrom(primary: secondaryColor,textStyle: TextStyle(fontSize: 15), shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(16.0))),),
       child: Text(labelName),
       onPressed: () {
-        Navigator.of(context).pushNamed(routingPageName);
+        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
       },
     );
   }
 
-  static RaisedButton createRaisedButton(context, String labelName, String routingPageName){
+  static RaisedButton createRaisedButton(context, String labelName, String routingPageName, PassingArgument passingArgument){
     return RaisedButton(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       onPressed: () {
-        Navigator.of(context).pushNamed(routingPageName);
+        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
       },
       child: Text(labelName, style: TextStyle(color: contentColor, fontSize: 20),),
       color: secondaryColor,
     );
   }
 
-  static Route<dynamic> _errorRoute(){
+  static Route<dynamic> _errorRoute(args){
     return MaterialPageRoute(builder: (_){
       return Scaffold(
         appBar: AppBar(
