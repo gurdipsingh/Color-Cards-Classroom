@@ -7,5 +7,9 @@ class PassingArgument{
   setElementToKey(key,element){
     this.navigation['${key}'] = element;
   }
+
+  getElement(key){
+    return this.navigation[key];
+  }
 }
 

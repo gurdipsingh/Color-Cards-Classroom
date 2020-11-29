@@ -26,11 +26,11 @@ class Gl1SubThemes extends StatelessWidget {
         body: ListView(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           children: [
-            RouteGenerator.createElevatedButton(context,"Bubblesort", BubbleSort.route,passingArgument),
-            RouteGenerator.createElevatedButton(context, "Insertionsort",BubbleSort.route,passingArgument),
-            RouteGenerator.createElevatedButton(context, "Selectionsort",BubbleSort.route,passingArgument),
-            RouteGenerator.createElevatedButton(context, "Quicksort",BubbleSort.route,passingArgument),
-            RouteGenerator.createElevatedButton(context, "Mergesort",BubbleSort.route,passingArgument),
+            RouteGenerator.createElevatedButtonWithMapSafe(context,"Bubblesort", BubbleSort.route,passingArgument, "Subtheme", "bubblesort"),
+            RouteGenerator.createElevatedButtonWithMapSafe(context, "Insertionsort",BubbleSort.route,passingArgument, "Subtheme", "insertionsort"),
+            RouteGenerator.createElevatedButtonWithMapSafe(context, "Selectionsort",BubbleSort.route,passingArgument, "Subtheme", "selectionsort"),
+            RouteGenerator.createElevatedButtonWithMapSafe(context, "Quicksort",BubbleSort.route,passingArgument, "Subtheme", "quicksort"),
+            RouteGenerator.createElevatedButtonWithMapSafe(context, "Mergesort",BubbleSort.route,passingArgument, "Subtheme", "mergesort"),
           ],
         )
     );

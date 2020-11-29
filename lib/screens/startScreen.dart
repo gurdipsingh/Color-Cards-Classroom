@@ -30,7 +30,7 @@ class StartScreen extends StatelessWidget {
   }
 
   ElevatedButton continueButton(context) {
-    const passingArgument = PassingArgument("Jordan", {});
+    var passingArgument = PassingArgument("Jordan", {});
     return ElevatedButton(
       style: ElevatedButton.styleFrom(primary: secondaryColor),
       child: Text("Continue"),

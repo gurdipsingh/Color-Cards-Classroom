@@ -1,6 +1,5 @@
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/bubbleSort.dart';
 import 'package:e_learning/Modules/GL1/gl1GameModeSelection.dart';
-import 'package:e_learning/Modules/GL1/gl1Mode.dart';
 import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
 import 'package:e_learning/components/PassingArgument.dart';
@@ -8,6 +7,7 @@ import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/game.dart';
 import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
+import 'package:e_learning/screens/learnOrTest.dart';
 import 'package:e_learning/screens/settings.dart';
 import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
@@ -57,9 +57,9 @@ class RouteGenerator{
           return _createRoute(Gl1Themes(passingArgument: _passingArgument));
               }
          return _errorRoute(_passingArgument);
-      case '/gl1Mode':
+      case '/learnOrTest':
         if(_passingArgument is PassingArgument){
-          return _createRoute(Gl1Mode(passingArgument: _passingArgument));
+          return _createRoute(LearnOrTest(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case '/gl1Lernen':
@@ -101,6 +101,20 @@ class RouteGenerator{
       },
     );
   }
+
+  static ElevatedButton createElevatedButtonWithMapSafe(context, String labelName,String routingPageName, PassingArgument passingArgument, String key,String element){
+    return ElevatedButton(
+      style:ElevatedButton.styleFrom(primary: secondaryColor,textStyle: TextStyle(fontSize: 15), shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(16.0))),),
+      child: Text(labelName),
+      onPressed: () {
+        if(key != null && element != null ){
+          passingArgument.setElementToKey(key, element);}
+        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
+      },
+    );
+  }
+
 
   static RaisedButton createRaisedButton(context, String labelName, String routingPageName, PassingArgument passingArgument){
     return RaisedButton(
