@@ -1,12 +1,22 @@
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 class BubbleSort extends StatelessWidget{
+  static const route = '/bubbleSort';
+
+  final PassingArgument passingArgument;
+
+  BubbleSort({
+    Key key,
+    @required this.passingArgument,}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyButtomNavigationBar(),
+      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
       appBar: AppBar(
         title: const Text('Theoretische Informatik 1'),
         backgroundColor: primaryColor,

@@ -5,6 +5,8 @@ import '../constants.dart';
 
 
 class Statistic extends StatelessWidget {
+  static const route = "/statistic";
+
   final PassingArgument passingArgument;
 
   Statistic({
@@ -20,7 +22,7 @@ class Statistic extends StatelessWidget {
       body: Center(
         child: Text('Statistic of ${passingArgument.name}'),
       ),
-      bottomNavigationBar: MyButtomNavigationBar(),
+      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
     );
   }
 }

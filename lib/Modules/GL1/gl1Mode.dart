@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import '../../route_generator.dart';
 
 class Gl1Mode extends StatelessWidget {
+  static const route = '/gl1Mode';
+
 
   final PassingArgument passingArgument;
 
@@ -16,7 +18,7 @@ class Gl1Mode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: MyButtomNavigationBar(),
+        bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
         appBar: AppBar(
           title: const Text('Theoretische Informatik 1'),
           backgroundColor: primaryColor,

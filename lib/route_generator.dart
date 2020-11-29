@@ -20,34 +20,38 @@ import 'screens/homescreen.dart';
 class RouteGenerator{
 
   static int index = 0;
-  static String name;
 
   static Route<dynamic> generateRoute(RouteSettings settings){
 
     final _passingArgument = settings.arguments;
 
     switch (settings.name){
-      case HomeScreen.route:
+      case "/":
         RouteGenerator.index = 0;
         if(_passingArgument is PassingArgument){
-          name = _passingArgument.name;
         return _createRoute(HomeScreen(passingArgument: _passingArgument,));
         }
         return _errorRoute(_passingArgument);
       case '/startScreen':
         return MaterialPageRoute(builder: (_)=> StartScreen());
-      case '/statistic':
+      case "/statistic":
         RouteGenerator.index = 1;
-        if(name != null){
-          return _createRoute(Statistic(passingArgument: PassingArgument(name,{}))); //  TODO: Muss ausgewechselt werden!
+        if(_passingArgument is PassingArgument){
+          return _createRoute(Statistic(passingArgument:_passingArgument)); //  TODO: Muss ausgewechselt werden!
         }
         return _errorRoute(_passingArgument);
-      case '/help':
+      case "/help":
         RouteGenerator.index = 2;
-        return _createRoute(Help());
-      case '/settings':
+        if(_passingArgument is PassingArgument){
+          return _createRoute(Help(passingArgument:_passingArgument));
+        }
+        return _errorRoute(_passingArgument);
+      case "/settings":
         RouteGenerator.index = 3;
-        return _createRoute(Settings());
+        if(_passingArgument is PassingArgument){
+          return _createRoute(Settings(passingArgument:_passingArgument));
+        }
+        return _errorRoute(_passingArgument);
       case '/gl1Themes':
         if(_passingArgument is PassingArgument){
           return _createRoute(Gl1Themes(passingArgument: _passingArgument));
@@ -64,11 +68,9 @@ class RouteGenerator{
         }
         return _errorRoute(_passingArgument);
         case '/bubbleSort':
-        return _createRoute(BubbleSort());
-      case '/gl1GameSelectionMode':
-        return _createRoute(BubbleSort());
+        return _createRoute(BubbleSort(passingArgument: _passingArgument,));
         case '/gl1Abfragen':
-        return _createRoute(Gl1GameModeSelection());
+        return _createRoute(Gl1GameModeSelection(passingArgument: _passingArgument,));
         case '/game':
         return _createRoute(Game());
         default:

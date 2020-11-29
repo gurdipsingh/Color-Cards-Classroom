@@ -1,12 +1,22 @@
 import 'package:e_learning/route_generator.dart';
+import 'package:e_learning/screens/help.dart';
+import 'package:e_learning/screens/homescreen.dart';
+import 'package:e_learning/screens/settings.dart';
+import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
+import 'PassingArgument.dart';
 
 class MyButtomNavigationBar extends StatefulWidget {
+
+  final PassingArgument passingArgument;
+
+
   const MyButtomNavigationBar({
     Key key,
-  }) : super(key: key);
+    @required this.passingArgument
+}) : super(key: key);
 
   @override
   _MyButtomNavigationBarState createState() => _MyButtomNavigationBarState();
@@ -21,16 +31,16 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
     });
     switch (index) {
       case 0:
-        Navigator.of(context).pushNamed("/");
+        Navigator.of(context).pushNamed(HomeScreen.route, arguments: widget.passingArgument);
         break;
       case 1:
-        Navigator.of(context).pushNamed("/statistic");
+        Navigator.of(context).pushNamed(Statistic.route, arguments: widget.passingArgument);
         break;
       case 2:
-        Navigator.of(context).pushNamed("/help");
+        Navigator.of(context).pushNamed(Help.route, arguments: widget.passingArgument);
         break;
       case 3:
-        Navigator.of(context).pushNamed("/settings");
+        Navigator.of(context).pushNamed(Settings.route, arguments: widget.passingArgument);
         break;
     }
   }
