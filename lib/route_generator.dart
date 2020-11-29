@@ -1,4 +1,4 @@
-import 'package:e_learning/Modules/GL1/Gl1Subthemes/bubbleSort.dart';
+import 'package:e_learning/Modules/GL1/Gl1Subthemes/sortingAlgorithms.dart';
 import 'package:e_learning/Modules/GL1/gl1GameModeSelection.dart';
 import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
@@ -67,8 +67,8 @@ class RouteGenerator{
           return _createRoute(Gl1SubThemes(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
-        case '/bubbleSort':
-        return _createRoute(BubbleSort(passingArgument: _passingArgument,));
+        case '/sortingAlgorithm':
+        return _createRoute(SortingAlgorithm(passingArgument: _passingArgument,));
         case '/gl1Abfragen':
         return _createRoute(Gl1GameModeSelection(passingArgument: _passingArgument,));
         case '/game':

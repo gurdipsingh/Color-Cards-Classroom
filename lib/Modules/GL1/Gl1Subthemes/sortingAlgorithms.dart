@@ -3,12 +3,12 @@ import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
-class BubbleSort extends StatelessWidget {
-  static const route = '/bubbleSort';
+class SortingAlgorithm extends StatelessWidget {
+  static const route = '/sortingAlgorithm';
 
   final PassingArgument passingArgument;
 
-  BubbleSort({
+  SortingAlgorithm({
     Key key,
     @required this.passingArgument,}) : super(key: key);
 
@@ -87,48 +87,48 @@ class BubbleSort extends StatelessWidget {
   quickSort(context) {
     return RichText(
       text: TextSpan(
-        style: DefaultTextStyle
-            .of(context)
-            .style,
-        children: <TextSpan>[
-          TextSpan(text: "Quicksort \n",
-              style: TextStyle(fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  decoration: TextDecoration.underline,
-                  decorationColor: secondaryColor)),
-          TextSpan(
-              text: "Diese Seite Beschäftigt sich mit Quicksort. Hier werden "
-                  "Infortmationen über Quicksort aufgezeigt, welches euch behilflich sein kann,"
-                  "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-              style: TextStyle(color: Colors.black,
-                  fontSize: 15,
-                  decoration: TextDecoration.none))
-        ]
-    ),
-  );
+          style: DefaultTextStyle
+              .of(context)
+              .style,
+          children: <TextSpan>[
+            TextSpan(text: "Quicksort \n",
+                style: TextStyle(fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    decoration: TextDecoration.underline,
+                    decorationColor: secondaryColor)),
+            TextSpan(
+                text: "Diese Seite Beschäftigt sich mit Quicksort. Hier werden "
+                    "Infortmationen über Quicksort aufgezeigt, welches euch behilflich sein kann,"
+                    "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+                style: TextStyle(color: Colors.black,
+                    fontSize: 15,
+                    decoration: TextDecoration.none))
+          ]
+      ),
+    );
   }
 
   mergeSort(context) {
     return RichText(
       text: TextSpan(
-        style: DefaultTextStyle
-            .of(context)
-            .style,
-        children: <TextSpan>[
-          TextSpan(text: "Mergesort \n",
-              style: TextStyle(fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  decoration: TextDecoration.underline,
-                  decorationColor: secondaryColor)),
-          TextSpan(
-              text: "Diese Seite Beschäftigt sich mit Mergesort. Hier werden "
-                  "Infortmationen über Mergesort aufgezeigt, welches euch behilflich sein kann,"
-                  "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-              style: TextStyle(color: Colors.black,
-                  fontSize: 15,
-                  decoration: TextDecoration.none))
-        ]
-    ),
+          style: DefaultTextStyle
+              .of(context)
+              .style,
+          children: <TextSpan>[
+            TextSpan(text: "Mergesort \n",
+                style: TextStyle(fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    decoration: TextDecoration.underline,
+                    decorationColor: secondaryColor)),
+            TextSpan(
+                text: "Diese Seite Beschäftigt sich mit Mergesort. Hier werden "
+                    "Infortmationen über Mergesort aufgezeigt, welches euch behilflich sein kann,"
+                    "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+                style: TextStyle(color: Colors.black,
+                    fontSize: 15,
+                    decoration: TextDecoration.none))
+          ]
+      ),
     );
   }
 
@@ -154,7 +154,7 @@ class BubbleSort extends StatelessWidget {
   }
 
   showSubThemeContent(context) {
-    switch (passingArgument.navigation["Subtheme"]) {
+    switch (passingArgument.navigation["subtheme"]) {
       case "bubblesort":
         return bubbleSort(context);
       case "insertionsort":
