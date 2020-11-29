@@ -6,7 +6,8 @@ import '../constants.dart';
 import 'game.dart';
 
 
-//TODO: Verwende Parametisierung für das erstellen von Themenspezifische unterthemen
+//TODO: Custom navigation vollenden
+//TODO: Make Mode Generic
 //TODO: Bewege Continue button etwas höher
 //TODO: Betrachte den Navigationswechsel bei Fehler
 

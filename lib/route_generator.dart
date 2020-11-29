@@ -1,3 +1,5 @@
+import 'package:e_learning/Modules/GL1/Gl1Subthemes/dynamicProgramming.dart';
+import 'package:e_learning/Modules/GL1/Gl1Subthemes/graphAlgorithm.dart';
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/sortingAlgorithms.dart';
 import 'package:e_learning/Modules/GL1/gl1GameModeSelection.dart';
 import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
@@ -69,6 +71,10 @@ class RouteGenerator{
         return _errorRoute(_passingArgument);
         case '/sortingAlgorithm':
         return _createRoute(SortingAlgorithm(passingArgument: _passingArgument,));
+        case '/graphalgorithm':
+        return _createRoute(GraphAlgorithm(passingArgument: _passingArgument,));
+        case '/dynamicprogramming':
+        return _createRoute(DynamicProgramming(passingArgument: _passingArgument,));
         case '/gl1Abfragen':
         return _createRoute(Gl1GameModeSelection(passingArgument: _passingArgument,));
         case '/game':

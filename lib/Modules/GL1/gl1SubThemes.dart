@@ -1,3 +1,5 @@
+import 'package:e_learning/Modules/GL1/Gl1Subthemes/dynamicProgramming.dart';
+import 'package:e_learning/Modules/GL1/Gl1Subthemes/graphAlgorithm.dart';
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/sortingAlgorithms.dart';
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
@@ -28,17 +30,17 @@ class Gl1SubThemes extends StatelessWidget {
 
   graphenAlgorithmusSubThemes(context) {
     return[
-      RouteGenerator.createElevatedButtonWithMapSafe(context,"Dijkstra", SortingAlgorithm.route,passingArgument, "subtheme", "dijkstra"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Kruskal",SortingAlgorithm.route,passingArgument, "subtheme", "kruskal"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Prim",SortingAlgorithm.route,passingArgument, "subtheme", "prim"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context,"Dijkstra", GraphAlgorithm.route,passingArgument, "subtheme", "dijkstra"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Kruskal",GraphAlgorithm.route,passingArgument, "subtheme", "kruskal"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Prim",GraphAlgorithm.route,passingArgument, "subtheme", "prim"),
     ];
   }
 
   dynamischeProgrammierungSubThemes(context) {
     return [
-      RouteGenerator.createElevatedButtonWithMapSafe(context,"Belman Ford", SortingAlgorithm.route,passingArgument, "subtheme", "belmanford"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Floyd",SortingAlgorithm.route,passingArgument, "subtheme", "floyd"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Time Scheduling",SortingAlgorithm.route,passingArgument, "subtheme", "timescheduling"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context,"Belman Ford", DynamicProgramming.route,passingArgument, "subtheme", "belmanford"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Floyd",DynamicProgramming.route,passingArgument, "subtheme", "floyd"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Time Scheduling",DynamicProgramming.route,passingArgument, "subtheme", "timescheduling"),
     ];
   }
 
@@ -73,7 +75,6 @@ class Gl1SubThemes extends StatelessWidget {
         return dynamischeProgrammierungSubThemes(context);
       case "Alles":
         return sortierAlgorithmenSubThemes(context) + graphenAlgorithmusSubThemes(context) + dynamischeProgrammierungSubThemes(context);
-
       default:
         return ungezeigteSeite(context) ;
     }
@@ -85,7 +86,7 @@ class Gl1SubThemes extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
         appBar: AppBar(
-          title: const Text('Theoretische Informatik 1'),
+          title: Text(passingArgument.navigation["theme"]),
           backgroundColor: primaryColor,
         ),
         body: ListView(
