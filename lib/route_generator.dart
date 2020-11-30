@@ -1,12 +1,12 @@
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/dynamicProgramming.dart';
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/graphAlgorithm.dart';
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/sortingAlgorithms.dart';
-import 'package:e_learning/Modules/GL1/gl1GameModeSelection.dart';
 import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/constants.dart';
-import 'package:e_learning/screens/game.dart';
+import 'package:e_learning/screens/gameModeSelection.dart';
+import 'package:e_learning/screens/gameScreen.dart';
 import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/learnOrTest.dart';
@@ -75,10 +75,10 @@ class RouteGenerator{
         return _createRoute(GraphAlgorithm(passingArgument: _passingArgument,));
         case '/dynamicprogramming':
         return _createRoute(DynamicProgramming(passingArgument: _passingArgument,));
-        case '/gl1Abfragen':
-        return _createRoute(Gl1GameModeSelection(passingArgument: _passingArgument,));
+        case '/gameSelectionMode':
+        return _createRoute(GameModeSelection(passingArgument: _passingArgument,));
         case '/game':
-        return _createRoute(Game());
+        return _createRoute(GameScreen(passingArgument: _passingArgument));
         default:
         return _errorRoute(_passingArgument);
     }
@@ -127,6 +127,20 @@ class RouteGenerator{
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       onPressed: () {
+        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
+      },
+      child: Text(labelName, style: TextStyle(color: contentColor, fontSize: 20),),
+      color: secondaryColor,
+    );
+  }
+
+  static RaisedButton createRaisedButtonWithMapSafe(context, String labelName, String routingPageName, PassingArgument passingArgument, String key,String element){
+    return RaisedButton(
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20.0))),
+      onPressed: () {
+        if(key != null && element != null ){
+          passingArgument.setElementToKey(key, element);}
         Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
       },
       child: Text(labelName, style: TextStyle(color: contentColor, fontSize: 20),),

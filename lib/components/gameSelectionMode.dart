@@ -20,9 +20,9 @@ class GameSelectionMode extends StatelessWidget {
       mainAxisSpacing: 20,
       crossAxisCount: 2,
       children: <Widget>[
-        RouteGenerator.createRaisedButton(context, "Unbewertet", "/game", passingArgument),
-        RouteGenerator.createRaisedButton(context, "Bewertet", "/game",passingArgument),
-        RouteGenerator.createRaisedButton(context, "Zeit", "/game",passingArgument),
+        RouteGenerator.createRaisedButtonWithMapSafe(context, "Unbewertet", "/game", passingArgument, "gamemode", "unbewertet"),
+        RouteGenerator.createRaisedButtonWithMapSafe(context, "Bewertet", "/game",passingArgument, "gamemode", "bewertet"),
+        RouteGenerator.createRaisedButtonWithMapSafe(context, "Zeit", "/game",passingArgument,"gamemode", "zeit"),
               ],
     );
   }

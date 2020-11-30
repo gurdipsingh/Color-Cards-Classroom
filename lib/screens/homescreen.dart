@@ -7,7 +7,6 @@ import 'game.dart';
 
 
 //TODO: Custom navigation vollenden
-//TODO: Make Mode Generic
 //TODO: Betrachte den Navigationswechsel bei Fehler
 
 class HomeScreen extends StatelessWidget {

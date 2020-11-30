@@ -37,7 +37,7 @@ class LearnOrTest extends StatelessWidget {
             ,
             Container(
               color: secondaryColor,
-              child: RouteGenerator.createElevatedButton(context, "Abfragen","/gl1Abfragen",passingArgument),
+              child: RouteGenerator.createElevatedButton(context, "Abfragen","/gameSelectionMode",passingArgument),
             ),
           ],
         )
