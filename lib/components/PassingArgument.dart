@@ -1,15 +1,29 @@
 class PassingArgument{
-  final String name;
-  final Map navigation;
+  String name;
+  Map navigation;
+  Map settings = {"language": "GERMAN"};
 
-  const PassingArgument(this.name, this.navigation);
+    PassingArgument(this.name, this.navigation);
+
+  setName(String name){
+    this.name = name;
+  }
 
   setElementToKey(key,element){
     this.navigation['${key}'] = element;
   }
 
+  setLanguage(String language){
+    this.settings["language"] = language;
+  }
+
   getElement(key){
     return this.navigation[key];
   }
+
+  getLanguage(){
+    return this.settings["language"];
+  }
+
 }
 

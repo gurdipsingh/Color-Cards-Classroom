@@ -1,4 +1,5 @@
 import 'package:e_learning/components/PassingArgument.dart';
+import 'package:e_learning/components/radioButton.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:e_learning/constants.dart';
@@ -29,39 +30,38 @@ class StartScreen extends StatelessWidget {
     );
   }
 
-  ElevatedButton continueButton(context) {
-    var passingArgument = PassingArgument("Jordan", {});
+  ElevatedButton continueButton(context, PassingArgument passingArgument) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(primary: secondaryColor),
       child: Text("Continue"),
       onPressed: () {
-        entry = userNameController.text;
+        passingArgument.setName(userNameController.text);
         Navigator.of(context).pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
       },
     );
   }
 
+
   @override
   Widget build(BuildContext context) {
+    var _passingArgument = PassingArgument(" ", {});
+
     return Scaffold(
         backgroundColor: primaryColor,
-        body: Stack(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Positioned(
-                top: 200,
-                left: 140,
-                child: Text(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+                children: [Text(
                   "Welcome",
                   style: TextStyle(fontSize: 30, color: contentColor),
-                )),
-            Align(
-              alignment: Alignment.center,
-              child: textField(),
-            ),
-            Align(
-                alignment: Alignment.bottomCenter,
-                child: continueButton(context))
+                )]),
+            Column(
+              children: [textField(),Radiobutton(passingArgument: _passingArgument,),continueButton(context, _passingArgument), ],
+            )
           ],
         ));
   }
+
 }
