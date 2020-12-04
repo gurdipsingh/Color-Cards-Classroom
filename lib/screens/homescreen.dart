@@ -1,9 +1,9 @@
 import 'package:e_learning/components/PassingArgument.dart';
+import 'package:e_learning/components/modules.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
-import 'game.dart';
 
 
 //TODO: Custom navigation vollenden
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: primaryColor,
       ),
       body: Center(
-        child: Game(),
+        child: Modules(passingArgument: passingArgument),
       ),
     );
   }
