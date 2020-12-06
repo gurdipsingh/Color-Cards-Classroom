@@ -2,6 +2,9 @@ import 'package:e_learning/components/indexCard.dart';
 import 'package:e_learning/components/indexCardWidget.dart';
 import 'package:flutter/material.dart';
 
+import '../components/indexCard.dart';
+import '../constants.dart';
+
 class Game extends StatefulWidget {
   @override
   _GameState createState() => _GameState();
@@ -9,15 +12,15 @@ class Game extends StatefulWidget {
 
 class _GameState extends State<Game> {
   static List<IndexCard> indexCardList = [
-    IndexCard(1, 'first_Name', 'first_Info', 'first_Label', null),
-    IndexCard(2, 'second_Name', 'second_Info', 'second_Label', null),
-    IndexCard(3, 'third_Name', 'third_Info', 'third_Label', null),
-    IndexCard(4, 'four_Name', 'four_Info', 'four_Label', null),
-    IndexCard(5, 'five_Name', 'five_Info', 'first_Label', null),
-    IndexCard(6, 'six_Name', 'six_Info', 'second_Label', null),
-    IndexCard(7, 'seven_Name', 'seven_Info', 'third_Label', null),
-    IndexCard(8, 'eight_Name', 'eight_Info', 'four_Label', null),
-    IndexCard(9, 'nine_Name', 'nine_Info', 'four_Label', null),
+    IndexCard(1, 'bubble', 'first_Info', 'bubbleSort', firstGameColor),
+    IndexCard(2, 'insert', 'second_Info', 'insertionSort', firstGameColor),
+    IndexCard(3, 'bubblesort', 'third_Info', 'bubbleSort', firstGameColor),
+    IndexCard(4, 'insertionsort', 'four_Info', 'insertionSort', firstGameColor),
+    IndexCard(5, 'bub', 'five_Info', 'bubbleSort', firstGameColor),
+    IndexCard(6, 'ins', 'six_Info', 'insertionSort', firstGameColor),
+    IndexCard(7, 'merguez', 'seven_Info', 'mergeSort', firstGameColor),
+    IndexCard(8, 'merge', 'eight_Info', 'mergeSort', firstGameColor),
+    IndexCard(9, 'mergesort', 'nine_Info', 'mergeSort', firstGameColor),
   ];
 
   static List<Widget> createIndexCardWidgetList(List<IndexCard> indexList) {
@@ -40,16 +43,26 @@ class _GameState extends State<Game> {
       createIndexCardWidgetList(indexCardList);
 
   static void winAlgo() {
-    for (IndexCard indexCard in indexCardList) {
-      IndexCard currentIndexCard = indexCard;
-      for (IndexCard nextIndexCard in indexCardList) {
-        if (currentIndexCard.id != nextIndexCard.id &&
-            currentIndexCard.stateOfColor == nextIndexCard.stateOfColor &&
-            currentIndexCard.label == nextIndexCard.label) {
-          print(currentIndexCard.toString() + "== ### WIN ### ==" + nextIndexCard.toString());
-        }
+    List<IndexCard> sortedList = indexCardList;
+    sortedList
+        .sort((a, b) => a.label.toLowerCase().compareTo(b.label.toLowerCase()));
+    List<IndexCard> solutionOne = sortedList.sublist(0, 3);
+    List<IndexCard> solutionTwo = sortedList.sublist(3, 6);
+    List<IndexCard> solutionThree = sortedList.sublist(6);
+
+    print(checkIfColorsAreSame(solutionOne) &&
+        checkIfColorsAreSame(solutionTwo) &&
+        checkIfColorsAreSame(solutionThree));
+  }
+
+  static checkIfColorsAreSame(List<IndexCard> list) {
+    for (IndexCard indexCard in list) {
+      if (!(indexCard.stateOfColor.toString() ==
+          list[0].stateOfColor.toString())) {
+        return false;
       }
     }
+    return true;
   }
 
   @override
