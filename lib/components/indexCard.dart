@@ -15,4 +15,9 @@ class IndexCard {
     this.label = label;
     this.stateOfColor = stateOfColor;
   }
+
+  @override
+  String toString() {
+    return 'IndexCard{id: $id, name: $name, informationToDisplay: $informationToDisplay, label: $label, stateOfColor: $stateOfColor}';
+  }
 }

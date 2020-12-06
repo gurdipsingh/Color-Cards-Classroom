@@ -13,11 +13,11 @@ class _GameState extends State<Game> {
     IndexCard(2, 'second_Name', 'second_Info', 'second_Label', null),
     IndexCard(3, 'third_Name', 'third_Info', 'third_Label', null),
     IndexCard(4, 'four_Name', 'four_Info', 'four_Label', null),
-    IndexCard(5, 'five_Name', 'five_Info', 'five_Label', null),
-    IndexCard(6, 'six_Name', 'six_Info', 'six_Label', null),
-    IndexCard(7, 'seven_Name', 'seven_Info', 'seven_Label', null),
-    IndexCard(8, 'eight_Name', 'eight_Info', 'eight_Label', null),
-    IndexCard(9, 'nine_Name', 'nine_Info', 'nine_Label', null),
+    IndexCard(5, 'five_Name', 'five_Info', 'first_Label', null),
+    IndexCard(6, 'six_Name', 'six_Info', 'second_Label', null),
+    IndexCard(7, 'seven_Name', 'seven_Info', 'third_Label', null),
+    IndexCard(8, 'eight_Name', 'eight_Info', 'four_Label', null),
+    IndexCard(9, 'nine_Name', 'nine_Info', 'four_Label', null),
   ];
 
   static List<Widget> createIndexCardWidgetList(List<IndexCard> indexList) {
@@ -28,7 +28,7 @@ class _GameState extends State<Game> {
     result.add(
       RaisedButton(
         onPressed: () {
-          print("Win Button!");
+          winAlgo();
         },
         child: const Text('Check for win', style: TextStyle(fontSize: 20)),
       ),
@@ -36,7 +36,21 @@ class _GameState extends State<Game> {
     return result;
   }
 
-  List<Widget> indexCardWidgetList = createIndexCardWidgetList(indexCardList);
+  static List<Widget> indexCardWidgetList =
+      createIndexCardWidgetList(indexCardList);
+
+  static void winAlgo() {
+    for (IndexCard indexCard in indexCardList) {
+      IndexCard currentIndexCard = indexCard;
+      for (IndexCard nextIndexCard in indexCardList) {
+        if (currentIndexCard.id != nextIndexCard.id &&
+            currentIndexCard.stateOfColor == nextIndexCard.stateOfColor &&
+            currentIndexCard.label == nextIndexCard.label) {
+          print(currentIndexCard.toString() + "== ### WIN ### ==" + nextIndexCard.toString());
+        }
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
