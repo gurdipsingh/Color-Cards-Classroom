@@ -1,61 +1,48 @@
 import 'package:flutter/material.dart';
 
+import 'indexCardWidget.dart';
+
 class IndexCard {
-  String name;
   int id;
-  String informationOne;
-  String informationTwo;
-  String informationThree;
-  bool stateOfColor;
+  String name;
+  String informationToDisplay;
+  String label;
+  Color stateOfColor;
 
-  IndexCard(String name, int id, String informationOne, String informationTwo,
-      String informationThree) {
-    this.name = name;
+  IndexCard(int id, String name, String informationToDisplay, String label, Color stateOfColor) {
     this.id = id;
-    this.informationOne = informationOne;
-    this.informationTwo = informationTwo;
-    this.informationThree = informationThree;
+    this.name = name;
+    this.informationToDisplay = informationToDisplay;
+    this.label = label;
+    this.stateOfColor = stateOfColor;
   }
 
-  Color _changeColor() {
-    if (false) {
-      return Colors.red;
-    } else {
-      return Colors.blue;
-    }
-  }
-
-  void changeState(bool changeState) {
-    stateOfColor = changeState;
-  }
-
-  Widget createIndexCardWiget(IndexCard indexCard) {
-    return InkWell(
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          child: Text(indexCard.name),
-          color: _changeColor(),
-        ),
-        onTap: () => {
-              print('On tap a container of = ' + indexCard.id.toString()),
-              changeState(this.stateOfColor)
-            });
-  }
-
-  static List<Widget> createIndexCardWigetList(List<IndexCard> indexList) {
+  static List<Widget> createIndexCardWidgetList(List<IndexCard> indexList) {
     List<Widget> result = [];
     indexList.forEach((element) {
-      result.add(element.createIndexCardWiget(element));
+      result.add(IndexCardWidget(element));
     });
     return result;
   }
 
   static List<IndexCard> indexCardList = [
     IndexCard(
-        'firstTest', 1, 'first_Info_ONE', 'first_Info_TWO', 'first_Info_THREE'),
-    IndexCard('secondTest', 2, 'second_Info_ONE', 'second_Info_TWO',
-        'second_Info_THREE'),
+         1, 'first_Name', 'first_Info', 'first_Label', Colors.blue),
     IndexCard(
-        'thirdTest', 3, 'third_Info_ONE', 'third_Info_TWO', 'third_Info_THREE')
+        2, 'second_Name', 'second_Info', 'second_Label', Colors.red),
+    IndexCard(
+        3, 'third_Name', 'third_Info', 'third_Label', Colors.amber),
+    IndexCard(
+        4, 'four_Name', 'four_Info', 'four_Label', Colors.blueGrey),
+    IndexCard(
+        5, 'five_Name', 'five_Info', 'five_Label', Colors.green),
+    IndexCard(
+        6, 'six_Name', 'six_Info', 'six_Label', Colors.purple),
+    IndexCard(
+        7, 'seven_Name', 'seven_Info', 'seven_Label', Colors.pink),
+    IndexCard(
+        8, 'eight_Name', 'eight_Info', 'eight_Label', Colors.orange),
+    IndexCard(
+        9, 'nine_Name', 'nine_Info', 'nine_Label', Colors.brown),
   ];
 }

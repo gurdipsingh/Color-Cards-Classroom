@@ -36,11 +36,11 @@ class StartScreen extends StatelessWidget {
       child: Text("Continue"),
       onPressed: () {
         passingArgument.setName(userNameController.text);
-        Navigator.of(context).pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
+        Navigator.of(context)
+            .pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
       },
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -51,17 +51,22 @@ class StartScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text(
-                  "Welcome",
-                  style: TextStyle(fontSize: 30, color: contentColor),
-                )]),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(
+                "Welcome",
+                style: TextStyle(fontSize: 30, color: contentColor),
+              )
+            ]),
             Column(
-              children: [textField(),Radiobutton(passingArgument: _passingArgument,),continueButton(context, _passingArgument), ],
+              children: [
+                textField(),
+                Radiobutton(
+                  passingArgument: _passingArgument,
+                ),
+                continueButton(context, _passingArgument),
+              ],
             )
           ],
         ));
   }
-
 }

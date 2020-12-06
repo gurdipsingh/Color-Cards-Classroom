@@ -15,7 +15,7 @@ class _GameState extends State<Game> {
       crossAxisSpacing: 10,
       mainAxisSpacing: 10,
       crossAxisCount: 3,
-      children: IndexCard.createIndexCardWigetList(IndexCard.indexCardList),
+      children: IndexCard.createIndexCardWidgetList(IndexCard.indexCardList),
     );
   }
 }

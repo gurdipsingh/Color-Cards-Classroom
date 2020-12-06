@@ -12,12 +12,15 @@ class GameScreen extends StatelessWidget {
 
   GameScreen({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
+      bottomNavigationBar: MyButtomNavigationBar(
+        passingArgument: passingArgument,
+      ),
       appBar: AppBar(
         title: Text("GAME"),
         backgroundColor: primaryColor,
