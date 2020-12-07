@@ -4,7 +4,7 @@ class IndexCard {
   int id;
   String name;
   String informationToDisplay;
-  String label;
+  String label; 
   Color stateOfColor;
 
   IndexCard(int id, String name, String informationToDisplay, String label,

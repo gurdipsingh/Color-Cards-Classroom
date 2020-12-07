@@ -31,3 +31,28 @@ class GameScreen extends StatelessWidget {
     );
   }
 }
+
+
+/*
+Column(
+        children: [
+          Column(
+            children: [
+              ElevatedButton(onPressed: (()=>{}), child: Text("hello"))
+            ],
+          ),
+          Column(
+            children: <Widget> [Container(
+              height: 400,
+              child: Game(),
+            )
+          ]),
+          Column(
+              children: [
+                ElevatedButton(onPressed: (()=>{}), child: Text("hello"))
+              ]
+          )
+        ],
+      ),
+
+ */
