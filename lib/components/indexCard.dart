@@ -1,61 +1,86 @@
+import 'package:e_learning/components/cardObject.dart';
 import 'package:flutter/material.dart';
 
-class IndexCard {
-  String name;
-  int id;
-  String informationOne;
-  String informationTwo;
-  String informationThree;
-  bool stateOfColor;
+import '../constants.dart';
 
-  IndexCard(String name, int id, String informationOne, String informationTwo,
-      String informationThree) {
-    this.name = name;
-    this.id = id;
-    this.informationOne = informationOne;
-    this.informationTwo = informationTwo;
-    this.informationThree = informationThree;
+/**
+ * This class is the WidgetClass of our CardObject
+ */
+
+class IndexCard extends StatefulWidget {
+  final String name;
+  final String content;
+  final CardObject card;        // Contains the Card Object of its widget
+
+  const IndexCard({
+    Key key,
+    @required this.name,
+    @required this.content,
+    @required this.card,
+  }) : super(key: key);
+
+  @override
+  _IndexCard createState() => _IndexCard();
+}
+
+class _IndexCard extends State<IndexCard> {
+  Color stateOfColor = Colors.grey;
+  String colorName = "grey";
+
+  String getName() {
+    return widget.name;
   }
 
-  Color _changeColor() {
-    if (false) {
-      return Colors.red;
-    } else {
-      return Colors.blue;
-    }
+  String getContent() {
+    return widget.content;
   }
 
-  void changeState(bool changeState) {
-    stateOfColor = changeState;
+  Color getStateOfColor() {
+    return this.stateOfColor;
   }
 
-  Widget createIndexCardWiget(IndexCard indexCard) {
-    return InkWell(
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          child: Text(indexCard.name),
-          color: _changeColor(),
-        ),
-        onTap: () => {
-              print('On tap a container of = ' + indexCard.id.toString()),
-              changeState(this.stateOfColor)
-            });
+  String getColorName(){
+    return this.colorName;
   }
 
-  static List<Widget> createIndexCardWigetList(List<IndexCard> indexList) {
-    List<Widget> result = [];
-    indexList.forEach((element) {
-      result.add(element.createIndexCardWiget(element));
+
+  // Checks which color it currently has and changes it to the next one
+  void updateColor() {
+    setState(() {
+      switch (this.colorName) {
+        case "grey":
+          this.stateOfColor = secondGameColor;
+          this.colorName = "orange";
+          widget.card.setColorName("orange");
+          break;
+        case "orange":
+          this.stateOfColor = thirdGameColor;
+          this.colorName = "purple";
+          widget.card.setColorName("purple");
+          break;
+        case "purple":
+          this.stateOfColor = fourthGameColor;
+          this.colorName = "blue";
+          widget.card.setColorName("blue");
+          break;
+        case "blue":
+          this.stateOfColor = firstGameColor;
+          this.colorName = "grey";
+          widget.card.setColorName("grey");
+          break;
+      }
     });
-    return result;
   }
 
-  static List<IndexCard> indexCardList = [
-    IndexCard(
-        'firstTest', 1, 'first_Info_ONE', 'first_Info_TWO', 'first_Info_THREE'),
-    IndexCard('secondTest', 2, 'second_Info_ONE', 'second_Info_TWO',
-        'second_Info_THREE'),
-    IndexCard(
-        'thirdTest', 3, 'third_Info_ONE', 'third_Info_TWO', 'third_Info_THREE')
-  ];
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: secondaryColor,
+        child: new RaisedButton(
+          child: new Text(this.getContent()),
+          textColor: Colors.white,
+          onPressed: () => {updateColor()},
+          color: this.getStateOfColor(),
+        ));
+  }
 }
