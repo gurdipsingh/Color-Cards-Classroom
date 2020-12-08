@@ -7,21 +7,21 @@ import 'package:flutter/material.dart';
  * This Class Contains all the functionality for the GL1 Cardpool
  * Diese Klasse persistiert die Karteikarten und ihre Widgets
  */
-class Gl1CardPool extends StatefulWidget {
+class Gl1Database extends StatefulWidget {
 
   final PassingArgument passingArgument;
 
 
-  const Gl1CardPool({
+  const Gl1Database({
     Key key,
     @required this.passingArgument
   }) : super(key: key);
 
   @override
-  _Gl1CardPool createState() => _Gl1CardPool();
+  _Gl1Database createState() => _Gl1Database();
 }
 
-class _Gl1CardPool extends State<Gl1CardPool> {
+class _Gl1Database extends State<Gl1Database> {
 
   List<Widget> cardList = [];
   List<CardObject> cardObjects = [];
@@ -40,15 +40,15 @@ class _Gl1CardPool extends State<Gl1CardPool> {
   createSortingList(context) {
     this.cardList = [];
     this.cardObjects = [];
-    cardObjects.add(new CardObject("bubblesort", "bubb", "grey"));
-    cardObjects.add(new CardObject("bubblesort", "bubble", "grey"));
-    cardObjects.add(new CardObject("bubblesort", "bubbuu", "grey"));
-    cardObjects.add(new CardObject("mergesort", "merguez", "grey"));
-    cardObjects.add(new CardObject("mergesort", "mergez", "grey"));
-    cardObjects.add(new CardObject("mergesort", "mergeeez", "grey"));
-    cardObjects.add(new CardObject("insertionsort", "insi", "grey"));
-    cardObjects.add(new CardObject("insertionsort", "insertion", "grey"));
-    cardObjects.add(new CardObject("insertionsort", "inse", "grey"));
+    cardObjects.add(new CardObject(1,"bubblesort", "bubb", "grey"));
+    cardObjects.add(new CardObject(2,"bubblesort", "bubble", "grey"));
+    cardObjects.add(new CardObject(3,"bubblesort", "bubbuu", "grey"));
+    cardObjects.add(new CardObject(4,"mergesort", "merguez", "grey"));
+    cardObjects.add(new CardObject(5,"mergesort", "mergez", "grey"));
+    cardObjects.add(new CardObject(6,"mergesort", "mergeeez", "grey"));
+    cardObjects.add(new CardObject(7,"insertionsort", "insi", "grey"));
+    cardObjects.add(new CardObject(8,"insertionsort", "insertion", "grey"));
+    cardObjects.add(new CardObject(9,"insertionsort", "inse", "grey"));
 
     cardObjects.forEach((element) {
       cardList.add(element.getWidget());

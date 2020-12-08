@@ -1,4 +1,4 @@
-import 'package:e_learning/Modules/GL1/gl1CardPool.dart';
+import 'package:e_learning/Modules/GL1/gl1Database.dart';
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
@@ -17,7 +17,7 @@ class GameScreen extends StatelessWidget {
   getCardPool(){
     switch(passingArgument.navigation["Module"]){
       case "GL1":
-        return Gl1CardPool(passingArgument: passingArgument);
+        return Gl1Database(passingArgument: passingArgument);
         /* If other Module Cardpool are created, insert it here
       case "HWR":
         return HWRCardPool(passingArgument: passingArgument);
