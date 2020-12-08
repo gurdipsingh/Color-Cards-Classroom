@@ -8,34 +8,46 @@ import '../constants.dart';
  */
 
 class CardObject{
-  Widget indexCard;   // It's widget
-  int id;
-  String label;
-  String content;
-  String colorName;
+  Widget _indexCard;   // It's widget
+  int _id;
+  String _label;
+  String _content;
+  String _colorName;
 
   CardObject(int id,String label, String content, String colorName){
-    this.id = id;
-    this.label = label;
-    this.content = content;
-    this.colorName = colorName;
+    this._id = id;
+    this._label = label;
+    this._content = content;
+    this._colorName = colorName;
     this.setWidget();
   }
 
-  setWidget(){
-    this.indexCard = IndexCard(id: this.id,label: this.label, content: this.content, card: this);
+  Widget setWidget(){
+    this._indexCard = IndexCard(id: this._id,label: this._label, content: this._content, card: this);
   }
 
-  getWidget(){
-    return this.indexCard;
+  Widget getWidget(){
+    return this._indexCard;
   }
 
-  getId(){
-    return this.id;
+  String getLabel(){
+    return this._label;
   }
 
-  setColorName(String colorName){
-    this.colorName = colorName;
+  int getId(){
+    return this._id;
+  }
+
+  String getContent(){
+    return this._content;
+  }
+
+  String getColorName(){
+    return _colorName;
+  }
+
+  void setColorName(String colorName){
+    this._colorName = colorName;
   }
 
   String convertStringToColor(String colorString){
@@ -52,5 +64,4 @@ class CardObject{
       return fourthGameColor.toString();
     }
   }
-
 }

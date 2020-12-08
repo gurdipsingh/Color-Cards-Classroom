@@ -97,19 +97,19 @@ class _Gl1Database extends State<Gl1Database> {
   List<CardObject> winAlgo() {
     List<CardObject> falseCards = [];
     this.cardObjects.forEach((element) {
-      if (element.label.toLowerCase() == verifier["firstLabel"].toLowerCase()) {
-        if (!(element.convertStringToColor(element.colorName) == verifier["firstColor"])) {
+      if (element.getLabel().toLowerCase() == verifier["firstLabel"].toLowerCase()) {
+        if (!(element.convertStringToColor(element.getColorName()) == verifier["firstColor"])) {
           falseCards.add(element);
         }
       }
-      if (element.label.toLowerCase() ==
+      if (element.getLabel().toLowerCase() ==
           verifier["secondLabel"].toLowerCase()) {
-        if (!(element.convertStringToColor(element.colorName) == verifier["secondColor"])) {
+        if (!(element.convertStringToColor(element.getColorName()) == verifier["secondColor"])) {
           falseCards.add(element);
         }
       }
-      if (element.label.toLowerCase() == verifier["thirdLabel"].toLowerCase()) {
-        if (!(element.convertStringToColor(element.colorName) == verifier["thirdColor"])) {
+      if (element.getLabel().toLowerCase() == verifier["thirdLabel"].toLowerCase()) {
+        if (!(element.convertStringToColor(element.getColorName()) == verifier["thirdColor"])) {
           falseCards.add(element);
         }
       }
@@ -120,7 +120,7 @@ class _Gl1Database extends State<Gl1Database> {
   // temporary function to print all false answers
   printFalse(List<CardObject> cards){
     cards.forEach((element) {
-      print(element.content);
+      print(element.getContent());
     });
   }
 

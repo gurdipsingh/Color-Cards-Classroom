@@ -26,8 +26,8 @@ class IndexCard extends StatefulWidget {
 }
 
 class _IndexCard extends State<IndexCard> {
-  Color stateOfColor = Colors.grey;
-  String colorName = "grey";
+  Color _stateOfColor = Colors.grey;
+  String _colorName = "grey";
 
   int getId(){
     return widget.id;
@@ -42,35 +42,42 @@ class _IndexCard extends State<IndexCard> {
   }
 
   Color getStateOfColor() {
-    return this.stateOfColor;
+    return this._stateOfColor;
   }
 
   String getColorName(){
-    return this.colorName;
+    return this._colorName;
+  }
+
+  void setStateOfColor(Color stateOfColor){
+    this._stateOfColor = stateOfColor;
+  }
+  void setColorName(String colorName){
+    this._colorName = colorName;
   }
 
   // Checks which color it currently has and changes it to the next one
   void updateColor() {
     setState(() {
-      switch (this.colorName) {
+      switch (this.getColorName()) {
         case "grey":
-          this.stateOfColor = secondGameColor;
-          this.colorName = "orange";
+          this.setStateOfColor(secondGameColor);
+          this.setColorName("orange");
           widget.card.setColorName("orange");
           break;
         case "orange":
-          this.stateOfColor = thirdGameColor;
-          this.colorName = "purple";
+          this.setStateOfColor(thirdGameColor);
+          setColorName("purple");
           widget.card.setColorName("purple");
           break;
         case "purple":
-          this.stateOfColor = fourthGameColor;
-          this.colorName = "blue";
+          this.setStateOfColor(fourthGameColor);
+          setColorName("blue");
           widget.card.setColorName("blue");
           break;
         case "blue":
-          this.stateOfColor = firstGameColor;
-          this.colorName = "grey";
+          this.setStateOfColor(firstGameColor);
+          setColorName("grey");
           widget.card.setColorName("grey");
           break;
       }
