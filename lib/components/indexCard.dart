@@ -8,13 +8,15 @@ import '../constants.dart';
  */
 
 class IndexCard extends StatefulWidget {
-  final String name;
+  final int id;
+  final String label;
   final String content;
   final CardObject card;        // Contains the Card Object of its widget
 
   const IndexCard({
     Key key,
-    @required this.name,
+    @required this.id,
+    @required this.label,
     @required this.content,
     @required this.card,
   }) : super(key: key);
@@ -27,8 +29,12 @@ class _IndexCard extends State<IndexCard> {
   Color stateOfColor = Colors.grey;
   String colorName = "grey";
 
+  int getId(){
+    return widget.id;
+  }
+
   String getName() {
-    return widget.name;
+    return widget.label;
   }
 
   String getContent() {
@@ -42,7 +48,6 @@ class _IndexCard extends State<IndexCard> {
   String getColorName(){
     return this.colorName;
   }
-
 
   // Checks which color it currently has and changes it to the next one
   void updateColor() {

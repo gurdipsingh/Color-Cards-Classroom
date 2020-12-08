@@ -9,11 +9,13 @@ import '../constants.dart';
 
 class CardObject{
   Widget indexCard;   // It's widget
+  int id;
   String label;
   String content;
   String colorName;
 
-  CardObject(String label, String content, String colorName){
+  CardObject(int id,String label, String content, String colorName){
+    this.id = id;
     this.label = label;
     this.content = content;
     this.colorName = colorName;
@@ -21,11 +23,15 @@ class CardObject{
   }
 
   setWidget(){
-    this.indexCard = IndexCard(name: this.label, content: this.content, card: this);
+    this.indexCard = IndexCard(id: this.id,label: this.label, content: this.content, card: this);
   }
 
   getWidget(){
     return this.indexCard;
+  }
+
+  getId(){
+    return this.id;
   }
 
   setColorName(String colorName){
