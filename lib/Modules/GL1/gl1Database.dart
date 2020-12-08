@@ -1,4 +1,3 @@
-import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/cardObject.dart';
 import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
@@ -7,26 +6,19 @@ import 'package:flutter/material.dart';
  * This Class Contains all the functionality for the GL1 Cardpool
  * Diese Klasse persistiert die Karteikarten und ihre Widgets
  */
-class Gl1Database extends StatefulWidget {
 
-  final PassingArgument passingArgument;
+class Gl1Database extends StatelessWidget {
+  final passingArgument;
 
-
-  const Gl1Database({
-    Key key,
-    @required this.passingArgument
+  Gl1Database({
+  Key key,
+  @required this.passingArgument
   }) : super(key: key);
-
-  @override
-  _Gl1Database createState() => _Gl1Database();
-}
-
-class _Gl1Database extends State<Gl1Database> {
 
   List<Widget> cardList = [];
   List<CardObject> cardObjects = [];
 
-  // Hard coded solution to compare with
+  // Hard coded solution to compare withS
   Map<String, String> verifier = {
     "firstLabel": "Bubblesort",
     "secondLabel": "Insertionsort",
@@ -85,7 +77,7 @@ class _Gl1Database extends State<Gl1Database> {
 
   // gets the Cards according to the Theme which was selected earlier
   showSubThemeContent(context) {
-    switch (widget.passingArgument.navigation["theme"]) {
+    switch (this.passingArgument.navigation["theme"]) {
       case "Sortieralgorithmen":
         return this.createSortingList(context);
       default:
