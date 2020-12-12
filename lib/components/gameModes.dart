@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'PassingArgument.dart';
 
-class GameSelectionMode extends StatelessWidget {
+class GameModes extends StatelessWidget {
 
   final PassingArgument passingArgument;
 
-  GameSelectionMode({
+  GameModes({
     Key key,
     @required this.passingArgument,}) : super(key: key);
 

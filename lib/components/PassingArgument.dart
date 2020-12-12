@@ -7,6 +7,7 @@ class PassingArgument {
   Map _settings = {"language": "GERMAN"};
   List<IndexCardObject> _cards = [];
   List<Score> _scoreSheet = [];
+  Score _unratedScore;
 
   PassingArgument(String name){
     this._name = name;
@@ -37,6 +38,10 @@ class PassingArgument {
     this._scoreSheet.add(score);
   }
 
+  void setUnratedScore(DateTime time, int numberOfRightAnswer){
+    this._unratedScore = new Score(numberOfRightAnswer, time);
+  }
+
   String getName(){
     return this._name;
   }
@@ -57,9 +62,17 @@ class PassingArgument {
     return this._navigation["subtheme"];
   }
 
+  String getGameMode(){
+    return this._navigation["gamemode"];
+  }
+
   String getModule(){
     //TODO: Make Key lowercase
     return this._navigation["Module"];
+  }
+
+  Score getUnratedScore(){
+    return this._unratedScore;
   }
 
   String getElementFromNavigation(key) {

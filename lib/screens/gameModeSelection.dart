@@ -1,5 +1,5 @@
 import 'package:e_learning/components/PassingArgument.dart';
-import 'package:e_learning/components/gameSelectionMode.dart';
+import 'package:e_learning/components/gameModes.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class GameModeSelection extends StatelessWidget {
           title: const Text('Spiel Modus Wahl'),
           backgroundColor: primaryColor,
         ),
-        body: GameSelectionMode(passingArgument: passingArgument,)
+        body: GameModes(passingArgument: passingArgument,)
     );
   }
 }

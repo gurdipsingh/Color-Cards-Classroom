@@ -100,13 +100,18 @@ class Gl1Database extends StatelessWidget {
       falseIds.add(element.getId());
     });
 
-    this.passingArgument.addScore(new DateTime.now(), 9-falseIds.length);
+    // If unrated then dont set it into the ScoreSheet
+    if(this.passingArgument.getGameMode() == "unbewertet"){
+      this.passingArgument.setUnratedScore(new DateTime.now(), 9-falseIds.length);
+    }
+    else{
+      this.passingArgument.addScore(new DateTime.now(), 9-falseIds.length);
+    }
 
 
     this.cardObjects.forEach((IndexCardObject element) {
       if(falseIds.contains(element.getId())){
         element.createSolutionCard(false);
-        //print(element.getSolutionWidget().getContent());
       }
       else{
         element.createSolutionCard(true);
