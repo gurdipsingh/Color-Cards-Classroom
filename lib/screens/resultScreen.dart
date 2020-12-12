@@ -50,15 +50,15 @@ class ResultScreen extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                            height: 20,
-                            width: 20,
+                            height: 25,
+                            width: 25,
                             color: secondaryColor,
                             child: Center(
                               child: Text(this.passingArgument.getLatestScore().getNumberOfRightAsString(), style: TextStyle(color: contentColor),),
                             )
                         ),
                         Container(
-                          child: Text("Right Answer"),
+                          child: Text("  Right "),
                         )
                       ],
                     ),
@@ -66,8 +66,8 @@ class ResultScreen extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                            height: 20,
-                            width: 20,
+                            height: 25,
+                            width: 25,
                             color: firstGameColor,
                             child: Center(
                               child: Text(this.passingArgument.getLatestScore().getNumberOfWrongAsString(), style: TextStyle(color: contentColor),),
@@ -75,7 +75,7 @@ class ResultScreen extends StatelessWidget {
                         ),
 
                         Container(
-                          child: Text("Wrong Answer"),
+                          child: Text("  Wrong "),
                         )
                       ],
                     ),
