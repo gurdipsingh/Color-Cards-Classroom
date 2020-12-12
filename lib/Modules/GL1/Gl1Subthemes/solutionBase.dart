@@ -111,44 +111,4 @@ class SolutionBase extends StatelessWidget {
     )]
     );
   }
-
 }
-
-
-
-/*column bis column
-Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                    height: 30,
-                    width: 110,
-                    color: secondaryColor,
-                    child: Center(
-                      child: Text(
-                        "Right Answer",
-                        style: TextStyle(
-                          color: contentColor,
-                        ),
-                      ),
-                    )
-                ),
-                Container(
-                    height: 30,
-                    width: 110,
-                    color: firstGameColor,
-                    child: Center(
-                      child: Text(
-                        "Wrong Answer",
-                        style: TextStyle(
-                          color: contentColor,
-                        ),
-                      ),
-                    )
-                )
-              ],
-          )],
-        ),
- */
