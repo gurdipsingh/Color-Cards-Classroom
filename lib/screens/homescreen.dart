@@ -18,17 +18,33 @@ class HomeScreen extends StatelessWidget {
     Key key,
     @required this.passingArgument,}) : super(key: key);
 
+  getHeightSizeAccordingToPercent(context, int percent){
+    var screenSize = MediaQuery.of(context).size;
+    return (screenSize.height/100)*percent;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
       appBar: AppBar(
-        title: Text(passingArgument.getName()),
+        title: Text("Home"),
         backgroundColor: primaryColor,
       ),
-      body: Center(
-        child: Modules(passingArgument: passingArgument),
-      ),
+      body:Column(
+          children: [
+            Container(
+              height: getHeightSizeAccordingToPercent(context, 10),
+              child: Center(
+                child: Text("Willkommen ${passingArgument.getName()}", style: TextStyle(fontSize: 19),),
+              )
+            ),
+            Container(
+              height: getHeightSizeAccordingToPercent(context, 60),
+            child:Modules(passingArgument: passingArgument),
+            )
+          ],
+        ),
     );
   }
 }

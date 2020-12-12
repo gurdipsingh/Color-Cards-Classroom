@@ -24,7 +24,6 @@ class Modules extends StatelessWidget {
         RouteGenerator.createRaisedButtonWithMapSafe(context, "HWR", "/none",passingArgument, "Module", "HWR"),
         RouteGenerator.createRaisedButtonWithMapSafe(context, "PRG1", "/none",passingArgument, "Module", "PRG1"),
         RouteGenerator.createRaisedButtonWithMapSafe(context, "Mathe1", "/none",passingArgument, "Module", "Mathe1"),
-
       ],
     );
   }
