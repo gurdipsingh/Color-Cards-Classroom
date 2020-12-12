@@ -5,6 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 
+// TODO: MERGE SOLUTIONBASE INTO SOLUTIONSCREEN AS IT IS REDUNDANT
+
 class SolutionScreen extends StatelessWidget {
   static const route = "/solution";
 

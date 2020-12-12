@@ -1,10 +1,12 @@
 import 'package:e_learning/components/cardObject.dart';
+import 'package:e_learning/components/score.dart';
 
 class PassingArgument {
   String name;
   Map navigation;
   Map settings = {"language": "GERMAN"};
   List<CardObject> cards = [];
+  List<Score> scoreSheet = [];
 
   PassingArgument(this.name, this.navigation);
 
@@ -26,6 +28,15 @@ class PassingArgument {
 
   setSubTheme(String subtheme) {
     this.navigation["subtheme"] = subtheme;
+  }
+
+  addScore(DateTime time, int numberOfRightAnswer){
+    Score score = new Score(numberOfRightAnswer, time);
+    this.scoreSheet.add(score);
+  }
+
+  Score getLatestScore(){
+    return this.scoreSheet.last;
   }
 
   getTheme() {

@@ -42,6 +42,47 @@ class SolutionBase extends StatelessWidget {
       children: [
         Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Row(
+                   children: [
+                    Container(
+                      height: 20,
+                      width: 20,
+                      color: secondaryColor,
+                      child: Center(
+                        child: Text(this.passingArgument.getLatestScore().getNumberOfRightAsString(), style: TextStyle(color: contentColor),),
+                      )
+                      ),
+                    Container(
+                      child: Text("Right Answer"),
+                    )
+                  ],
+                ),
+
+                Row(
+                  children: [
+                    Container(
+                      height: 20,
+                      width: 20,
+                      color: firstGameColor,
+                        child: Center(
+                          child: Text(this.passingArgument.getLatestScore().getNumberOfWrongAsString(), style: TextStyle(color: contentColor),),
+                        )
+                    ),
+
+                    Container(
+                      child: Text("Wrong Answer"),
+                    )
+                  ],
+                ),
+
+              ],
+          )],
+        ),
+        Column(
+          children: [
         Column(children: <Widget>[
           Container(
             height: 400,
@@ -72,3 +113,42 @@ class SolutionBase extends StatelessWidget {
   }
 
 }
+
+
+
+/*column bis column
+Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                    height: 30,
+                    width: 110,
+                    color: secondaryColor,
+                    child: Center(
+                      child: Text(
+                        "Right Answer",
+                        style: TextStyle(
+                          color: contentColor,
+                        ),
+                      ),
+                    )
+                ),
+                Container(
+                    height: 30,
+                    width: 110,
+                    color: firstGameColor,
+                    child: Center(
+                      child: Text(
+                        "Wrong Answer",
+                        style: TextStyle(
+                          color: contentColor,
+                        ),
+                      ),
+                    )
+                )
+              ],
+          )],
+        ),
+ */

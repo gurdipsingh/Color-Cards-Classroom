@@ -53,24 +53,7 @@ class Gl1Database extends StatelessWidget {
 
 
   ungezeigteSeite(context) {
-    return RichText(
-      text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
-          children: <TextSpan>[
-            TextSpan(text: "Fehler \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: secondaryColor)),
-            TextSpan(text: "Diese Seite konnte nicht aufgezeigt werden",
-                style: TextStyle(color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
-          ]
-      ),
-    );
+
   }
 
 
@@ -115,6 +98,9 @@ class Gl1Database extends StatelessWidget {
     falseCards.forEach((element) {
       falseIds.add(element.getId());
     });
+
+    this.passingArgument.addScore(new DateTime.now(), 9-falseIds.length);
+
 
     this.cardObjects.forEach((element) {
       if(falseIds.contains(element.getId())){
