@@ -1,5 +1,7 @@
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/cardObject.dart';
 import 'package:e_learning/constants.dart';
+import 'package:e_learning/screens/solutionScreen.dart';
 import 'package:flutter/material.dart';
 
 /**
@@ -8,7 +10,7 @@ import 'package:flutter/material.dart';
  */
 
 class Gl1Database extends StatelessWidget {
-  final passingArgument;
+  final PassingArgument passingArgument;
 
   Gl1Database({
   Key key,
@@ -29,7 +31,7 @@ class Gl1Database extends StatelessWidget {
   };
 
 // Creates a list of CardObjects and then creates a list of its Widgets
-  createSortingList(context) {
+  List<Widget> createSortingList(context) {
     this.cardList = [];
     this.cardObjects = [];
     cardObjects.add(new CardObject(1,"bubblesort", "bubb", "grey"));
@@ -71,9 +73,7 @@ class Gl1Database extends StatelessWidget {
     );
   }
 
-  verifySolution(){
 
-  }
 
   // gets the Cards according to the Theme which was selected earlier
   showSubThemeContent(context) {
@@ -110,10 +110,25 @@ class Gl1Database extends StatelessWidget {
   }
 
   // temporary function to print all false answers
-  printFalse(List<CardObject> cards){
-    cards.forEach((element) {
-      print(element.getContent());
+  void verifySolution(List<CardObject> falseCards, context){
+    List<int> falseIds = [];
+    falseCards.forEach((element) {
+      falseIds.add(element.getId());
     });
+
+    this.cardObjects.forEach((element) {
+      if(falseIds.contains(element.getId())){
+        element.createSolutionCard(false);
+        //print(element.getSolutionWidget().getContent());
+      }
+      else{
+        element.createSolutionCard(true);
+      }
+    });
+    passingArgument.setCards(this.cardObjects);
+    // Removes until nothing leftNavigator.pushNamedAndRemoveUntil(context, SolutionScreen.route, (_) => false, arguments: passingArgument);
+    // TODO: return to HomeScreen Navigator.popUntil(context, (route) => route.isFirst);
+    Navigator.of(context).pushNamed(SolutionScreen.route, arguments: passingArgument);
   }
 
   static Color getColorFromString(String color) {
@@ -189,7 +204,7 @@ class Gl1Database extends StatelessWidget {
         Column(children: [
           RaisedButton(
             onPressed: () => {
-              printFalse(winAlgo()),
+              verifySolution(winAlgo(), context),
             },
             child: Text(
               "Check answer",

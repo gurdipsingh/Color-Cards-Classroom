@@ -11,81 +11,90 @@ import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/learnOrTest.dart';
 import 'package:e_learning/screens/settings.dart';
+import 'package:e_learning/screens/solutionScreen.dart';
 import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/homescreen.dart';
 
-
-
-class RouteGenerator{
-
+class RouteGenerator {
   static int index = 0;
 
-  static Route<dynamic> generateRoute(RouteSettings settings){
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    final PassingArgument _passingArgument = settings.arguments;
 
-    final _passingArgument = settings.arguments;
-
-    switch (settings.name){
+    switch (settings.name) {
+      case '/startScreen':
+        return MaterialPageRoute(builder: (_) => StartScreen());
       case "/":
         RouteGenerator.index = 0;
-        if(_passingArgument is PassingArgument){
-        return _createRoute(HomeScreen(passingArgument: _passingArgument,));
+        if (_passingArgument is PassingArgument) {
+          return _createRoute(HomeScreen(
+            passingArgument: _passingArgument,
+          ));
         }
         return _errorRoute(_passingArgument);
-      case '/startScreen':
-        return MaterialPageRoute(builder: (_)=> StartScreen());
       case "/statistic":
         RouteGenerator.index = 1;
-        if(_passingArgument is PassingArgument){
-          return _createRoute(Statistic(passingArgument:_passingArgument)); //  TODO: Muss ausgewechselt werden!
+        if (_passingArgument is PassingArgument) {
+          return _createRoute(Statistic(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case "/help":
         RouteGenerator.index = 2;
-        if(_passingArgument is PassingArgument){
-          return _createRoute(Help(passingArgument:_passingArgument));
+        if (_passingArgument is PassingArgument) {
+          return _createRoute(Help(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case "/settings":
         RouteGenerator.index = 3;
-        if(_passingArgument is PassingArgument){
-          return _createRoute(Settings(passingArgument:_passingArgument));
+        if (_passingArgument is PassingArgument) {
+          return _createRoute(Settings(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case '/gl1Themes':
-        if(_passingArgument is PassingArgument){
+        if (_passingArgument is PassingArgument) {
           return _createRoute(Gl1Themes(passingArgument: _passingArgument));
-              }
-         return _errorRoute(_passingArgument);
+        }
+        return _errorRoute(_passingArgument);
       case '/learnOrTest':
-        if(_passingArgument is PassingArgument){
+        if (_passingArgument is PassingArgument) {
           return _createRoute(LearnOrTest(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case '/gl1Lernen':
-        if(_passingArgument is PassingArgument){
+        if (_passingArgument is PassingArgument) {
           return _createRoute(Gl1SubThemes(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
-        case '/sortingAlgorithm':
-        return _createRoute(SortingAlgorithm(passingArgument: _passingArgument,));
-        case '/graphalgorithm':
-        return _createRoute(GraphAlgorithm(passingArgument: _passingArgument,));
-        case '/dynamicprogramming':
-        return _createRoute(DynamicProgramming(passingArgument: _passingArgument,));
-        case '/gameSelectionMode':
-        return _createRoute(GameModeSelection(passingArgument: _passingArgument,));
-        case '/game':
+      case '/sortingAlgorithm':
+        return _createRoute(SortingAlgorithm(
+          passingArgument: _passingArgument,
+        ));
+      case '/graphalgorithm':
+        return _createRoute(GraphAlgorithm(
+          passingArgument: _passingArgument,
+        ));
+      case '/dynamicprogramming':
+        return _createRoute(DynamicProgramming(
+          passingArgument: _passingArgument,
+        ));
+      case '/gameSelectionMode':
+        return _createRoute(GameModeSelection(
+          passingArgument: _passingArgument,
+        ));
+      case '/game':
         return _createRoute(GameScreen(passingArgument: _passingArgument));
-        default:
+      case '/solution':
+        return _createRoute(SolutionScreen(passingArgument: _passingArgument));
+      default:
         return _errorRoute(_passingArgument);
     }
   }
 
-  static PageRouteBuilder _createRoute(widget){
-    return PageRouteBuilder(
+  static PageRouteBuilder _createRoute(widget) {
+    return new PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return child;
@@ -93,63 +102,96 @@ class RouteGenerator{
     );
   }
 
-  static int getIndex(){
+  static int getIndex() {
     return index;
   }
 
-  static ElevatedButton createElevatedButton(context, String labelName,String routingPageName, PassingArgument passingArgument){
+  static ElevatedButton createElevatedButton(context, String labelName,
+      String routingPageName, PassingArgument passingArgument) {
     return ElevatedButton(
-      style:ElevatedButton.styleFrom(primary: secondaryColor,textStyle: TextStyle(fontSize: 15), shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(16.0))),),
+      style: ElevatedButton.styleFrom(
+        primary: secondaryColor,
+        textStyle: TextStyle(fontSize: 15),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16.0))),
+      ),
       child: Text(labelName),
       onPressed: () {
-        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
+        Navigator.of(context)
+            .pushNamed(routingPageName, arguments: passingArgument);
       },
     );
   }
 
-  static ElevatedButton createElevatedButtonWithMapSafe(context, String labelName,String routingPageName, PassingArgument passingArgument, String key,String element){
+  static ElevatedButton createElevatedButtonWithMapSafe(
+      context,
+      String labelName,
+      String routingPageName,
+      PassingArgument passingArgument,
+      String key,
+      String element) {
     return ElevatedButton(
-      style:ElevatedButton.styleFrom(primary: secondaryColor,textStyle: TextStyle(fontSize: 15), shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(16.0))),),
+      style: ElevatedButton.styleFrom(
+        primary: secondaryColor,
+        textStyle: TextStyle(fontSize: 15),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(16.0))),
+      ),
       child: Text(labelName),
       onPressed: () {
-        if(key != null && element != null ){
-          passingArgument.setElementToKey(key, element);}
-        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
+        if (key != null && element != null) {
+          passingArgument.setElementToKey(key, element);
+        }
+        Navigator.of(context)
+            .pushNamed(routingPageName, arguments: passingArgument);
       },
     );
   }
 
-
-  static RaisedButton createRaisedButton(context, String labelName, String routingPageName, PassingArgument passingArgument){
+  static RaisedButton createRaisedButton(context, String labelName,
+      String routingPageName, PassingArgument passingArgument) {
     return RaisedButton(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       onPressed: () {
-        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
+        Navigator.of(context)
+            .pushNamed(routingPageName, arguments: passingArgument);
       },
-      child: Text(labelName, style: TextStyle(color: contentColor, fontSize: 20),),
+      child: Text(
+        labelName,
+        style: TextStyle(color: contentColor, fontSize: 20),
+      ),
       color: secondaryColor,
     );
   }
 
-  static RaisedButton createRaisedButtonWithMapSafe(context, String labelName, String routingPageName, PassingArgument passingArgument, String key,String element){
+  static RaisedButton createRaisedButtonWithMapSafe(
+      context,
+      String labelName,
+      String routingPageName,
+      PassingArgument passingArgument,
+      String key,
+      String element) {
     return RaisedButton(
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       onPressed: () {
-        if(key != null && element != null ){
-          passingArgument.setElementToKey(key, element);}
-        Navigator.of(context).pushNamed(routingPageName, arguments: passingArgument);
+        if (key != null && element != null) {
+          passingArgument.setElementToKey(key, element);
+        }
+        Navigator.of(context)
+            .pushNamed(routingPageName, arguments: passingArgument);
       },
-      child: Text(labelName, style: TextStyle(color: contentColor, fontSize: 20),),
+      child: Text(
+        labelName,
+        style: TextStyle(color: contentColor, fontSize: 20),
+      ),
       color: secondaryColor,
     );
   }
 
-  static Route<dynamic> _errorRoute(args){
-    return MaterialPageRoute(builder: (_){
+  static Route<dynamic> _errorRoute(args) {
+    return MaterialPageRoute(builder: (_) {
       return Scaffold(
         appBar: AppBar(
           backgroundColor: primaryColor,
