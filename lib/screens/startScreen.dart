@@ -37,8 +37,6 @@ class StartScreen extends StatelessWidget {
       onPressed: () {
         passingArgument.setName(userNameController.text);
         Navigator.pushNamedAndRemoveUntil(context, HomeScreen.route, (_) => false, arguments: passingArgument);
-        // TODO: REMOVE STARTSCREEN Navigator.popUntil(context, (route) => route.isFirst);
-        // Navigator.of(context).pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
       },
     );
   }

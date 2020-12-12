@@ -112,9 +112,9 @@ class Gl1Database extends StatelessWidget {
       }
     });
     passingArgument.setCards(this.cardObjects);
-    // Removes until nothing leftNavigator.pushNamedAndRemoveUntil(context, SolutionScreen.route, (_) => false, arguments: passingArgument);
-    // TODO: return to HomeScreen Navigator.popUntil(context, (route) => route.isFirst);
-    Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
+    Navigator.pushNamedAndRemoveUntil(context, ResultScreen.route, (_) => false, arguments: passingArgument);
+    //Navigator.popUntil(context, (route) => route.isFirst);
+    //Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
   }
 
   static Color getColorFromString(String color) {
