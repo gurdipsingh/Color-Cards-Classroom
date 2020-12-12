@@ -4,7 +4,7 @@ import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 class SortingAlgorithm extends StatelessWidget {
-  static const route = '/Sortieralgotithmen ';
+  static const route = '/Sortieralgorithmen ';
 
   final PassingArgument passingArgument;
 

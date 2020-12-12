@@ -33,7 +33,7 @@ class Gl1Themes extends StatelessWidget {
             Container(
               height: 80,
                 padding: const EdgeInsets.all(15),
-                child: RouteGenerator.createElevatedButtonWithMapSafe(context,"Sortieralgotithmen",LearnOrTest.route, passingArgument, "theme", "Sortieralgorithmen")
+                child: RouteGenerator.createElevatedButtonWithMapSafe(context,"Sortieralgorithmen",LearnOrTest.route, passingArgument, "theme", "Sortieralgorithmen")
             ),
             Container(
               height: 80,
@@ -55,8 +55,6 @@ class Gl1Themes extends StatelessWidget {
     ],
     )
     );
-        
-    
   }
 }
 

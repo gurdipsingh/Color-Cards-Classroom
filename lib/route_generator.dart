@@ -68,7 +68,7 @@ class RouteGenerator {
           return _createRoute(Gl1SubThemes(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
-      case '/Sortieralgotithmen':
+      case '/Sortieralgorithmen':
         return _createRoute(SortingAlgorithm(
           passingArgument: _passingArgument,
         ));
