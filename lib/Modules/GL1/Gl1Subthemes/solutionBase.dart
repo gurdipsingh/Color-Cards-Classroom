@@ -1,5 +1,6 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/cardObject.dart';
+import 'package:e_learning/components/solutionWidget.dart';
 import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -21,9 +22,11 @@ class SolutionBase extends StatelessWidget {
 
 // Creates a list of CardObjects and then creates a list of its Widgets
   List<Widget>  getResult(context) {
-    List<CardObject> cards = passingArgument.cards;
+    List<CardObject> cards = this.passingArgument.cards;
     cards.forEach((element) {
-      cardList.add(element.getSolutionWidget());
+      SolutionWidget solutionCard = element.getSolutionWidget();
+      solutionCard.setPassingArgument(this.passingArgument);
+      cardList.add(solutionCard);
     });
     return cardList;
   }

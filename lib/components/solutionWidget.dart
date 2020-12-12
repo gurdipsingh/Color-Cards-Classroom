@@ -1,3 +1,4 @@
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/cardObject.dart';
 import 'package:flutter/material.dart';
 
@@ -8,23 +9,25 @@ import '../constants.dart';
  */
 
 class SolutionWidget extends StatelessWidget {
-   int id;
-   String label;
-   String content;
-   CardObject card;        // Contains the Card Object of its widget
-   Color _stateOfColor;
-   bool correct;
+  int id;
+  String label;
+  String content;
+  CardObject card; // Contains the Card Object of its widget
+  Color _stateOfColor;
+  bool correct;
+  PassingArgument _passingArgument;
 
-    SolutionWidget(int id, String label, String content, CardObject card, bool correct ){
-      this.id = id;
-      this.label = label;
-      this.content = content;
-      this.card = card;
-      this.correct = correct;
-      this.setStateOfColor();
-    }
+  SolutionWidget(
+      int id, String label, String content, CardObject card, bool correct) {
+    this.id = id;
+    this.label = label;
+    this.content = content;
+    this.card = card;
+    this.correct = correct;
+    this.setStateOfColor();
+  }
 
-  int getId(){
+  int getId() {
     return this.id;
   }
 
@@ -40,19 +43,49 @@ class SolutionWidget extends StatelessWidget {
     return this._stateOfColor;
   }
 
-  void setStateOfColor(){
-    if(this.correct){
+  PassingArgument getPassingArgument() {
+    return this._passingArgument;
+  }
+
+  void setPassingArgument(PassingArgument passingArgument) {
+    this._passingArgument = passingArgument;
+  }
+
+  void setStateOfColor() {
+    if (this.correct) {
       this._stateOfColor = secondaryColor;
-    }
-    else{
+    } else {
       this._stateOfColor = Colors.grey;
     }
   }
 
-
   // supposed to show dialog, which leads to learning Page
   void showDialogToPage(BuildContext context) {
-    print(this.label);
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Redirection"),
+              content: Text(
+                  "Diese Karte gehört zu ${this.label}, möchten Sie die Seite zu ${this.label} öffnen?"),
+              actions: [
+                FlatButton(
+                    child: Text("Ja"),
+                    onPressed: () => {
+                          Navigator.of(context).pop(),
+                          this.directToLearningPage(context)
+                        }),
+                FlatButton(
+                    child: Text("Nein"),
+                    onPressed: () => {Navigator.of(context).pop()})
+              ],
+            ));
+  }
+
+  // funcion that leads to learning Page
+  void directToLearningPage(BuildContext context) {
+    this._passingArgument.setSubTheme(this.label);
+    Navigator.of(context).pushNamed("/${this._passingArgument.getTheme()}",
+        arguments: this.getPassingArgument());
   }
 
   @override
