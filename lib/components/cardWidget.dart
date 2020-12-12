@@ -7,13 +7,13 @@ import '../constants.dart';
  * This class is the WidgetClass of our CardObject
  */
 
-class IndexCard extends StatefulWidget {
+class CardWidget extends StatefulWidget {
   final int id;
   final String label;
   final String content;
   final CardObject card;        // Contains the Card Object of its widget
 
-  const IndexCard({
+  const CardWidget({
     Key key,
     @required this.id,
     @required this.label,
@@ -22,10 +22,10 @@ class IndexCard extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _IndexCard createState() => _IndexCard();
+  _CardWidget createState() => _CardWidget();
 }
 
-class _IndexCard extends State<IndexCard> {
+class _CardWidget extends State<CardWidget> {
   Color _stateOfColor = Colors.grey;
   String _colorName = "grey";
 

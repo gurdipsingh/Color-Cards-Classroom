@@ -1,4 +1,4 @@
-import 'package:e_learning/components/indexCard.dart';
+import 'package:e_learning/components/cardWidget.dart';
 import 'package:e_learning/components/solutionWidget.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -25,7 +25,7 @@ class CardObject{
   }
 
   Widget setWidget(){
-    this._indexCard = IndexCard(id: this._id,label: this._label, content: this._content, card: this);
+    this._indexCard = CardWidget(id: this._id,label: this._label, content: this._content, card: this);
   }
 
   Widget createSolutionCard(correct){
