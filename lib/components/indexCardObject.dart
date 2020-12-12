@@ -1,6 +1,5 @@
 import 'package:e_learning/components/indexCardWidget.dart';
 import 'package:e_learning/components/solutionWidget.dart';
-import 'package:flutter/cupertino.dart';
 
 import '../constants.dart';
 
@@ -9,8 +8,8 @@ import '../constants.dart';
  */
 
 class IndexCardObject{
-  Widget _indexCard;   // It's widget
-  Widget _solutionCard;
+  IndexCardWidget _indexCardWidget;   // It's widget
+  SolutionWidget _solutionCard;
   int _id;
   String _label;
   String _content;
@@ -24,20 +23,24 @@ class IndexCardObject{
     this.setWidget();
   }
 
-  Widget setWidget(){
-    this._indexCard = IndexCardWidget(id: this._id,label: this._label, content: this._content, card: this);
+  void setWidget(){
+    this._indexCardWidget = IndexCardWidget(id: this._id,label: this._label, content: this._content, card: this);
   }
 
-  Widget createSolutionCard(correct){
+  void createSolutionCard(correct){
     this._solutionCard = SolutionWidget(this._id, this._label, this._content, this, correct);
+  }
+
+  void setColorName(String colorName){
+    this._colorName = colorName;
   }
 
   SolutionWidget getSolutionWidget(){
     return this._solutionCard;
   }
 
-  Widget getWidget(){
-    return this._indexCard;
+  IndexCardWidget getWidget(){
+    return this._indexCardWidget;
   }
 
   String getLabel(){
@@ -54,10 +57,6 @@ class IndexCardObject{
 
   String getColorName(){
     return _colorName;
-  }
-
-  void setColorName(String colorName){
-    this._colorName = colorName;
   }
 
   String convertStringToColor(String colorString){

@@ -140,7 +140,7 @@ class RouteGenerator {
       child: Text(labelName),
       onPressed: () {
         if (key != null && element != null) {
-          passingArgument.setElementToKey(key, element);
+          passingArgument.setElementToNavigation(key, element);
         }
         Navigator.of(context)
             .pushNamed(routingPageName, arguments: passingArgument);
@@ -177,7 +177,7 @@ class RouteGenerator {
           borderRadius: BorderRadius.all(Radius.circular(20.0))),
       onPressed: () {
         if (key != null && element != null) {
-          passingArgument.setElementToKey(key, element);
+          passingArgument.setElementToNavigation(key, element);
         }
         Navigator.of(context)
             .pushNamed(routingPageName, arguments: passingArgument);

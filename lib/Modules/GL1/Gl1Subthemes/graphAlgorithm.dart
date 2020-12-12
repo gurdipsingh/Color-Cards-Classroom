@@ -12,7 +12,7 @@ class GraphAlgorithm extends StatelessWidget {
     Key key,
     @required this.passingArgument,}) : super(key: key);
 
-  dijkstra(context) {
+  RichText dijkstra(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -36,7 +36,7 @@ class GraphAlgorithm extends StatelessWidget {
     );
   }
 
-  kruskal(context) {
+  RichText kruskal(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -60,7 +60,7 @@ class GraphAlgorithm extends StatelessWidget {
     );
   }
 
-  prim(context) {
+  RichText prim(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -84,7 +84,7 @@ class GraphAlgorithm extends StatelessWidget {
     );
   }
 
-  ungezeigteSeite(context) {
+  RichText ungezeigteSeite(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -105,7 +105,7 @@ class GraphAlgorithm extends StatelessWidget {
     );
   }
 
-  showSubThemeContent(context) {
+  RichText showSubThemeContent(context) {
     switch (passingArgument.getSubtheme()) {
       case "dijkstra":
         return dijkstra(context);

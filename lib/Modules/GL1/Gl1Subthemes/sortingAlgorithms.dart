@@ -12,7 +12,7 @@ class SortingAlgorithm extends StatelessWidget {
     Key key,
     @required this.passingArgument,}) : super(key: key);
 
-  bubbleSort(context) {
+  RichText bubbleSort(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -36,7 +36,7 @@ class SortingAlgorithm extends StatelessWidget {
     );
   }
 
-  insertionSort(context) {
+  RichText insertionSort(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -60,7 +60,7 @@ class SortingAlgorithm extends StatelessWidget {
     );
   }
 
-  selectionSort(context) {
+  RichText selectionSort(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -84,7 +84,7 @@ class SortingAlgorithm extends StatelessWidget {
     );
   }
 
-  quickSort(context) {
+  RichText quickSort(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -108,7 +108,7 @@ class SortingAlgorithm extends StatelessWidget {
     );
   }
 
-  mergeSort(context) {
+  RichText mergeSort(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -132,7 +132,7 @@ class SortingAlgorithm extends StatelessWidget {
     );
   }
 
-  ungezeigteSeite(context) {
+  RichText ungezeigteSeite(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -153,7 +153,7 @@ class SortingAlgorithm extends StatelessWidget {
     );
   }
 
-  showSubThemeContent(context) {
+  RichText showSubThemeContent(context) {
     switch (passingArgument.getSubtheme()) {
       case "bubblesort":
         return bubbleSort(context);

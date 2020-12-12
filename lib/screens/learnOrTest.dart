@@ -21,7 +21,7 @@ class LearnOrTest extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
         appBar: AppBar(
-          title: Text(passingArgument.getElement("theme")),
+          title: Text(passingArgument.getTheme()),
           backgroundColor: primaryColor,
         ),
         body: GridView.count(

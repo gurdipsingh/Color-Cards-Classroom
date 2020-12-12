@@ -1,5 +1,6 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/indexCardObject.dart';
+import 'package:e_learning/components/indexCardWidget.dart';
 import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/resultScreen.dart';
 import 'package:flutter/material.dart';
@@ -17,10 +18,10 @@ class Gl1Database extends StatelessWidget {
   @required this.passingArgument
   }) : super(key: key);
 
-  List<Widget> cardList = [];
+  List<IndexCardWidget> cardList = [];
   List<IndexCardObject> cardObjects = [];
 
-  // Hard coded solution to compare withS
+  // Hard coded solution to compare wins
   Map<String, String> verifier = {
     "firstLabel": "Bubblesort",
     "secondLabel": "Insertionsort",
@@ -31,7 +32,7 @@ class Gl1Database extends StatelessWidget {
   };
 
 // Creates a list of CardObjects and then creates a list of its Widgets
-  List<Widget> createSortingList(context) {
+  List<IndexCardWidget> createSortingList(context) {
     this.cardList = [];
     this.cardObjects = [];
     cardObjects.add(new IndexCardObject(1,"bubblesort", "bubb", "grey"));
@@ -44,7 +45,7 @@ class Gl1Database extends StatelessWidget {
     cardObjects.add(new IndexCardObject(8,"insertionsort", "insertion", "grey"));
     cardObjects.add(new IndexCardObject(9,"insertionsort", "inse", "grey"));
 
-    cardObjects.forEach((element) {
+    cardObjects.forEach((IndexCardObject element) {
       cardList.add(element.getWidget());
     });
     return cardList;
@@ -59,7 +60,7 @@ class Gl1Database extends StatelessWidget {
 
 
   // gets the Cards according to the Theme which was selected earlier
-  showSubThemeContent(context) {
+  List<IndexCardWidget> showSubThemeContent(context) {
     switch (this.passingArgument.getTheme()) {
       case "Sortieralgorithmen":
         return this.createSortingList(context);
@@ -71,7 +72,7 @@ class Gl1Database extends StatelessWidget {
   // winning algo check
   List<IndexCardObject> winAlgo() {
     List<IndexCardObject> falseCards = [];
-    this.cardObjects.forEach((element) {
+    this.cardObjects.forEach((IndexCardObject element) {
       if (element.getLabel().toLowerCase() == verifier["firstLabel"].toLowerCase()) {
         if (!(element.convertStringToColor(element.getColorName()) == verifier["firstColor"])) {
           falseCards.add(element);
@@ -102,7 +103,7 @@ class Gl1Database extends StatelessWidget {
     this.passingArgument.addScore(new DateTime.now(), 9-falseIds.length);
 
 
-    this.cardObjects.forEach((element) {
+    this.cardObjects.forEach((IndexCardObject element) {
       if(falseIds.contains(element.getId())){
         element.createSolutionCard(false);
         //print(element.getSolutionWidget().getContent());

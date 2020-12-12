@@ -12,27 +12,27 @@ class PassingArgument {
     this._name = name;
   }
 
-  setName(String name) {
+  void setName(String name) {
     this._name = name;
   }
 
-  setElementToKey(String key, String element) {
+  void setElementToNavigation(String key, String element) {
     this._navigation['$key'] = element;
   }
 
-  setLanguage(String language) {
+  void setLanguage(String language) {
     this._settings["language"] = language;
   }
 
-  setCards(List<IndexCardObject> cards) {
+  void setCards(List<IndexCardObject> cards) {
     this._cards = cards;
   }
 
-  setSubTheme(String subtheme) {
+  void setSubTheme(String subtheme) {
     this._navigation["subtheme"] = subtheme;
   }
 
-  addScore(DateTime time, int numberOfRightAnswer){
+  void addScore(DateTime time, int numberOfRightAnswer){
     Score score = new Score(numberOfRightAnswer, time);
     this._scoreSheet.add(score);
   }
@@ -49,19 +49,20 @@ class PassingArgument {
     return this._scoreSheet.last;
   }
 
-  getTheme() {
+  String getTheme() {
     return this._navigation["theme"];
   }
 
-  getSubtheme(){
+  String getSubtheme(){
     return this._navigation["subtheme"];
   }
 
-  getModule(){
+  String getModule(){
+    //TODO: Make Key lowercase
     return this._navigation["Module"];
   }
 
-  getElement(key) {
+  String getElementFromNavigation(key) {
     return this._navigation[key];
   }
 

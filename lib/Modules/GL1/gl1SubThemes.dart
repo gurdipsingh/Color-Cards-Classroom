@@ -18,7 +18,7 @@ class Gl1SubThemes extends StatelessWidget {
     @required this.passingArgument,}) : super(key: key);
 
 
-  sortierAlgorithmenSubThemes(context) {
+  List<ElevatedButton> sortierAlgorithmenSubThemes(context) {
     return [
       RouteGenerator.createElevatedButtonWithMapSafe(context,"Bubblesort", SortingAlgorithm.route,passingArgument, "subtheme", "bubblesort"),
       RouteGenerator.createElevatedButtonWithMapSafe(context, "Insertionsort",SortingAlgorithm.route,passingArgument, "subtheme", "insertionsort"),
@@ -28,7 +28,7 @@ class Gl1SubThemes extends StatelessWidget {
     ];
   }
 
-  graphenAlgorithmusSubThemes(context) {
+  List<ElevatedButton> graphenAlgorithmusSubThemes(context) {
     return[
       RouteGenerator.createElevatedButtonWithMapSafe(context,"Dijkstra", GraphAlgorithm.route,passingArgument, "subtheme", "dijkstra"),
       RouteGenerator.createElevatedButtonWithMapSafe(context, "Kruskal",GraphAlgorithm.route,passingArgument, "subtheme", "kruskal"),
@@ -36,7 +36,7 @@ class Gl1SubThemes extends StatelessWidget {
     ];
   }
 
-  dynamischeProgrammierungSubThemes(context) {
+  List<ElevatedButton> dynamischeProgrammierungSubThemes(context) {
     return [
       RouteGenerator.createElevatedButtonWithMapSafe(context,"Belman Ford", DynamicProgramming.route,passingArgument, "subtheme", "belmanford"),
       RouteGenerator.createElevatedButtonWithMapSafe(context, "Floyd",DynamicProgramming.route,passingArgument, "subtheme", "floyd"),
@@ -65,7 +65,7 @@ class Gl1SubThemes extends StatelessWidget {
     );
   }
 
-  showSubThemeContent(context) {
+  List<ElevatedButton> showSubThemeContent(context) {
     switch (passingArgument.getTheme()) {
       case "Sortieralgorithmen":
         return sortierAlgorithmenSubThemes(context);

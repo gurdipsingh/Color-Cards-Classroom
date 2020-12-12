@@ -8,7 +8,7 @@ import '../constants.dart';
 import 'homescreen.dart';
 
 class StartScreen extends StatelessWidget {
-  final userNameController = TextEditingController();
+  final TextEditingController userNameController = TextEditingController();
 
   var entry = 'Enter Your Username';
 

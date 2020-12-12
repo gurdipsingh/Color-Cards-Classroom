@@ -36,7 +36,7 @@ class DynamicProgramming extends StatelessWidget {
     );
   }
 
-  floyd(context) {
+  RichText floyd(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -60,7 +60,7 @@ class DynamicProgramming extends StatelessWidget {
     );
   }
 
-  timeScheduling(context) {
+  RichText timeScheduling(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -84,7 +84,7 @@ class DynamicProgramming extends StatelessWidget {
     );
   }
 
-  ungezeigteSeite(context) {
+  RichText ungezeigteSeite(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
