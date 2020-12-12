@@ -1,70 +1,98 @@
-import 'package:e_learning/components/indexCard.dart';
-import 'package:e_learning/constants.dart';
+import 'package:e_learning/components/indexCardObject.dart';
 import 'package:flutter/material.dart';
 
-class IndexCardWidget extends StatefulWidget {
-  IndexCard _indexCard;
+import '../constants.dart';
 
-  IndexCardWidget(IndexCard indexCard) {
-    this._indexCard = indexCard;
-  }
+/**
+ * This class is the WidgetClass of our CardObject
+ */
+
+class IndexCardWidget extends StatefulWidget {
+  final int id;
+  final String label;
+  final String content;
+  final IndexCardObject card;        // Contains the Card Object of its widget
+
+  const IndexCardWidget({
+    Key key,
+    @required this.id,
+    @required this.label,
+    @required this.content,
+    @required this.card,
+  }) : super(key: key);
 
   @override
-  _IndexCardWidgetState createState() => _IndexCardWidgetState();
+  _CardWidget createState() => _CardWidget();
 }
 
-class _IndexCardWidgetState extends State<IndexCardWidget> {
-  List<Color> _colors = <Color>[
-    firstGameColor,
-    secondGameColor,
-    thirdGameColor,
-    fourthGameColor
-  ];
+class _CardWidget extends State<IndexCardWidget> {
+  Color _stateOfColor = Colors.grey;
+  String _colorName = "grey";
 
-  int _currentColorIndex = 0;
+  int getId(){
+    return widget.id;
+  }
 
-  void _incrementColorIndex() {
+  String getName() {
+    return widget.label;
+  }
+
+  String getContent() {
+    return widget.content;
+  }
+
+  Color getStateOfColor() {
+    return this._stateOfColor;
+  }
+
+  String getColorName(){
+    return this._colorName;
+  }
+
+  void setStateOfColor(Color stateOfColor){
+    this._stateOfColor = stateOfColor;
+  }
+  void setColorName(String colorName){
+    this._colorName = colorName;
+  }
+
+  // Checks which color it currently has and changes it to the next one
+  void updateColor() {
     setState(() {
-      if (_currentColorIndex < _colors.length - 1) {
-        _currentColorIndex++;
-      } else {
-        _currentColorIndex = 0;
+      switch (this.getColorName()) {
+        case "grey":
+          this.setStateOfColor(secondGameColor);
+          this.setColorName("orange");
+          widget.card.setColorName("orange");
+          break;
+        case "orange":
+          this.setStateOfColor(thirdGameColor);
+          setColorName("purple");
+          widget.card.setColorName("purple");
+          break;
+        case "purple":
+          this.setStateOfColor(fourthGameColor);
+          setColorName("blue");
+          widget.card.setColorName("blue");
+          break;
+        case "blue":
+          this.setStateOfColor(firstGameColor);
+          setColorName("grey");
+          widget.card.setColorName("grey");
+          break;
       }
     });
   }
 
-  void _changeStateOfColor() {
-    switch (_currentColorIndex) {
-      case 0:
-        this.widget._indexCard.stateOfColor = firstGameColor;
-        break;
-      case 1:
-        this.widget._indexCard.stateOfColor = secondGameColor;
-        break;
-      case 2:
-        this.widget._indexCard.stateOfColor = thirdGameColor;
-        break;
-      case 3:
-        this.widget._indexCard.stateOfColor = fourthGameColor;
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          child: Text(this.widget._indexCard.name),
-          color: _colors[_currentColorIndex],
-        ),
-        onTap: () => {
-              print(
-                  'The label of the card is = ' + this.widget._indexCard.label),
-              _incrementColorIndex(),
-              _changeStateOfColor(),
-              print('The color of the index card variable is = ' +
-                  this.widget._indexCard.stateOfColor.toString()),
-            });
+    return Container(
+        color: secondaryColor,
+        child: new RaisedButton(
+          child: new Text(this.getContent()),
+          textColor: Colors.white,
+          onPressed: () => {updateColor()},
+          color: this.getStateOfColor(),
+        ));
   }
 }

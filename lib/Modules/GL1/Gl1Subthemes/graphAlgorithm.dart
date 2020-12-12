@@ -4,7 +4,7 @@ import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 class GraphAlgorithm extends StatelessWidget {
-  static const route = '/graphalgorithm';
+  static const route = '/Graphenalgorithmen';
 
   final PassingArgument passingArgument;
 

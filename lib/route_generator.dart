@@ -11,6 +11,7 @@ import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/learnOrTest.dart';
 import 'package:e_learning/screens/settings.dart';
+import 'package:e_learning/screens/resultScreen.dart';
 import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +22,11 @@ class RouteGenerator {
   static int index = 0;
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    final _passingArgument = settings.arguments;
+    final PassingArgument _passingArgument = settings.arguments;
 
     switch (settings.name) {
+      case '/startScreen':
+        return MaterialPageRoute(builder: (_) => StartScreen());
       case "/":
         RouteGenerator.index = 0;
         if (_passingArgument is PassingArgument) {
@@ -32,14 +35,10 @@ class RouteGenerator {
           ));
         }
         return _errorRoute(_passingArgument);
-      case '/startScreen':
-        return MaterialPageRoute(builder: (_) => StartScreen());
       case "/statistic":
         RouteGenerator.index = 1;
         if (_passingArgument is PassingArgument) {
-          return _createRoute(Statistic(
-              passingArgument:
-                  _passingArgument)); //  TODO: Muss ausgewechselt werden!
+          return _createRoute(Statistic(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case "/help":
@@ -69,15 +68,15 @@ class RouteGenerator {
           return _createRoute(Gl1SubThemes(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
-      case '/sortingAlgorithm':
+      case '/Sortieralgorithmen':
         return _createRoute(SortingAlgorithm(
           passingArgument: _passingArgument,
         ));
-      case '/graphalgorithm':
+      case '/Graphenalgorithmen':
         return _createRoute(GraphAlgorithm(
           passingArgument: _passingArgument,
         ));
-      case '/dynamicprogramming':
+      case '/Dynamische Programmierung':
         return _createRoute(DynamicProgramming(
           passingArgument: _passingArgument,
         ));
@@ -87,13 +86,15 @@ class RouteGenerator {
         ));
       case '/game':
         return _createRoute(GameScreen(passingArgument: _passingArgument));
+      case '/solution':
+        return _createRoute(ResultScreen(passingArgument: _passingArgument));
       default:
         return _errorRoute(_passingArgument);
     }
   }
 
   static PageRouteBuilder _createRoute(widget) {
-    return PageRouteBuilder(
+    return new PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => widget,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         return child;
