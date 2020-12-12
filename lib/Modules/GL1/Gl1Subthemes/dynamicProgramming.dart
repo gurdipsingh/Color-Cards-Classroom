@@ -106,7 +106,7 @@ class DynamicProgramming extends StatelessWidget {
   }
 
   RichText showSubThemeContent(context) {
-    switch (passingArgument.navigation["subtheme"]) {
+    switch (passingArgument.getSubtheme()) {
       case "belmanford":
         return belmanFord(context);
       case "floyd":

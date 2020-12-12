@@ -53,14 +53,14 @@ class Gl1Database extends StatelessWidget {
 
 
   ungezeigteSeite(context) {
-
+//TODO: REMOVE
   }
 
 
 
   // gets the Cards according to the Theme which was selected earlier
   showSubThemeContent(context) {
-    switch (this.passingArgument.navigation["theme"]) {
+    switch (this.passingArgument.getTheme()) {
       case "Sortieralgorithmen":
         return this.createSortingList(context);
       default:

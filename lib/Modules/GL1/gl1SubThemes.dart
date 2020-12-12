@@ -66,7 +66,7 @@ class Gl1SubThemes extends StatelessWidget {
   }
 
   showSubThemeContent(context) {
-    switch (passingArgument.navigation["theme"]) {
+    switch (passingArgument.getTheme()) {
       case "Sortieralgorithmen":
         return sortierAlgorithmenSubThemes(context);
       case "Graphenalgorithmen":
@@ -86,7 +86,7 @@ class Gl1SubThemes extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
         appBar: AppBar(
-          title: Text(passingArgument.navigation["theme"]),
+          title: Text(passingArgument.getTheme()),
           backgroundColor: primaryColor,
         ),
         body: ListView(

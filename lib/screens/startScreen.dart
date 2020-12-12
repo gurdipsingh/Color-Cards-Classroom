@@ -44,7 +44,7 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PassingArgument _passingArgument = PassingArgument(" ", {});
+    PassingArgument _passingArgument = PassingArgument(" ");
 
     return Scaffold(
         backgroundColor: primaryColor,

@@ -16,7 +16,7 @@ class GameScreen extends StatelessWidget {
   }) : super(key: key);
 
   getCardPool(){
-    switch(passingArgument.navigation["Module"]){
+    switch(passingArgument.getModule()){
       case "GL1":
         return Gl1Database(passingArgument: passingArgument);
         /* If other Module Cardpool are created, insert it here

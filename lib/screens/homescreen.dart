@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
       appBar: AppBar(
-        title: Text(passingArgument.name),
+        title: Text(passingArgument.getName()),
         backgroundColor: primaryColor,
       ),
       body: Center(

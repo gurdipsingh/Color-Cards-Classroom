@@ -154,7 +154,7 @@ class SortingAlgorithm extends StatelessWidget {
   }
 
   showSubThemeContent(context) {
-    switch (passingArgument.navigation["subtheme"]) {
+    switch (passingArgument.getSubtheme()) {
       case "bubblesort":
         return bubbleSort(context);
       case "insertionsort":

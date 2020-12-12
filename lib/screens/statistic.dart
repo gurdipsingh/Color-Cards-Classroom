@@ -20,7 +20,7 @@ class Statistic extends StatelessWidget {
         backgroundColor: primaryColor,
       ),
       body: Center(
-        child: Text('Statistic of ${passingArgument.name}'),
+        child: Text('Statistic of ${passingArgument.getName()}'),
       ),
       bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
     );

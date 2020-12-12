@@ -106,7 +106,7 @@ class GraphAlgorithm extends StatelessWidget {
   }
 
   showSubThemeContent(context) {
-    switch (passingArgument.navigation["subtheme"]) {
+    switch (passingArgument.getSubtheme()) {
       case "dijkstra":
         return dijkstra(context);
       case "kruskal":

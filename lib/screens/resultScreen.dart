@@ -21,7 +21,7 @@ class ResultScreen extends StatelessWidget {
 
   // Creates a list of CardObjects and then creates a list of its Widgets
   List<Widget>  getResult(context) {
-    List<IndexCardObject> cards = this.passingArgument.cards;
+    List<IndexCardObject> cards = this.passingArgument.getCards();
     cards.forEach((element) {
       SolutionWidget solutionCard = element.getSolutionWidget();
       solutionCard.setPassingArgument(this.passingArgument);
