@@ -12,7 +12,7 @@ class DynamicProgramming extends StatelessWidget {
     Key key,
     @required this.passingArgument,}) : super(key: key);
 
-  belmanFord(context) {
+  RichText belmanFord(context) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle
@@ -105,7 +105,7 @@ class DynamicProgramming extends StatelessWidget {
     );
   }
 
-  showSubThemeContent(context) {
+  RichText showSubThemeContent(context) {
     switch (passingArgument.navigation["subtheme"]) {
       case "belmanford":
         return belmanFord(context);

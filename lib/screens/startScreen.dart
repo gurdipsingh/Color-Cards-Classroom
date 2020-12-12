@@ -36,7 +36,9 @@ class StartScreen extends StatelessWidget {
       child: Text("Continue"),
       onPressed: () {
         passingArgument.setName(userNameController.text);
-        Navigator.of(context).pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
+        Navigator.pushNamedAndRemoveUntil(context, HomeScreen.route, (_) => false, arguments: passingArgument);
+        // TODO: REMOVE STARTSCREEN Navigator.popUntil(context, (route) => route.isFirst);
+        // Navigator.of(context).pushReplacementNamed(HomeScreen.route, arguments: passingArgument);
       },
     );
   }
@@ -44,7 +46,7 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _passingArgument = PassingArgument(" ", {});
+    PassingArgument _passingArgument = PassingArgument(" ", {});
 
     return Scaffold(
         backgroundColor: primaryColor,
@@ -63,5 +65,4 @@ class StartScreen extends StatelessWidget {
           ],
         ));
   }
-
 }

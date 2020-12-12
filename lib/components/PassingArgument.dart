@@ -1,9 +1,12 @@
+import 'package:e_learning/components/cardObject.dart';
+
 class PassingArgument{
   String name;
   Map navigation;
   Map settings = {"language": "GERMAN"};
+  List <CardObject> cards = [];
 
-    PassingArgument(this.name, this.navigation);
+  PassingArgument(this.name, this.navigation);
 
   setName(String name){
     this.name = name;
@@ -17,11 +20,15 @@ class PassingArgument{
     this.settings["language"] = language;
   }
 
+  setCards(List<CardObject> cards){
+    this.cards = cards;
+  }
+
   getElement(key){
     return this.navigation[key];
   }
 
-  getLanguage(){
+  String getLanguage(){
     return this.settings["language"];
   }
 
