@@ -4,7 +4,7 @@ import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 class DynamicProgramming extends StatelessWidget {
-  static const route = '/dynamicprogramming';
+  static const route = '/Dynamische Programmierung';
 
   final PassingArgument passingArgument;
 

@@ -68,15 +68,15 @@ class RouteGenerator {
           return _createRoute(Gl1SubThemes(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
-      case '/sortingAlgorithm':
+      case '/Sortieralgotithmen':
         return _createRoute(SortingAlgorithm(
           passingArgument: _passingArgument,
         ));
-      case '/graphalgorithm':
+      case '/Graphenalgorithmen':
         return _createRoute(GraphAlgorithm(
           passingArgument: _passingArgument,
         ));
-      case '/dynamicprogramming':
+      case '/Dynamische Programmierung':
         return _createRoute(DynamicProgramming(
           passingArgument: _passingArgument,
         ));
