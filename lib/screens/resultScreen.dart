@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 
-class SolutionScreen extends StatelessWidget {
+class ResultScreen extends StatelessWidget {
   static const route = "/solution";
 
   final PassingArgument passingArgument;
@@ -15,7 +15,7 @@ class SolutionScreen extends StatelessWidget {
   List<Widget> cardList = [];
 
 
-  SolutionScreen({
+  ResultScreen({
     Key key,
     @required this.passingArgument,}) : super(key: key);
 

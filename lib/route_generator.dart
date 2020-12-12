@@ -11,7 +11,7 @@ import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/learnOrTest.dart';
 import 'package:e_learning/screens/settings.dart';
-import 'package:e_learning/screens/solutionScreen.dart';
+import 'package:e_learning/screens/resultScreen.dart';
 import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +87,7 @@ class RouteGenerator {
       case '/game':
         return _createRoute(GameScreen(passingArgument: _passingArgument));
       case '/solution':
-        return _createRoute(SolutionScreen(passingArgument: _passingArgument));
+        return _createRoute(ResultScreen(passingArgument: _passingArgument));
       default:
         return _errorRoute(_passingArgument);
     }

@@ -1,7 +1,7 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/cardObject.dart';
 import 'package:e_learning/constants.dart';
-import 'package:e_learning/screens/solutionScreen.dart';
+import 'package:e_learning/screens/resultScreen.dart';
 import 'package:flutter/material.dart';
 
 /**
@@ -114,7 +114,7 @@ class Gl1Database extends StatelessWidget {
     passingArgument.setCards(this.cardObjects);
     // Removes until nothing leftNavigator.pushNamedAndRemoveUntil(context, SolutionScreen.route, (_) => false, arguments: passingArgument);
     // TODO: return to HomeScreen Navigator.popUntil(context, (route) => route.isFirst);
-    Navigator.of(context).pushNamed(SolutionScreen.route, arguments: passingArgument);
+    Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
   }
 
   static Color getColorFromString(String color) {
