@@ -5,6 +5,7 @@ import 'package:e_learning/Modules/GL1/gl1SubThemes.dart';
 import 'package:e_learning/Modules/GL1/gl1Themes.dart';
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/constants.dart';
+import 'package:e_learning/screens/ResultFeedback.dart';
 import 'package:e_learning/screens/gameModeSelection.dart';
 import 'package:e_learning/screens/gameScreen.dart';
 import 'package:e_learning/screens/help.dart';
@@ -88,6 +89,8 @@ class RouteGenerator {
         return _createRoute(GameScreen(passingArgument: _passingArgument));
       case '/solution':
         return _createRoute(ResultScreen(passingArgument: _passingArgument));
+      case '/feedback':
+        return _createRoute(ResultFeedback(passingArgument: _passingArgument));
       default:
         return _errorRoute(_passingArgument);
     }

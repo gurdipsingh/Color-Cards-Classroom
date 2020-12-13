@@ -22,4 +22,8 @@ class Score {
   DateTime getDateTime(){
     return this._date;
   }
+
+  int getPercentage(){
+    return ((this._numberOfRight/9)*100).toInt();
+  }
 }

@@ -3,6 +3,7 @@ import 'package:e_learning/components/indexCardObject.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/components/score.dart';
 import 'package:e_learning/components/solutionWidget.dart';
+import 'package:e_learning/screens/ResultFeedback.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
@@ -39,6 +40,10 @@ class ResultScreen extends StatelessWidget {
     else{
       return this.passingArgument.getLatestScore();
     }
+  }
+
+  void continueToFeedbackScreen(context){
+    Navigator.pushNamed(context, ResultFeedback.route,arguments: this.passingArgument);
   }
 
 
@@ -112,6 +117,7 @@ class ResultScreen extends StatelessWidget {
                 Column(children: [
                   RaisedButton(
                     onPressed: () => {
+                      continueToFeedbackScreen(context)
                     },
                     child: Text(
                       "Continue",
