@@ -1,7 +1,7 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/components/score.dart';
 import 'package:e_learning/screens/gameModeSelection.dart';
+import 'package:e_learning/staticMethods.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
@@ -20,24 +20,14 @@ class ResultFeedback extends StatelessWidget {
     return (screenSize.height/100)*percent;
   }
 
-  Score getScore(){
-    // Get the right Score from passing Argument
-    if(this.passingArgument.getGameMode() == "unbewertet"){
-      return this.passingArgument.getUnratedScore();
-    }
-    else{
-      return this.passingArgument.getLatestScore();
-    }
-  }
-
   String getValue(){
-    if(getScore().getPercentage() < 50){
+    if(StaticMethods.getScore(passingArgument).getPercentage() < 50){
       return "Befriedigend";
     }
-    if((getScore().getPercentage() < 70)&&(getScore().getPercentage() > 49)){
+    if((StaticMethods.getScore(passingArgument).getPercentage() < 70)&&(StaticMethods.getScore(passingArgument).getPercentage() > 49)){
       return "Gut";
     }
-    if((getScore().getPercentage() > 69)){
+    if((StaticMethods.getScore(passingArgument).getPercentage() > 69)){
       return "Sehr Gut";
     }
   }
@@ -68,10 +58,10 @@ class ResultFeedback extends StatelessWidget {
                 child:Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children:[
-                      Text("${this.getScore().getNumberOfRightAsString()}/9", style: TextStyle(fontSize: 35)),
+                      Text("${StaticMethods.getScore(passingArgument).getNumberOfRightAsString()}/9", style: TextStyle(fontSize: 35)),
                       Text("Karten wurden richtig zugewiesen", style: TextStyle(fontSize: 15),),
                       Text("Das entspricht", style: TextStyle(fontSize: 15),),
-                      Text("   ${this.getScore().getPercentage()}%", style: TextStyle(fontSize: 35),),
+                      Text("   ${StaticMethods.getScore(passingArgument).getPercentage()}%", style: TextStyle(fontSize: 35),),
                       Text(this.getValue(), style: TextStyle(fontSize: 25),),
                       RaisedButton(
                         onPressed: () => {

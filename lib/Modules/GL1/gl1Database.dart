@@ -3,6 +3,7 @@ import 'package:e_learning/components/indexCardObject.dart';
 import 'package:e_learning/components/indexCardWidget.dart';
 import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/resultScreen.dart';
+import 'package:e_learning/staticMethods.dart';
 import 'package:flutter/material.dart';
 
 /**
@@ -123,13 +124,6 @@ class Gl1Database extends StatelessWidget {
     //Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
   }
 
-  static Color getColorFromString(String color) {
-    String valueString = color.split('(0x')[1].split(')')[0]; // kind of hacky..
-    int value = int.parse(valueString, radix: 16);
-    return new Color(value);
-  }
-
-
   @override
   Widget build(BuildContext context) {
     return  Column(
@@ -143,7 +137,7 @@ class Gl1Database extends StatelessWidget {
                 Container(
                     height: 30,
                     width: 110,
-                    color: getColorFromString(verifier["firstColor"]),
+                    color: StaticMethods.getColorFromString(verifier["firstColor"]),
                     child: Center(
                       child: Text(
                         verifier["firstLabel"],
@@ -155,7 +149,7 @@ class Gl1Database extends StatelessWidget {
                 Container(
                     height: 30,
                     width: 110,
-                    color: getColorFromString(verifier["secondColor"]),
+                    color: StaticMethods.getColorFromString(verifier["secondColor"]),
                     child: Center(
                       child: Text(
                         verifier["secondLabel"],
@@ -167,7 +161,7 @@ class Gl1Database extends StatelessWidget {
                 Container(
                     height: 30,
                     width: 110,
-                    color: getColorFromString(verifier["thirdColor"]),
+                    color: StaticMethods.getColorFromString(verifier["thirdColor"]),
                     child: Center(
                       child: Text(
                         verifier["thirdLabel"],

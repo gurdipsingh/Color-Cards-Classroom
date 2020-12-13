@@ -1,12 +1,12 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/indexCardObject.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/components/score.dart';
 import 'package:e_learning/components/solutionWidget.dart';
 import 'package:e_learning/screens/ResultFeedback.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
+import '../staticMethods.dart';
 
 
 class ResultScreen extends StatelessWidget {
@@ -30,16 +30,6 @@ class ResultScreen extends StatelessWidget {
       cardList.add(solutionCard);
     });
     return cardList;
-  }
-
-  Score getScore(){
-    // Get the right Score from passing Argument
-    if(this.passingArgument.getGameMode() == "unbewertet"){
-      return this.passingArgument.getUnratedScore();
-    }
-    else{
-      return this.passingArgument.getLatestScore();
-    }
   }
 
   void continueToFeedbackScreen(context){
@@ -70,7 +60,7 @@ class ResultScreen extends StatelessWidget {
                             width: 25,
                             color: secondaryColor,
                             child: Center(
-                              child: Text(this.getScore().getNumberOfRightAsString(), style: TextStyle(color: contentColor),),
+                              child: Text(StaticMethods.getScore(passingArgument).getNumberOfRightAsString(), style: TextStyle(color: contentColor),),
                             )
                         ),
                         Container(
@@ -86,7 +76,7 @@ class ResultScreen extends StatelessWidget {
                             width: 25,
                             color: firstGameColor,
                             child: Center(
-                              child: Text(this.getScore().getNumberOfWrongAsString(), style: TextStyle(color: contentColor),),
+                              child: Text(StaticMethods.getScore(passingArgument).getNumberOfWrongAsString(), style: TextStyle(color: contentColor),),
                             )
                         ),
 
