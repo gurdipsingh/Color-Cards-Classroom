@@ -22,52 +22,118 @@ class Gl1Database extends StatelessWidget {
   List<IndexCardWidget> cardList = [];
   List<IndexCardObject> cardObjects = [];
 
+  Map<String, List<IndexCardObject>> gl1Cards = {};
+
   // Hard coded solution to compare wins
-  Map<String, String> verifier = {
-    "firstLabel": "Bubblesort",
-    "secondLabel": "Insertionsort",
-    "thirdLabel": "Mergesort",
-    "firstColor": secondGameColor.toString(),
-    "secondColor": thirdGameColor.toString(),
-    "thirdColor": fourthGameColor.toString()
-  };
+  Map<String, String> verifier;
+
+  void setVerifier(){
+    switch(this.passingArgument.getTheme()) {
+      case "Sortieralgorithmen":
+        this.verifier = {
+          "firstLabel": "Bubblesort",
+          "secondLabel": "Insertionsort",
+          "thirdLabel": "Mergesort",
+          "firstColor": secondGameColor.toString(),
+          "secondColor": thirdGameColor.toString(),
+          "thirdColor": fourthGameColor.toString()
+        };
+        break;
+      case "Graphenalgorithmen":
+        this.verifier = {
+          "firstLabel": "Dijkstra",
+          "secondLabel": "Kruskal",
+          "thirdLabel": "Prim",
+          "firstColor": secondGameColor.toString(),
+          "secondColor": thirdGameColor.toString(),
+          "thirdColor": fourthGameColor.toString()
+        };
+        break;
+        case "Dynamische Prog.":
+        this.verifier = {
+          "firstLabel": "Belman",
+          "secondLabel": "Floyd",
+          "thirdLabel": "Time Scheduling",
+          "firstColor": secondGameColor.toString(),
+          "secondColor": thirdGameColor.toString(),
+          "thirdColor": fourthGameColor.toString()
+        };
+        break;
+        case "Alles":
+        this.verifier = {
+          "firstLabel": "Belman",
+          "secondLabel": "Kruskal",
+          "thirdLabel": "Insertionsort",
+          "firstColor": secondGameColor.toString(),
+          "secondColor": thirdGameColor.toString(),
+          "thirdColor": fourthGameColor.toString()
+        };
+        break;
+    }
+  }
 
 // Creates a list of CardObjects and then creates a list of its Widgets
-  List<IndexCardWidget> createSortingList(context) {
+  List<IndexCardWidget> createGameList(context) {
     this.cardList = [];
     this.cardObjects = [];
-    cardObjects.add(new IndexCardObject(1,"bubblesort", "bubb", "grey"));
-    cardObjects.add(new IndexCardObject(2,"bubblesort", "bubble", "grey"));
-    cardObjects.add(new IndexCardObject(3,"bubblesort", "bubbuu", "grey"));
-    cardObjects.add(new IndexCardObject(4,"mergesort", "merguez", "grey"));
-    cardObjects.add(new IndexCardObject(5,"mergesort", "mergez", "grey"));
-    cardObjects.add(new IndexCardObject(6,"mergesort", "mergeeez", "grey"));
-    cardObjects.add(new IndexCardObject(7,"insertionsort", "insi", "grey"));
-    cardObjects.add(new IndexCardObject(8,"insertionsort", "insertion", "grey"));
-    cardObjects.add(new IndexCardObject(9,"insertionsort", "inse", "grey"));
+
+    this.cardObjects = this.gl1Cards[this.passingArgument.getTheme()];
 
     cardObjects.forEach((IndexCardObject element) {
       cardList.add(element.getWidget());
     });
     return cardList;
-
   }
 
+  void initializeGl1Cards(context) {
+    this.gl1Cards["Sortieralgorithmen"]= [
+      new IndexCardObject(1,"bubblesort", "bubb", "grey"),
+      new IndexCardObject(2,"bubblesort", "bubble", "grey"),
+    new IndexCardObject(3,"bubblesort", "bubbuu", "grey"),
+    new IndexCardObject(4,"mergesort", "merguez", "grey"),
+    new IndexCardObject(5,"mergesort", "mergez", "grey"),
+    new IndexCardObject(6,"mergesort", "mergeeez", "grey"),
+    new IndexCardObject(7,"insertionsort", "insi", "grey"),
+    new IndexCardObject(8,"insertionsort", "insertion", "grey"),
+    new IndexCardObject(9,"insertionsort", "inse", "grey"),
+    ];
 
-  ungezeigteSeite(context) {
-//TODO: REMOVE
-  }
+    this.gl1Cards["Graphenalgorithmen"]= [
+    new IndexCardObject(1,"dijkstra", "dij", "grey"),
+    new IndexCardObject(2,"dijkstra", "dijkstra", "grey"),
+    new IndexCardObject(3,"dijkstra", "dii", "grey"),
+    new IndexCardObject(4,"Kruskal", "krus", "grey"),
+    new IndexCardObject(5,"Kruskal", "kal", "grey"),
+    new IndexCardObject(6,"Kruskal", "kruskal", "grey"),
+    new IndexCardObject(7,"Prim", "prim", "grey"),
+    new IndexCardObject(8,"Prim", "optimus", "grey"),
+    new IndexCardObject(9,"Prim", "prime", "grey")
+    ];
 
+    this.gl1Cards["Dynamische Prog."]=[
+    new IndexCardObject(1,"belman", "bel", "grey"),
+    new IndexCardObject(2,"belman", "man", "grey"),
+    new IndexCardObject(3,"belman", "belman", "grey"),
+    new IndexCardObject(4,"floyd", "flo", "grey"),
+    new IndexCardObject(5,"floyd", "yd", "grey"),
+    new IndexCardObject(6,"floyd", "floyd", "grey"),
+    new IndexCardObject(7,"time scheduling", "time", "grey"),
+    new IndexCardObject(8,"time scheduling", "schedule", "grey"),
+    new IndexCardObject(9,"time scheduling", "time scheduling", "grey"),
+    ];
 
+    this.gl1Cards["Alles"]=[
+    new IndexCardObject(1,"belman", "bel", "grey"),
+    new IndexCardObject(2,"belman", "man", "grey"),
+    new IndexCardObject(3,"belman", "belman", "grey"),
+      new IndexCardObject(4,"Kruskal", "krus", "grey"),
+      new IndexCardObject(5,"Kruskal", "kal", "grey"),
+      new IndexCardObject(6,"Kruskal", "kruskal", "grey"),
+      new IndexCardObject(7,"insertionsort", "insi", "grey"),
+      new IndexCardObject(8,"insertionsort", "insertion", "grey"),
+      new IndexCardObject(9,"insertionsort", "inse", "grey"),
 
-  // gets the Cards according to the Theme which was selected earlier
-  List<IndexCardWidget> showSubThemeContent(context) {
-    switch (this.passingArgument.getTheme()) {
-      case "Sortieralgorithmen":
-        return this.createSortingList(context);
-      default:
-        return ungezeigteSeite(context) ;
-    }
+    ];
   }
 
   // winning algo check
@@ -126,6 +192,8 @@ class Gl1Database extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    initializeGl1Cards(context);
+    setVerifier();
     return  Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -183,7 +251,7 @@ class Gl1Database extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               crossAxisCount: 3,
-              children: showSubThemeContent(context),
+              children: this.createGameList(context),
             ),
           )
         ]),
