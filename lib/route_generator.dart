@@ -91,6 +91,8 @@ class RouteGenerator {
         return _createRoute(ResultScreen(passingArgument: _passingArgument));
       case '/feedback':
         return _createRoute(ResultFeedback(passingArgument: _passingArgument));
+        case '/notImplementedYet':
+        return _notImplementedYet(_passingArgument);
       default:
         return _errorRoute(_passingArgument);
     }
@@ -202,6 +204,20 @@ class RouteGenerator {
         ),
         body: Center(
           child: Text("Error"),
+        ),
+      );
+    });
+  }
+
+  static Route<dynamic> _notImplementedYet(args) {
+    return MaterialPageRoute(builder: (_) {
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: primaryColor,
+          title: Text("Haben Sie bitte etwas Geduld"),
+        ),
+        body: Center(
+          child: Text("Dieser Bereich wurde noch nicht implementiert"),
         ),
       );
     });

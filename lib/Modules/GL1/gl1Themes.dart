@@ -46,7 +46,7 @@ class Gl1Themes extends StatelessWidget {
             Container(
               height: 80,
               padding: const EdgeInsets.all(15),
-            child: RouteGenerator.createElevatedButtonWithMapSafe(context, "Custom",LearnOrTest.route,passingArgument, "theme", "Custom")),
+            child: RouteGenerator.createElevatedButtonWithMapSafe(context, "Custom","/notImplementedYet",passingArgument, "theme", "Custom")),
             Container(
               height: 80,
               padding: const EdgeInsets.all(15),

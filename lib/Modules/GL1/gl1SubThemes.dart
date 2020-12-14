@@ -44,26 +44,7 @@ class Gl1SubThemes extends StatelessWidget {
     ];
   }
 
-  ungezeigteSeite(context) {
-    return RichText(
-      text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
-          children: <TextSpan>[
-            TextSpan(text: "Fehler \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: secondaryColor)),
-            TextSpan(text: "Diese Seite konnte nicht aufgezeigt werden",
-                style: TextStyle(color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
-          ]
-      ),
-    );
-  }
+
 
   List<ElevatedButton> showSubThemeContent(context) {
     switch (passingArgument.getTheme()) {
@@ -75,8 +56,6 @@ class Gl1SubThemes extends StatelessWidget {
         return dynamischeProgrammierungSubThemes(context);
       case "Alles":
         return sortierAlgorithmenSubThemes(context) + graphenAlgorithmusSubThemes(context) + dynamischeProgrammierungSubThemes(context);
-      default:
-        return ungezeigteSeite(context) ;
     }
   }
 
