@@ -5,21 +5,22 @@ import 'package:flutter/material.dart';
 
 import '../route_generator.dart';
 
-
 class LearnOrTest extends StatelessWidget {
   static const route = '/learnOrTest';
-
 
   final PassingArgument passingArgument;
 
   LearnOrTest({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
+        bottomNavigationBar: MyButtomNavigationBar(
+          passingArgument: passingArgument,
+        ),
         appBar: AppBar(
           title: Text(passingArgument.getTheme()),
           backgroundColor: primaryColor,
@@ -33,14 +34,15 @@ class LearnOrTest extends StatelessWidget {
           children: <Widget>[
             Container(
               color: secondaryColor,
-              child: RouteGenerator.createElevatedButton(context, "Lernen","/gl1Lernen",passingArgument),)
-            ,
+              child: RouteGenerator.createElevatedButton(
+                  context, "Lernen", "/gl1Lernen", passingArgument),
+            ),
             Container(
               color: secondaryColor,
-              child: RouteGenerator.createElevatedButton(context, "Abfragen","/gameSelectionMode",passingArgument),
+              child: RouteGenerator.createElevatedButton(
+                  context, "Abfragen", "/gameSelectionMode", passingArgument),
             ),
           ],
-        )
-    );
+        ));
   }
 }

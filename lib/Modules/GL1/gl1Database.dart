@@ -14,10 +14,7 @@ import 'package:flutter/material.dart';
 class Gl1Database extends StatelessWidget {
   final PassingArgument passingArgument;
 
-  Gl1Database({
-  Key key,
-  @required this.passingArgument
-  }) : super(key: key);
+  Gl1Database({Key key, @required this.passingArgument}) : super(key: key);
 
   List<IndexCardWidget> cardList = [];
   List<IndexCardObject> cardObjects = [];
@@ -27,8 +24,8 @@ class Gl1Database extends StatelessWidget {
   // Hard coded solution to compare wins
   Map<String, String> verifier;
 
-  void setVerifier(){
-    switch(this.passingArgument.getTheme()) {
+  void setVerifier() {
+    switch (this.passingArgument.getTheme()) {
       case "Sortieralgorithmen":
         this.verifier = {
           "firstLabel": "Bubblesort",
@@ -49,7 +46,7 @@ class Gl1Database extends StatelessWidget {
           "thirdColor": fourthGameColor.toString()
         };
         break;
-        case "Dynamische Prog.":
+      case "Dynamische Prog.":
         this.verifier = {
           "firstLabel": "Belman",
           "secondLabel": "Floyd",
@@ -59,7 +56,7 @@ class Gl1Database extends StatelessWidget {
           "thirdColor": fourthGameColor.toString()
         };
         break;
-        case "Alles":
+      case "Alles":
         this.verifier = {
           "firstLabel": "Belman",
           "secondLabel": "Kruskal",
@@ -86,53 +83,52 @@ class Gl1Database extends StatelessWidget {
   }
 
   void initializeGl1Cards(context) {
-    this.gl1Cards["Sortieralgorithmen"]= [
-      new IndexCardObject(1,"bubblesort", "bubb", "grey"),
-      new IndexCardObject(2,"bubblesort", "bubble", "grey"),
-    new IndexCardObject(3,"bubblesort", "bubbuu", "grey"),
-    new IndexCardObject(4,"mergesort", "merguez", "grey"),
-    new IndexCardObject(5,"mergesort", "mergez", "grey"),
-    new IndexCardObject(6,"mergesort", "mergeeez", "grey"),
-    new IndexCardObject(7,"insertionsort", "insi", "grey"),
-    new IndexCardObject(8,"insertionsort", "insertion", "grey"),
-    new IndexCardObject(9,"insertionsort", "inse", "grey"),
+    this.gl1Cards["Sortieralgorithmen"] = [
+      new IndexCardObject(1, "bubblesort", "bubb", "grey"),
+      new IndexCardObject(2, "bubblesort", "bubble", "grey"),
+      new IndexCardObject(3, "bubblesort", "bubbuu", "grey"),
+      new IndexCardObject(4, "mergesort", "merguez", "grey"),
+      new IndexCardObject(5, "mergesort", "mergez", "grey"),
+      new IndexCardObject(6, "mergesort", "mergeeez", "grey"),
+      new IndexCardObject(7, "insertionsort", "insi", "grey"),
+      new IndexCardObject(8, "insertionsort", "insertion", "grey"),
+      new IndexCardObject(9, "insertionsort", "inse", "grey"),
     ];
 
-    this.gl1Cards["Graphenalgorithmen"]= [
-    new IndexCardObject(1,"dijkstra", "dij", "grey"),
-    new IndexCardObject(2,"dijkstra", "dijkstra", "grey"),
-    new IndexCardObject(3,"dijkstra", "dii", "grey"),
-    new IndexCardObject(4,"Kruskal", "krus", "grey"),
-    new IndexCardObject(5,"Kruskal", "kal", "grey"),
-    new IndexCardObject(6,"Kruskal", "kruskal", "grey"),
-    new IndexCardObject(7,"Prim", "prim", "grey"),
-    new IndexCardObject(8,"Prim", "optimus", "grey"),
-    new IndexCardObject(9,"Prim", "prime", "grey")
+    this.gl1Cards["Graphenalgorithmen"] = [
+      new IndexCardObject(1, "dijkstra", "dij", "grey"),
+      new IndexCardObject(2, "dijkstra", "dijkstra", "grey"),
+      new IndexCardObject(3, "dijkstra", "dii", "grey"),
+      new IndexCardObject(4, "Kruskal", "krus", "grey"),
+      new IndexCardObject(5, "Kruskal", "kal", "grey"),
+      new IndexCardObject(6, "Kruskal", "kruskal", "grey"),
+      new IndexCardObject(7, "Prim", "prim", "grey"),
+      new IndexCardObject(8, "Prim", "optimus", "grey"),
+      new IndexCardObject(9, "Prim", "prime", "grey")
     ];
 
-    this.gl1Cards["Dynamische Prog."]=[
-    new IndexCardObject(1,"belman", "bel", "grey"),
-    new IndexCardObject(2,"belman", "man", "grey"),
-    new IndexCardObject(3,"belman", "belman", "grey"),
-    new IndexCardObject(4,"floyd", "flo", "grey"),
-    new IndexCardObject(5,"floyd", "yd", "grey"),
-    new IndexCardObject(6,"floyd", "floyd", "grey"),
-    new IndexCardObject(7,"time scheduling", "time", "grey"),
-    new IndexCardObject(8,"time scheduling", "schedule", "grey"),
-    new IndexCardObject(9,"time scheduling", "time scheduling", "grey"),
+    this.gl1Cards["Dynamische Prog."] = [
+      new IndexCardObject(1, "belman", "bel", "grey"),
+      new IndexCardObject(2, "belman", "man", "grey"),
+      new IndexCardObject(3, "belman", "belman", "grey"),
+      new IndexCardObject(4, "floyd", "flo", "grey"),
+      new IndexCardObject(5, "floyd", "yd", "grey"),
+      new IndexCardObject(6, "floyd", "floyd", "grey"),
+      new IndexCardObject(7, "time scheduling", "time", "grey"),
+      new IndexCardObject(8, "time scheduling", "schedule", "grey"),
+      new IndexCardObject(9, "time scheduling", "time scheduling", "grey"),
     ];
 
-    this.gl1Cards["Alles"]=[
-    new IndexCardObject(1,"belman", "bel", "grey"),
-    new IndexCardObject(2,"belman", "man", "grey"),
-    new IndexCardObject(3,"belman", "belman", "grey"),
-      new IndexCardObject(4,"Kruskal", "krus", "grey"),
-      new IndexCardObject(5,"Kruskal", "kal", "grey"),
-      new IndexCardObject(6,"Kruskal", "kruskal", "grey"),
-      new IndexCardObject(7,"insertionsort", "insi", "grey"),
-      new IndexCardObject(8,"insertionsort", "insertion", "grey"),
-      new IndexCardObject(9,"insertionsort", "inse", "grey"),
-
+    this.gl1Cards["Alles"] = [
+      new IndexCardObject(1, "belman", "bel", "grey"),
+      new IndexCardObject(2, "belman", "man", "grey"),
+      new IndexCardObject(3, "belman", "belman", "grey"),
+      new IndexCardObject(4, "Kruskal", "krus", "grey"),
+      new IndexCardObject(5, "Kruskal", "kal", "grey"),
+      new IndexCardObject(6, "Kruskal", "kruskal", "grey"),
+      new IndexCardObject(7, "insertionsort", "insi", "grey"),
+      new IndexCardObject(8, "insertionsort", "insertion", "grey"),
+      new IndexCardObject(9, "insertionsort", "inse", "grey"),
     ];
   }
 
@@ -140,19 +136,24 @@ class Gl1Database extends StatelessWidget {
   List<IndexCardObject> winAlgo() {
     List<IndexCardObject> falseCards = [];
     this.cardObjects.forEach((IndexCardObject element) {
-      if (element.getLabel().toLowerCase() == verifier["firstLabel"].toLowerCase()) {
-        if (!(element.convertStringToColor(element.getColorName()) == verifier["firstColor"])) {
+      if (element.getLabel().toLowerCase() ==
+          verifier["firstLabel"].toLowerCase()) {
+        if (!(element.convertStringToColor(element.getColorName()) ==
+            verifier["firstColor"])) {
           falseCards.add(element);
         }
       }
       if (element.getLabel().toLowerCase() ==
           verifier["secondLabel"].toLowerCase()) {
-        if (!(element.convertStringToColor(element.getColorName()) == verifier["secondColor"])) {
+        if (!(element.convertStringToColor(element.getColorName()) ==
+            verifier["secondColor"])) {
           falseCards.add(element);
         }
       }
-      if (element.getLabel().toLowerCase() == verifier["thirdLabel"].toLowerCase()) {
-        if (!(element.convertStringToColor(element.getColorName()) == verifier["thirdColor"])) {
+      if (element.getLabel().toLowerCase() ==
+          verifier["thirdLabel"].toLowerCase()) {
+        if (!(element.convertStringToColor(element.getColorName()) ==
+            verifier["thirdColor"])) {
           falseCards.add(element);
         }
       }
@@ -161,31 +162,31 @@ class Gl1Database extends StatelessWidget {
   }
 
   // temporary function to print all false answers
-  void verifySolution(List<IndexCardObject> falseCards, context){
+  void verifySolution(List<IndexCardObject> falseCards, context) {
     List<int> falseIds = [];
     falseCards.forEach((element) {
       falseIds.add(element.getId());
     });
 
     // If unrated then dont set it into the ScoreSheet
-    if(this.passingArgument.getGameMode() == "unbewertet"){
-      this.passingArgument.setUnratedScore(new DateTime.now(), 9-falseIds.length);
+    if (this.passingArgument.getGameMode() == "unbewertet") {
+      this
+          .passingArgument
+          .setUnratedScore(new DateTime.now(), 9 - falseIds.length);
+    } else {
+      this.passingArgument.addScore(new DateTime.now(), 9 - falseIds.length);
     }
-    else{
-      this.passingArgument.addScore(new DateTime.now(), 9-falseIds.length);
-    }
-
 
     this.cardObjects.forEach((IndexCardObject element) {
-      if(falseIds.contains(element.getId())){
+      if (falseIds.contains(element.getId())) {
         element.createSolutionCard(false);
-      }
-      else{
+      } else {
         element.createSolutionCard(true);
       }
     });
     passingArgument.setCards(this.cardObjects);
-    Navigator.pushNamedAndRemoveUntil(context, ResultScreen.route, (_) => false, arguments: passingArgument);
+    Navigator.pushNamedAndRemoveUntil(context, ResultScreen.route, (_) => false,
+        arguments: passingArgument);
     //Navigator.popUntil(context, (route) => route.isFirst);
     //Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
   }
@@ -194,7 +195,7 @@ class Gl1Database extends StatelessWidget {
   Widget build(BuildContext context) {
     initializeGl1Cards(context);
     setVerifier();
-    return  Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Column(
@@ -205,7 +206,8 @@ class Gl1Database extends StatelessWidget {
                 Container(
                     height: 30,
                     width: 110,
-                    color: StaticMethods.getColorFromString(verifier["firstColor"]),
+                    color: StaticMethods.getColorFromString(
+                        verifier["firstColor"]),
                     child: Center(
                       child: Text(
                         verifier["firstLabel"],
@@ -217,7 +219,8 @@ class Gl1Database extends StatelessWidget {
                 Container(
                     height: 30,
                     width: 110,
-                    color: StaticMethods.getColorFromString(verifier["secondColor"]),
+                    color: StaticMethods.getColorFromString(
+                        verifier["secondColor"]),
                     child: Center(
                       child: Text(
                         verifier["secondLabel"],
@@ -229,7 +232,8 @@ class Gl1Database extends StatelessWidget {
                 Container(
                     height: 30,
                     width: 110,
-                    color: StaticMethods.getColorFromString(verifier["thirdColor"]),
+                    color: StaticMethods.getColorFromString(
+                        verifier["thirdColor"]),
                     child: Center(
                       child: Text(
                         verifier["thirdLabel"],
@@ -270,5 +274,4 @@ class Gl1Database extends StatelessWidget {
       ],
     );
   }
-
 }

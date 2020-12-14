@@ -10,17 +10,18 @@ class GraphAlgorithm extends StatelessWidget {
 
   GraphAlgorithm({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   RichText dijkstra(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Algorithmus von Dijkstra \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Algorithmus von Dijkstra \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
@@ -28,23 +29,23 @@ class GraphAlgorithm extends StatelessWidget {
                 text: "Diese Seite Beschäftigt sich mit Dijkstra. Hier werden "
                     "Infortmationen über Dijkstra aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText kruskal(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Algorithmus von Kruskal \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Algorithmus von Kruskal \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
@@ -52,56 +53,58 @@ class GraphAlgorithm extends StatelessWidget {
                 text: "Diese Seite Beschäftigt sich mit Kruskal. Hier werden "
                     "Infortmationen über Kruskal aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText prim(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Algorithmus von Prim \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Algorithmus von Prim \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
             TextSpan(
-                text: "Diese Seite Beschäftigt sich mit dem Prim Algorthmus. Hier werden "
+                text:
+                    "Diese Seite Beschäftigt sich mit dem Prim Algorthmus. Hier werden "
                     "Infortmationen über Prim aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText ungezeigteSeite(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Fehler \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Fehler \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
-            TextSpan(text: "Diese Seite konnte nicht aufgezeigt werden",
-                style: TextStyle(color: Colors.black,
+            TextSpan(
+                text: "Diese Seite konnte nicht aufgezeigt werden",
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
@@ -122,7 +125,8 @@ class GraphAlgorithm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: MyButtomNavigationBar(
-        passingArgument: passingArgument,),
+        passingArgument: passingArgument,
+      ),
       appBar: AppBar(
         title: const Text('Theoretische Informatik 1'),
         backgroundColor: primaryColor,
@@ -130,8 +134,4 @@ class GraphAlgorithm extends StatelessWidget {
       body: showSubThemeContent(context),
     );
   }
-
 }
-
-
-

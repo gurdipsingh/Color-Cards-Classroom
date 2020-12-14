@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'PassingArgument.dart';
 
 class Modules extends StatelessWidget {
-
   final PassingArgument passingArgument;
 
   Modules({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,14 @@ class Modules extends StatelessWidget {
       mainAxisSpacing: 20,
       crossAxisCount: 2,
       children: <Widget>[
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "Gl1", "/gl1Themes", passingArgument, "Module", "GL1"),
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "HWR", "/none",passingArgument, "Module", "HWR"),
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "PRG1", "/none",passingArgument, "Module", "PRG1"),
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "Mathe1", "/none",passingArgument, "Module", "Mathe1"),
+        RouteGenerator.createRaisedButtonWithMapSafe(
+            context, "Gl1", "/gl1Themes", passingArgument, "Module", "GL1"),
+        RouteGenerator.createRaisedButtonWithMapSafe(
+            context, "HWR", "/none", passingArgument, "Module", "HWR"),
+        RouteGenerator.createRaisedButtonWithMapSafe(
+            context, "PRG1", "/none", passingArgument, "Module", "PRG1"),
+        RouteGenerator.createRaisedButtonWithMapSafe(
+            context, "Mathe1", "/none", passingArgument, "Module", "Mathe1"),
       ],
     );
   }

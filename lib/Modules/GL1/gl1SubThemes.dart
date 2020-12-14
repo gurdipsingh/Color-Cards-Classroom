@@ -15,36 +15,50 @@ class Gl1SubThemes extends StatelessWidget {
 
   Gl1SubThemes({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
-
+    @required this.passingArgument,
+  }) : super(key: key);
 
   List<ElevatedButton> sortierAlgorithmenSubThemes(context) {
     return [
-      RouteGenerator.createElevatedButtonWithMapSafe(context,"Bubblesort", SortingAlgorithm.route,passingArgument, "subtheme", "bubblesort"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Insertionsort",SortingAlgorithm.route,passingArgument, "subtheme", "insertionsort"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Selectionsort",SortingAlgorithm.route,passingArgument, "subtheme", "selectionsort"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Quicksort",SortingAlgorithm.route,passingArgument, "subtheme", "quicksort"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Mergesort",SortingAlgorithm.route,passingArgument, "subtheme", "mergesort"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Bubblesort",
+          SortingAlgorithm.route, passingArgument, "subtheme", "bubblesort"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Insertionsort",
+          SortingAlgorithm.route, passingArgument, "subtheme", "insertionsort"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Selectionsort",
+          SortingAlgorithm.route, passingArgument, "subtheme", "selectionsort"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Quicksort",
+          SortingAlgorithm.route, passingArgument, "subtheme", "quicksort"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Mergesort",
+          SortingAlgorithm.route, passingArgument, "subtheme", "mergesort"),
     ];
   }
 
   List<ElevatedButton> graphenAlgorithmusSubThemes(context) {
-    return[
-      RouteGenerator.createElevatedButtonWithMapSafe(context,"Dijkstra", GraphAlgorithm.route,passingArgument, "subtheme", "dijkstra"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Kruskal",GraphAlgorithm.route,passingArgument, "subtheme", "kruskal"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Prim",GraphAlgorithm.route,passingArgument, "subtheme", "prim"),
+    return [
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Dijkstra",
+          GraphAlgorithm.route, passingArgument, "subtheme", "dijkstra"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Kruskal",
+          GraphAlgorithm.route, passingArgument, "subtheme", "kruskal"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Prim",
+          GraphAlgorithm.route, passingArgument, "subtheme", "prim"),
     ];
   }
 
   List<ElevatedButton> dynamischeProgrammierungSubThemes(context) {
     return [
-      RouteGenerator.createElevatedButtonWithMapSafe(context,"Belman Ford", DynamicProgramming.route,passingArgument, "subtheme", "belmanford"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Floyd",DynamicProgramming.route,passingArgument, "subtheme", "floyd"),
-      RouteGenerator.createElevatedButtonWithMapSafe(context, "Time Scheduling",DynamicProgramming.route,passingArgument, "subtheme", "timescheduling"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Belman Ford",
+          DynamicProgramming.route, passingArgument, "subtheme", "belmanford"),
+      RouteGenerator.createElevatedButtonWithMapSafe(context, "Floyd",
+          DynamicProgramming.route, passingArgument, "subtheme", "floyd"),
+      RouteGenerator.createElevatedButtonWithMapSafe(
+          context,
+          "Time Scheduling",
+          DynamicProgramming.route,
+          passingArgument,
+          "subtheme",
+          "timescheduling"),
     ];
   }
-
-
 
   List<ElevatedButton> showSubThemeContent(context) {
     switch (passingArgument.getTheme()) {
@@ -55,15 +69,18 @@ class Gl1SubThemes extends StatelessWidget {
       case "Dynamische Prog.":
         return dynamischeProgrammierungSubThemes(context);
       case "Alles":
-        return sortierAlgorithmenSubThemes(context) + graphenAlgorithmusSubThemes(context) + dynamischeProgrammierungSubThemes(context);
+        return sortierAlgorithmenSubThemes(context) +
+            graphenAlgorithmusSubThemes(context) +
+            dynamischeProgrammierungSubThemes(context);
     }
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
+        bottomNavigationBar: MyButtomNavigationBar(
+          passingArgument: passingArgument,
+        ),
         appBar: AppBar(
           title: Text(passingArgument.getTheme()),
           backgroundColor: primaryColor,
@@ -71,13 +88,6 @@ class Gl1SubThemes extends StatelessWidget {
         body: ListView(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
           children: showSubThemeContent(context),
-        )
-    );
+        ));
   }
-
-
-
-
-
-
 }

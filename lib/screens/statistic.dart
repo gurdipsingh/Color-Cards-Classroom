@@ -1,8 +1,8 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
+import 'package:e_learning/components/donutAutoLabelChart.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
-
 
 class Statistic extends StatelessWidget {
   static const route = "/statistic";
@@ -11,7 +11,8 @@ class Statistic extends StatelessWidget {
 
   Statistic({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,9 +21,12 @@ class Statistic extends StatelessWidget {
         backgroundColor: primaryColor,
       ),
       body: Center(
-        child: Text('Statistic of ${passingArgument.getName()}'),
+        //child: Text('Statistic of ${passingArgument.getName()}'),
+        child: DonutAutoLabelChart.withSampleData(),
       ),
-      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
+      bottomNavigationBar: MyButtomNavigationBar(
+        passingArgument: passingArgument,
+      ),
     );
   }
 }

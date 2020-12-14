@@ -11,7 +11,7 @@ class IndexCardWidget extends StatefulWidget {
   final int id;
   final String label;
   final String content;
-  final IndexCardObject card;        // Contains the Card Object of its widget
+  final IndexCardObject card; // Contains the Card Object of its widget
 
   const IndexCardWidget({
     Key key,
@@ -29,7 +29,7 @@ class _CardWidget extends State<IndexCardWidget> {
   Color _stateOfColor = Colors.grey;
   String _colorName = "grey";
 
-  int getId(){
+  int getId() {
     return widget.id;
   }
 
@@ -45,14 +45,15 @@ class _CardWidget extends State<IndexCardWidget> {
     return this._stateOfColor;
   }
 
-  String getColorName(){
+  String getColorName() {
     return this._colorName;
   }
 
-  void setStateOfColor(Color stateOfColor){
+  void setStateOfColor(Color stateOfColor) {
     this._stateOfColor = stateOfColor;
   }
-  void setColorName(String colorName){
+
+  void setColorName(String colorName) {
     this._colorName = colorName;
   }
 

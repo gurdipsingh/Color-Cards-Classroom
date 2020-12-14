@@ -11,8 +11,8 @@ import 'package:e_learning/screens/gameScreen.dart';
 import 'package:e_learning/screens/help.dart';
 import 'package:e_learning/screens/homescreen.dart';
 import 'package:e_learning/screens/learnOrTest.dart';
-import 'package:e_learning/screens/settings.dart';
 import 'package:e_learning/screens/resultScreen.dart';
+import 'package:e_learning/screens/settings.dart';
 import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
@@ -91,7 +91,7 @@ class RouteGenerator {
         return _createRoute(ResultScreen(passingArgument: _passingArgument));
       case '/feedback':
         return _createRoute(ResultFeedback(passingArgument: _passingArgument));
-        case '/notImplementedYet':
+      case '/notImplementedYet':
         return _notImplementedYet(_passingArgument);
       default:
         return _errorRoute(_passingArgument);

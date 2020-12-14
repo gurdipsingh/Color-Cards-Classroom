@@ -9,21 +9,17 @@ import '../constants.dart';
 import 'PassingArgument.dart';
 
 class MyButtomNavigationBar extends StatefulWidget {
-
   final PassingArgument passingArgument;
 
-
-  const MyButtomNavigationBar({
-    Key key,
-    @required this.passingArgument
-}) : super(key: key);
+  const MyButtomNavigationBar({Key key, @required this.passingArgument})
+      : super(key: key);
 
   @override
   _MyButtomNavigationBarState createState() => _MyButtomNavigationBarState();
 }
 
 class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
-  int _selectedIndex =  RouteGenerator.getIndex();
+  int _selectedIndex = RouteGenerator.getIndex();
 
   void _onItemTapped(int index) {
     setState(() {
@@ -31,16 +27,20 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
     });
     switch (index) {
       case 0:
-        Navigator.of(context).pushNamed(HomeScreen.route, arguments: widget.passingArgument);
+        Navigator.of(context)
+            .pushNamed(HomeScreen.route, arguments: widget.passingArgument);
         break;
       case 1:
-        Navigator.of(context).pushNamed(Statistic.route, arguments: widget.passingArgument);
+        Navigator.of(context)
+            .pushNamed(Statistic.route, arguments: widget.passingArgument);
         break;
       case 2:
-        Navigator.of(context).pushNamed(Help.route, arguments: widget.passingArgument);
+        Navigator.of(context)
+            .pushNamed(Help.route, arguments: widget.passingArgument);
         break;
       case 3:
-        Navigator.of(context).pushNamed(Settings.route, arguments: widget.passingArgument);
+        Navigator.of(context)
+            .pushNamed(Settings.route, arguments: widget.passingArgument);
         break;
     }
   }

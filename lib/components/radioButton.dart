@@ -5,31 +5,28 @@ import 'package:flutter/material.dart';
 import 'PassingArgument.dart';
 
 class Radiobutton extends StatefulWidget {
-
   final PassingArgument passingArgument;
 
-
-  const Radiobutton({
-    Key key,
-    @required this.passingArgument
-  }) : super(key: key);
+  const Radiobutton({Key key, @required this.passingArgument})
+      : super(key: key);
 
   @override
- _RadioButton createState() => _RadioButton();
+  _RadioButton createState() => _RadioButton();
 }
 
 class _RadioButton extends State<Radiobutton> {
-
   String radioItem = "GERMAN";
 
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-
         RadioListTile(
           activeColor: contentColor,
           groupValue: radioItem,
-          title: Text('DE', style: TextStyle(color: contentColor, fontWeight: FontWeight.bold),),
+          title: Text(
+            'DE',
+            style: TextStyle(color: contentColor, fontWeight: FontWeight.bold),
+          ),
           value: 'GERMAN',
           onChanged: (val) {
             setState(() {
@@ -38,11 +35,13 @@ class _RadioButton extends State<Radiobutton> {
             });
           },
         ),
-
         RadioListTile(
           activeColor: contentColor,
           groupValue: radioItem,
-          title: Text('EN', style: TextStyle(color: contentColor,fontWeight: FontWeight.bold),),
+          title: Text(
+            'EN',
+            style: TextStyle(color: contentColor, fontWeight: FontWeight.bold),
+          ),
           value: 'ENGLISH',
           onChanged: (val) {
             setState(() {

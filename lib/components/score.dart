@@ -4,26 +4,26 @@ class Score {
   DateTime _date;
   double score;
 
-  Score(int numberOfRight, DateTime date){
-   this._numberOfRight = numberOfRight;
-   this._numberOfWrong = 9 - numberOfRight;
-   this._date = date;
-   this.score = numberOfRight/9;
+  Score(int numberOfRight, DateTime date) {
+    this._numberOfRight = numberOfRight;
+    this._numberOfWrong = 9 - numberOfRight;
+    this._date = date;
+    this.score = numberOfRight / 9;
   }
 
-  String getNumberOfRightAsString(){
+  String getNumberOfRightAsString() {
     return "${this._numberOfRight}";
   }
 
-  String getNumberOfWrongAsString(){
+  String getNumberOfWrongAsString() {
     return "${this._numberOfWrong}";
   }
 
-  DateTime getDateTime(){
+  DateTime getDateTime() {
     return this._date;
   }
 
-  int getPercentage(){
-    return ((this._numberOfRight/9)*100).toInt();
+  int getPercentage() {
+    return ((this._numberOfRight / 9) * 100).toInt();
   }
 }

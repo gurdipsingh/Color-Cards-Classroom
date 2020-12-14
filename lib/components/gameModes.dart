@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'PassingArgument.dart';
 
 class GameModes extends StatelessWidget {
-
   final PassingArgument passingArgument;
 
   GameModes({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +20,13 @@ class GameModes extends StatelessWidget {
       mainAxisSpacing: 20,
       crossAxisCount: 2,
       children: <Widget>[
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "Unbewertet", "/game", passingArgument, "gamemode", "unbewertet"),
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "Bewertet", "/game",passingArgument, "gamemode", "bewertet"),
-        RouteGenerator.createRaisedButtonWithMapSafe(context, "Zeit", "/game",passingArgument,"gamemode", "zeit"),
-              ],
+        RouteGenerator.createRaisedButtonWithMapSafe(context, "Unbewertet",
+            "/game", passingArgument, "gamemode", "unbewertet"),
+        RouteGenerator.createRaisedButtonWithMapSafe(context, "Bewertet",
+            "/game", passingArgument, "gamemode", "bewertet"),
+        RouteGenerator.createRaisedButtonWithMapSafe(
+            context, "Zeit", "/game", passingArgument, "gamemode", "zeit"),
+      ],
     );
   }
 }

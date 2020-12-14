@@ -1,8 +1,8 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/radioButton.dart';
+import 'package:e_learning/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:e_learning/constants.dart';
 
 import '../constants.dart';
 import 'homescreen.dart';
@@ -36,11 +36,12 @@ class StartScreen extends StatelessWidget {
       child: Text("Continue"),
       onPressed: () {
         passingArgument.setName(userNameController.text);
-        Navigator.pushNamedAndRemoveUntil(context, HomeScreen.route, (_) => false, arguments: passingArgument);
+        Navigator.pushNamedAndRemoveUntil(
+            context, HomeScreen.route, (_) => false,
+            arguments: passingArgument);
       },
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +52,20 @@ class StartScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-                children: [Text(
-                  "Welcome",
-                  style: TextStyle(fontSize: 30, color: contentColor),
-                )]),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(
+                "Welcome",
+                style: TextStyle(fontSize: 30, color: contentColor),
+              )
+            ]),
             Column(
-              children: [textField(),Radiobutton(passingArgument: _passingArgument,),continueButton(context, _passingArgument), ],
+              children: [
+                textField(),
+                Radiobutton(
+                  passingArgument: _passingArgument,
+                ),
+                continueButton(context, _passingArgument),
+              ],
             )
           ],
         ));

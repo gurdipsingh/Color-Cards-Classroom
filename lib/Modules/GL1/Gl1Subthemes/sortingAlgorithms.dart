@@ -10,89 +10,93 @@ class SortingAlgorithm extends StatelessWidget {
 
   SortingAlgorithm({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   RichText bubbleSort(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "BubbleSort \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "BubbleSort \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
             TextSpan(
-                text: "Diese Seite Beschäftigt sich mit BubbleSort. Hier werden "
+                text:
+                    "Diese Seite Beschäftigt sich mit BubbleSort. Hier werden "
                     "Infortmationen über Bubblesort aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText insertionSort(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Insertionsort \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Insertionsort \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
             TextSpan(
-                text: "Diese Seite Beschäftigt sich mit Insertionsort. Hier werden "
+                text:
+                    "Diese Seite Beschäftigt sich mit Insertionsort. Hier werden "
                     "Infortmationen über Insertionsort aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText selectionSort(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Selectionsort \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Selectionsort \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
             TextSpan(
-                text: "Diese Seite Beschäftigt sich mit Selectionsort. Hier werden "
+                text:
+                    "Diese Seite Beschäftigt sich mit Selectionsort. Hier werden "
                     "Infortmationen über Selectionsort aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText quickSort(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Quicksort \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Quicksort \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
@@ -100,23 +104,23 @@ class SortingAlgorithm extends StatelessWidget {
                 text: "Diese Seite Beschäftigt sich mit Quicksort. Hier werden "
                     "Infortmationen über Quicksort aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText mergeSort(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Mergesort \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Mergesort \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
@@ -124,32 +128,33 @@ class SortingAlgorithm extends StatelessWidget {
                 text: "Diese Seite Beschäftigt sich mit Mergesort. Hier werden "
                     "Infortmationen über Mergesort aufgezeigt, welches euch behilflich sein kann,"
                     "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(color: Colors.black,
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
   RichText ungezeigteSeite(context) {
     return RichText(
       text: TextSpan(
-          style: DefaultTextStyle
-              .of(context)
-              .style,
+          style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
-            TextSpan(text: "Fehler \n",
-                style: TextStyle(fontWeight: FontWeight.bold,
+            TextSpan(
+                text: "Fehler \n",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
                     color: Colors.black,
                     decoration: TextDecoration.underline,
                     decorationColor: secondaryColor)),
-            TextSpan(text: "Diese Seite konnte nicht aufgezeigt werden",
-                style: TextStyle(color: Colors.black,
+            TextSpan(
+                text: "Diese Seite konnte nicht aufgezeigt werden",
+                style: TextStyle(
+                    color: Colors.black,
                     fontSize: 15,
                     decoration: TextDecoration.none))
-          ]
-      ),
+          ]),
     );
   }
 
@@ -174,7 +179,8 @@ class SortingAlgorithm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: MyButtomNavigationBar(
-        passingArgument: passingArgument,),
+        passingArgument: passingArgument,
+      ),
       appBar: AppBar(
         title: const Text('Theoretische Informatik 1'),
         backgroundColor: primaryColor,
@@ -182,8 +188,4 @@ class SortingAlgorithm extends StatelessWidget {
       body: showSubThemeContent(context),
     );
   }
-
 }
-
-
-

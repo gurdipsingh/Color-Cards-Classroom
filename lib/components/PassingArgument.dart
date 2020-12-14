@@ -3,13 +3,13 @@ import 'package:e_learning/components/score.dart';
 
 class PassingArgument {
   String _name;
-  Map <String,String> _navigation = {};
+  Map<String, String> _navigation = {};
   Map _settings = {"language": "GERMAN"};
   List<IndexCardObject> _cards = [];
   List<Score> _scoreSheet = [];
   Score _unratedScore;
 
-  PassingArgument(String name){
+  PassingArgument(String name) {
     this._name = name;
   }
 
@@ -33,24 +33,24 @@ class PassingArgument {
     this._navigation["subtheme"] = subtheme;
   }
 
-  void addScore(DateTime time, int numberOfRightAnswer){
+  void addScore(DateTime time, int numberOfRightAnswer) {
     Score score = new Score(numberOfRightAnswer, time);
     this._scoreSheet.add(score);
   }
 
-  void setUnratedScore(DateTime time, int numberOfRightAnswer){
+  void setUnratedScore(DateTime time, int numberOfRightAnswer) {
     this._unratedScore = new Score(numberOfRightAnswer, time);
   }
 
-  String getName(){
+  String getName() {
     return this._name;
   }
 
-  List<IndexCardObject> getCards(){
+  List<IndexCardObject> getCards() {
     return this._cards;
   }
 
-  Score getLatestScore(){
+  Score getLatestScore() {
     return this._scoreSheet.last;
   }
 
@@ -58,20 +58,20 @@ class PassingArgument {
     return this._navigation["theme"];
   }
 
-  String getSubtheme(){
+  String getSubtheme() {
     return this._navigation["subtheme"];
   }
 
-  String getGameMode(){
+  String getGameMode() {
     return this._navigation["gamemode"];
   }
 
-  String getModule(){
+  String getModule() {
     //TODO: Make Key lowercase
     return this._navigation["Module"];
   }
 
-  Score getUnratedScore(){
+  Score getUnratedScore() {
     return this._unratedScore;
   }
 

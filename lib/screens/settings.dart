@@ -11,8 +11,8 @@ class Settings extends StatelessWidget {
 
   Settings({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
-
+    @required this.passingArgument,
+  }) : super(key: key);
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +27,9 @@ class Settings extends StatelessWidget {
           print("Darkmode on!");
         },
       )),
-      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
+      bottomNavigationBar: MyButtomNavigationBar(
+        passingArgument: passingArgument,
+      ),
     );
   }
 }

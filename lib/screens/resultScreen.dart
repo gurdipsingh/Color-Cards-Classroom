@@ -5,9 +5,9 @@ import 'package:e_learning/components/solutionWidget.dart';
 import 'package:e_learning/screens/ResultFeedback.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../constants.dart';
 import '../staticMethods.dart';
-
 
 class ResultScreen extends StatelessWidget {
   static const route = "/solution";
@@ -16,10 +16,10 @@ class ResultScreen extends StatelessWidget {
 
   List<Widget> cardList = [];
 
-
   ResultScreen({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   // Creates a list of CardObjects and then creates a list of its Widgets
   List<Widget> getResult(context) {
@@ -32,93 +32,95 @@ class ResultScreen extends StatelessWidget {
     return cardList;
   }
 
-  void continueToFeedbackScreen(context){
-    Navigator.pushNamed(context, ResultFeedback.route,arguments: this.passingArgument);
+  void continueToFeedbackScreen(context) {
+    Navigator.pushNamed(context, ResultFeedback.route,
+        arguments: this.passingArgument);
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
-      appBar: AppBar(
-        title: Text("GAME"),
-        backgroundColor: primaryColor,
-      ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                            height: 25,
-                            width: 25,
-                            color: secondaryColor,
-                            child: Center(
-                              child: Text(StaticMethods.getScore(passingArgument).getNumberOfRightAsString(), style: TextStyle(color: contentColor),),
-                            )
-                        ),
-                        Container(
-                          child: Text("  Right "),
-                        )
-                      ],
-                    ),
-
-                    Row(
-                      children: [
-                        Container(
-                            height: 25,
-                            width: 25,
-                            color: firstGameColor,
-                            child: Center(
-                              child: Text(StaticMethods.getScore(passingArgument).getNumberOfWrongAsString(), style: TextStyle(color: contentColor),),
-                            )
-                        ),
-
-                        Container(
-                          child: Text("  Wrong "),
-                        )
-                      ],
-                    ),
-
-                  ],
-                )],
-            ),
-            Column(
-              children: [
-                Column(children: <Widget>[
-                  Container(
-                    height: 400,
-                    child: GridView.count(
-                      primary: false,
-                      padding: const EdgeInsets.all(20),
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      crossAxisCount: 3,
-                      children: getResult(context),
-                    ),
-                  )
-                ]),
-                Column(children: [
-                  RaisedButton(
-                    onPressed: () => {
-                      continueToFeedbackScreen(context)
-                    },
-                    child: Text(
-                      "Continue",
-                      style: TextStyle(color: contentColor),
-                    ),
-                    color: secondaryColor,
+        bottomNavigationBar: MyButtomNavigationBar(
+          passingArgument: passingArgument,
+        ),
+        appBar: AppBar(
+          title: Text("GAME"),
+          backgroundColor: primaryColor,
+        ),
+        body:
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                          height: 25,
+                          width: 25,
+                          color: secondaryColor,
+                          child: Center(
+                            child: Text(
+                              StaticMethods.getScore(passingArgument)
+                                  .getNumberOfRightAsString(),
+                              style: TextStyle(color: contentColor),
+                            ),
+                          )),
+                      Container(
+                        child: Text("  Right "),
+                      )
+                    ],
                   ),
-                ])
-              ],
-            )]
-      )
-    );
+                  Row(
+                    children: [
+                      Container(
+                          height: 25,
+                          width: 25,
+                          color: firstGameColor,
+                          child: Center(
+                            child: Text(
+                              StaticMethods.getScore(passingArgument)
+                                  .getNumberOfWrongAsString(),
+                              style: TextStyle(color: contentColor),
+                            ),
+                          )),
+                      Container(
+                        child: Text("  Wrong "),
+                      )
+                    ],
+                  ),
+                ],
+              )
+            ],
+          ),
+          Column(
+            children: [
+              Column(children: <Widget>[
+                Container(
+                  height: 400,
+                  child: GridView.count(
+                    primary: false,
+                    padding: const EdgeInsets.all(20),
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    crossAxisCount: 3,
+                    children: getResult(context),
+                  ),
+                )
+              ]),
+              Column(children: [
+                RaisedButton(
+                  onPressed: () => {continueToFeedbackScreen(context)},
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(color: contentColor),
+                  ),
+                  color: secondaryColor,
+                ),
+              ])
+            ],
+          )
+        ]));
   }
 }

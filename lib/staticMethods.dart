@@ -3,14 +3,12 @@ import 'package:flutter/cupertino.dart';
 
 import 'components/score.dart';
 
-class StaticMethods extends StatelessWidget{
-
-  static Score getScore(PassingArgument passingArgument){
+class StaticMethods extends StatelessWidget {
+  static Score getScore(PassingArgument passingArgument) {
     // Get the right Score from passing Argument
-    if(passingArgument.getGameMode() == "unbewertet"){
+    if (passingArgument.getGameMode() == "unbewertet") {
       return passingArgument.getUnratedScore();
-    }
-    else{
+    } else {
       return passingArgument.getLatestScore();
     }
   }
@@ -25,6 +23,4 @@ class StaticMethods extends StatelessWidget{
   Widget build(BuildContext context) {
     throw UnimplementedError();
   }
-
-
 }

@@ -11,7 +11,8 @@ class Help extends StatelessWidget {
 
   Help({
     Key key,
-    @required this.passingArgument,}) : super(key: key);
+    @required this.passingArgument,
+  }) : super(key: key);
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +23,9 @@ class Help extends StatelessWidget {
       body: Center(
         child: Text('Here is the Help Guide'),
       ),
-      bottomNavigationBar: MyButtomNavigationBar(passingArgument: passingArgument,),
+      bottomNavigationBar: MyButtomNavigationBar(
+        passingArgument: passingArgument,
+      ),
     );
   }
 }

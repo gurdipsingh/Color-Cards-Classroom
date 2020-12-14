@@ -3,6 +3,7 @@ import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../constants.dart';
 
 class GameScreen extends StatelessWidget {
@@ -15,11 +16,11 @@ class GameScreen extends StatelessWidget {
     @required this.passingArgument,
   }) : super(key: key);
 
-  getCardPool(){
-    switch(passingArgument.getModule()){
+  getCardPool() {
+    switch (passingArgument.getModule()) {
       case "GL1":
         return Gl1Database(passingArgument: passingArgument);
-        /* If other Module Cardpool are created, insert it here
+      /* If other Module Cardpool are created, insert it here
       case "HWR":
         return HWRCardPool(passingArgument: passingArgument);
       case "PRG1":
@@ -29,6 +30,7 @@ class GameScreen extends StatelessWidget {
     */
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,9 +41,7 @@ class GameScreen extends StatelessWidget {
         title: Text("GAME"),
         backgroundColor: primaryColor,
       ),
-      body: Center(
-        child: getCardPool()
-      ),
+      body: Center(child: getCardPool()),
     );
   }
 }

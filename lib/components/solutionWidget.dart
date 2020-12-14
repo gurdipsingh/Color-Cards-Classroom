@@ -17,8 +17,8 @@ class SolutionWidget extends StatelessWidget {
   bool correct;
   PassingArgument _passingArgument;
 
-  SolutionWidget(
-      int id, String label, String content, IndexCardObject card, bool correct) {
+  SolutionWidget(int id, String label, String content, IndexCardObject card,
+      bool correct) {
     this.id = id;
     this.label = label;
     this.content = content;
