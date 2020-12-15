@@ -15,8 +15,6 @@ class Help extends StatelessWidget {
     @required this.passingArgument,
   }) : super(key: key);
 
-
-
   Container addPicture(String picturePath) {
     return Container(
       width: 300,
@@ -65,8 +63,8 @@ class Help extends StatelessWidget {
         StaticMethods.addText(
             "Auch bei den Karten sieht man anhand der Farbe, welche Karte richtig und welche falsch"
             " zugeordnet wurde. Es ist auf der nachfolgenden Darstellung zu erkennen, "
-                "dass die erste Karte zuvor falsch einsortiert wurde da sie "
-                "nicht grün sondern grau aufgezeigt wird."),
+            "dass die erste Karte zuvor falsch einsortiert wurde da sie "
+            "nicht grün sondern grau aufgezeigt wird."),
         addPicture('assets/gamepictures/10wrongAnswer.png'),
         StaticMethods.addText(
             "Womöglich wollen Sie Informationen zu der Karte und dem Thema nachlesen. Das ist kein"
