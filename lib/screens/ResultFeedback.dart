@@ -78,7 +78,7 @@ class ResultFeedback extends StatelessWidget {
                       style: TextStyle(fontSize: 15),
                     ),
                     Text(
-                      "   ${StaticMethods.getScore(passingArgument).getPercentage()}%",
+                      "  ${StaticMethods.getScore(passingArgument).getPercentage()}%",
                       style: TextStyle(fontSize: 35),
                     ),
                     Text(

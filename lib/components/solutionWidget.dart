@@ -64,7 +64,7 @@ class SolutionWidget extends StatelessWidget {
     showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Redirection"),
+              title: Text("Weiterleiten ?"),
               content: Text(
                   "Diese Karte gehört zu ${this.label}, möchten Sie die Seite zu ${this.label} öffnen?"),
               actions: [
