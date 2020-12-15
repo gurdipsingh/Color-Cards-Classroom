@@ -10,7 +10,7 @@ import 'homescreen.dart';
 class StartScreen extends StatelessWidget {
   final TextEditingController userNameController = TextEditingController();
 
-  var entry = 'Enter Your Username';
+  var entry = 'Benutzernamen eingeben';
 
   TextField textField() {
     return TextField(
@@ -33,7 +33,7 @@ class StartScreen extends StatelessWidget {
   ElevatedButton continueButton(context, PassingArgument passingArgument) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(primary: secondaryColor),
-      child: Text("Continue"),
+      child: Text("Weiter "),
       onPressed: () {
         passingArgument.setName(userNameController.text);
         Navigator.pushNamedAndRemoveUntil(
@@ -54,7 +54,7 @@ class StartScreen extends StatelessWidget {
           children: [
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text(
-                "Welcome",
+                "Willkommen",
                 style: TextStyle(fontSize: 30, color: contentColor),
               )
             ]),

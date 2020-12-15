@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
+// TODO: Zeitmodus einbauen
+// TODO: Eine Einstellung hinzufügen(Name ändern?)
 //TODO: Custom navigation vollenden
 //TODO: Betrachte den Navigationswechsel bei Fehler
 
