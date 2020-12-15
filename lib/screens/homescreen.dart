@@ -34,10 +34,10 @@ class HomeScreen extends StatelessWidget {
         title: Text("Home"),
         backgroundColor: primaryColor,
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
-              height: getHeightSizeAccordingToPercent(context, 10),
+              height: getHeightSizeAccordingToPercent(context, 15),
               child: Center(
                 child: Text(
                   "Willkommen ${passingArgument.getName()}",
