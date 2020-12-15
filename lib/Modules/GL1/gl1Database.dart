@@ -265,7 +265,7 @@ class Gl1Database extends StatelessWidget {
               verifySolution(winAlgo(), context),
             },
             child: Text(
-              "Check answer",
+              "Lösung abgeben",
               style: TextStyle(color: contentColor),
             ),
             color: secondaryColor,

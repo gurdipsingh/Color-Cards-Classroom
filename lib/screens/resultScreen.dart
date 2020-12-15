@@ -68,7 +68,7 @@ class ResultScreen extends StatelessWidget {
                             ),
                           )),
                       Container(
-                        child: Text("  Right "),
+                        child: Text("  Richtig "),
                       )
                     ],
                   ),
@@ -86,7 +86,7 @@ class ResultScreen extends StatelessWidget {
                             ),
                           )),
                       Container(
-                        child: Text("  Wrong "),
+                        child: Text("  Falsch "),
                       )
                     ],
                   ),
@@ -113,7 +113,7 @@ class ResultScreen extends StatelessWidget {
                 RaisedButton(
                   onPressed: () => {continueToFeedbackScreen(context)},
                   child: Text(
-                    "Continue",
+                    "Weiter",
                     style: TextStyle(color: contentColor),
                   ),
                   color: secondaryColor,
