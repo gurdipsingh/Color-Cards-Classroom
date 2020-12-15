@@ -88,10 +88,11 @@ class _CardWidget extends State<IndexCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: secondaryColor,
         child: new RaisedButton(
-          child: new Text(this.getContent()),
-          textColor: Colors.white,
+          shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(15.0))),
+      child: new Text(this.getContent()),
+          textColor: contentColor,
           onPressed: () => {updateColor()},
           color: this.getStateOfColor(),
         ));

@@ -91,12 +91,13 @@ class SolutionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: secondaryColor,
         child: new RaisedButton(
-          child: new Text(this.getContent()),
-          textColor: Colors.white,
-          onPressed: () => {showDialogToPage(context)},
-          color: this.getStateOfColor(),
-        ));
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(15.0))),
+      child: new Text(this.getContent()),
+      textColor: contentColor,
+      onPressed: () => {showDialogToPage(context)},
+      color: this.getStateOfColor(),
+    ));
   }
 }
