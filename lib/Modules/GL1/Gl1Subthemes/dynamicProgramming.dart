@@ -3,6 +3,8 @@ import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
+import '../../../staticMethods.dart';
+
 class DynamicProgramming extends StatelessWidget {
   static const route = '/Dynamische Programmierung';
 
@@ -13,103 +15,39 @@ class DynamicProgramming extends StatelessWidget {
     @required this.passingArgument,
   }) : super(key: key);
 
-  RichText belmanFord(context) {
-    return RichText(
-      text: TextSpan(
-          style: DefaultTextStyle.of(context).style,
-          children: <TextSpan>[
-            TextSpan(
-                text: "Belman Ford\n",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: secondaryColor)),
-            TextSpan(
-                text:
-                    "Diese Seite Beschäftigt sich mit BelmanFord. Hier werden "
-                    "Infortmationen über BelmanFord aufgezeigt, welches euch behilflich sein kann,"
-                    "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
-          ]),
+  ListView belmanFord(context) {
+    return ListView(
+      children: [
+        StaticMethods.addHeader(context, "Belman Ford"),
+        StaticMethods.addText("Diese Seite Beschäftigt sich mit BelmanFord. Hier werden "
+            "Infortmationen über BelmanFord aufgezeigt, welches euch behilflich sein kann,"
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+      ],
+    );
+  }
+  ListView floyd(context) {
+    return ListView(
+      children: [
+        StaticMethods.addHeader(context, "Floyd "),
+        StaticMethods.addText("Diese Seite Beschäftigt sich mit Floyd. Hier werden "
+            "Infortmationen über Floyd aufgezeigt, welches euch behilflich sein kann,"
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+      ],
+    );
+  }
+  ListView timeScheduling(context) {
+    return ListView(
+      children: [
+        StaticMethods.addHeader(context, "Time Scheduling "),
+        StaticMethods.addText("Diese Seite Beschäftigt sich mit dem Time Scheduling. Hier werden "
+            "Infortmationen über Time Scheduling aufgezeigt, welches euch behilflich sein kann,"
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+      ],
     );
   }
 
-  RichText floyd(context) {
-    return RichText(
-      text: TextSpan(
-          style: DefaultTextStyle.of(context).style,
-          children: <TextSpan>[
-            TextSpan(
-                text: "Floyd \n",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: secondaryColor)),
-            TextSpan(
-                text: "Diese Seite Beschäftigt sich mit Floyd. Hier werden "
-                    "Infortmationen über Floyd aufgezeigt, welches euch behilflich sein kann,"
-                    "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
-          ]),
-    );
-  }
 
-  RichText timeScheduling(context) {
-    return RichText(
-      text: TextSpan(
-          style: DefaultTextStyle.of(context).style,
-          children: <TextSpan>[
-            TextSpan(
-                text: "Time Scheduling \n",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: secondaryColor)),
-            TextSpan(
-                text:
-                    "Diese Seite Beschäftigt sich mit dem Time Scheduling. Hier werden "
-                    "Infortmationen über Time Scheduling aufgezeigt, welches euch behilflich sein kann,"
-                    "wenn ihr etwas nicht versteht oder neu lernen müsst.",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
-          ]),
-    );
-  }
-
-  RichText ungezeigteSeite(context) {
-    return RichText(
-      text: TextSpan(
-          style: DefaultTextStyle.of(context).style,
-          children: <TextSpan>[
-            TextSpan(
-                text: "Fehler \n",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decoration: TextDecoration.underline,
-                    decorationColor: secondaryColor)),
-            TextSpan(
-                text: "Diese Seite konnte nicht aufgezeigt werden",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
-          ]),
-    );
-  }
-
-  RichText showSubThemeContent(context) {
+  ListView showSubThemeContent(context) {
     switch (passingArgument.getSubtheme()) {
       case "belmanford":
         return belmanFord(context);
@@ -118,7 +56,7 @@ class DynamicProgramming extends StatelessWidget {
       case "timescheduling":
         return timeScheduling(context);
       default:
-        return ungezeigteSeite(context);
+        return StaticMethods.ungezeigteSeite(context);
     }
   }
 
