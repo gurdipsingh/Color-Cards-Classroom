@@ -19,37 +19,37 @@ class GraphAlgorithm extends StatelessWidget {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Algorithmus von Dijkstra "),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Dijkstra. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Dijkstra. Hier werden "
             "Infortmationen über Dijkstra aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
 
-
   ListView kruskal(context) {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Algorithmus von Kruskal "),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Kruskal. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Kruskal. Hier werden "
             "Infortmationen über Kruskal aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
 
-
   ListView prim(context) {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Algorithmus von Prim "),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit dem Prim Algorthmus. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit dem Prim Algorthmus. Hier werden "
             "Infortmationen über Prim aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
-
 
   ListView showSubThemeContent(context) {
     switch (passingArgument.getSubtheme()) {

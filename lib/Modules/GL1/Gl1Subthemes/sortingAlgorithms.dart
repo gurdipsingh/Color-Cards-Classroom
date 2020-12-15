@@ -14,12 +14,12 @@ class SortingAlgorithm extends StatelessWidget {
     @required this.passingArgument,
   }) : super(key: key);
 
-
   ListView bubbleSort(context) {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "BubbleSort"),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit BubbleSort. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit BubbleSort. Hier werden "
             "Infortmationen über Bubblesort aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
@@ -30,7 +30,8 @@ class SortingAlgorithm extends StatelessWidget {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Insertionsort"),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Insertionsort. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Insertionsort. Hier werden "
             "Infortmationen über Insertionsort aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
@@ -41,7 +42,8 @@ class SortingAlgorithm extends StatelessWidget {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Selectionsort"),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Selectionsort. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Selectionsort. Hier werden "
             "Infortmationen über Selectionsort aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
@@ -52,7 +54,8 @@ class SortingAlgorithm extends StatelessWidget {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Quicksort"),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Quicksort. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Quicksort. Hier werden "
             "Infortmationen über Quicksort aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
@@ -63,15 +66,13 @@ class SortingAlgorithm extends StatelessWidget {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Mergesort"),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Mergesort. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Mergesort. Hier werden "
             "Infortmationen über Mergesort aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
-
-
-
 
   ListView showSubThemeContent(context) {
     switch (passingArgument.getSubtheme()) {

@@ -19,33 +19,37 @@ class DynamicProgramming extends StatelessWidget {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Belman Ford"),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit BelmanFord. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit BelmanFord. Hier werden "
             "Infortmationen über BelmanFord aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
+
   ListView floyd(context) {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Floyd "),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit Floyd. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit Floyd. Hier werden "
             "Infortmationen über Floyd aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
+
   ListView timeScheduling(context) {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Time Scheduling "),
-        StaticMethods.addText("Diese Seite Beschäftigt sich mit dem Time Scheduling. Hier werden "
+        StaticMethods.addText(
+            "Diese Seite Beschäftigt sich mit dem Time Scheduling. Hier werden "
             "Infortmationen über Time Scheduling aufgezeigt, welches euch behilflich sein kann,"
             "wenn ihr etwas nicht versteht oder neu lernen müsst.")
       ],
     );
   }
-
 
   ListView showSubThemeContent(context) {
     switch (passingArgument.getSubtheme()) {
