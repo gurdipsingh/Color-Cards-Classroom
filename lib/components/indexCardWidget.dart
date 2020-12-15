@@ -26,7 +26,7 @@ class IndexCardWidget extends StatefulWidget {
 }
 
 class _CardWidget extends State<IndexCardWidget> {
-  Color _stateOfColor = Colors.grey;
+  Color _stateOfColor = unselectedColor;
   String _colorName = "grey";
 
   int getId() {
@@ -62,22 +62,22 @@ class _CardWidget extends State<IndexCardWidget> {
     setState(() {
       switch (this.getColorName()) {
         case "grey":
-          this.setStateOfColor(secondGameColor);
+          this.setStateOfColor(firstGameColor);
           this.setColorName("orange");
           widget.card.setColorName("orange");
           break;
         case "orange":
-          this.setStateOfColor(thirdGameColor);
+          this.setStateOfColor(secondGameColor);
           setColorName("purple");
           widget.card.setColorName("purple");
           break;
         case "purple":
-          this.setStateOfColor(fourthGameColor);
+          this.setStateOfColor(thirdGameColor);
           setColorName("blue");
           widget.card.setColorName("blue");
           break;
         case "blue":
-          this.setStateOfColor(firstGameColor);
+          this.setStateOfColor(unselectedColor);
           setColorName("grey");
           widget.card.setColorName("grey");
           break;

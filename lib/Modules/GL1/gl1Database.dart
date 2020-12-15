@@ -31,9 +31,9 @@ class Gl1Database extends StatelessWidget {
           "firstLabel": "Bubblesort",
           "secondLabel": "Insertionsort",
           "thirdLabel": "Mergesort",
-          "firstColor": secondGameColor.toString(),
-          "secondColor": thirdGameColor.toString(),
-          "thirdColor": fourthGameColor.toString()
+          "firstColor": firstGameColor.toString(),
+          "secondColor": secondGameColor.toString(),
+          "thirdColor": thirdGameColor.toString()
         };
         break;
       case "Graphenalgorithmen":
@@ -41,9 +41,9 @@ class Gl1Database extends StatelessWidget {
           "firstLabel": "Dijkstra",
           "secondLabel": "Kruskal",
           "thirdLabel": "Prim",
-          "firstColor": secondGameColor.toString(),
-          "secondColor": thirdGameColor.toString(),
-          "thirdColor": fourthGameColor.toString()
+          "firstColor": firstGameColor.toString(),
+          "secondColor": secondGameColor.toString(),
+          "thirdColor": thirdGameColor.toString()
         };
         break;
       case "Dynamische Prog.":
@@ -51,9 +51,9 @@ class Gl1Database extends StatelessWidget {
           "firstLabel": "Belman",
           "secondLabel": "Floyd",
           "thirdLabel": "Time Scheduling",
-          "firstColor": secondGameColor.toString(),
-          "secondColor": thirdGameColor.toString(),
-          "thirdColor": fourthGameColor.toString()
+          "firstColor": firstGameColor.toString(),
+          "secondColor": secondGameColor.toString(),
+          "thirdColor": thirdGameColor.toString()
         };
         break;
       case "Alles":
@@ -61,9 +61,9 @@ class Gl1Database extends StatelessWidget {
           "firstLabel": "Belman",
           "secondLabel": "Kruskal",
           "thirdLabel": "Insertionsort",
-          "firstColor": secondGameColor.toString(),
-          "secondColor": thirdGameColor.toString(),
-          "thirdColor": fourthGameColor.toString()
+          "firstColor": firstGameColor.toString(),
+          "secondColor": secondGameColor.toString(),
+          "thirdColor": thirdGameColor.toString()
         };
         break;
     }
@@ -84,15 +84,15 @@ class Gl1Database extends StatelessWidget {
 
   void initializeGl1Cards(context) {
     this.gl1Cards["Sortieralgorithmen"] = [
-      new IndexCardObject(1, "bubblesort", "bubb", "grey"),
+      new IndexCardObject(1, "bubblesort", "bubble", "grey"),
       new IndexCardObject(2, "bubblesort", "bubble", "grey"),
-      new IndexCardObject(3, "bubblesort", "bubbuu", "grey"),
-      new IndexCardObject(4, "mergesort", "merguez", "grey"),
-      new IndexCardObject(5, "mergesort", "mergez", "grey"),
-      new IndexCardObject(6, "mergesort", "mergeeez", "grey"),
-      new IndexCardObject(7, "insertionsort", "insi", "grey"),
+      new IndexCardObject(3, "bubblesort", "bubble", "grey"),
+      new IndexCardObject(4, "mergesort", "merge", "grey"),
+      new IndexCardObject(5, "mergesort", "merge", "grey"),
+      new IndexCardObject(6, "mergesort", "merge", "grey"),
+      new IndexCardObject(7, "insertionsort", "insertion", "grey"),
       new IndexCardObject(8, "insertionsort", "insertion", "grey"),
-      new IndexCardObject(9, "insertionsort", "inse", "grey"),
+      new IndexCardObject(9, "insertionsort", "insertion", "grey"),
     ];
 
     this.gl1Cards["Graphenalgorithmen"] = [

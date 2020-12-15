@@ -77,7 +77,7 @@ class ResultScreen extends StatelessWidget {
                       Container(
                           height: 25,
                           width: 25,
-                          color: firstGameColor,
+                          color: unselectedColor,
                           child: Center(
                             child: Text(
                               StaticMethods.getScore(passingArgument)

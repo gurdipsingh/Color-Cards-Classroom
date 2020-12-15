@@ -63,19 +63,16 @@ class IndexCardObject {
 
   String convertStringToColor(String colorString) {
     if (colorString == "grey") {
+      return unselectedColor.toString();
+    }
+    if (colorString == "orange") {
       return firstGameColor.toString();
     }
-    if (colorString == "orange") {
-      return secondGameColor.toString();
-    }
-    if (colorString == "orange") {
-      return secondGameColor.toString();
-    }
     if (colorString == "purple") {
-      return thirdGameColor.toString();
+      return secondGameColor.toString();
     }
     if (colorString == "blue") {
-      return fourthGameColor.toString();
+      return thirdGameColor.toString();
     }
   }
 }
