@@ -21,7 +21,8 @@ class SortingAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit BubbleSort. Hier werden "
             "Infortmationen über Bubblesort aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -33,7 +34,8 @@ class SortingAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Insertionsort. Hier werden "
             "Infortmationen über Insertionsort aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -45,7 +47,8 @@ class SortingAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Selectionsort. Hier werden "
             "Infortmationen über Selectionsort aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -57,7 +60,8 @@ class SortingAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Quicksort. Hier werden "
             "Infortmationen über Quicksort aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -69,7 +73,8 @@ class SortingAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Mergesort. Hier werden "
             "Infortmationen über Mergesort aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -87,7 +92,7 @@ class SortingAlgorithm extends StatelessWidget {
       case "mergesort":
         return mergeSort(context);
       default:
-        return StaticMethods.ungezeigteSeite(context);
+        return StaticMethods.ungezeigteSeite(context, passingArgument);
     }
   }
 

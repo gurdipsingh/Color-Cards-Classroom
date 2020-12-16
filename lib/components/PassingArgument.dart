@@ -5,9 +5,11 @@ import 'package:e_learning/constants.dart';
 class PassingArgument {
   String _name;
   Map<String, String> _navigation = {};
-  Map _settings = {"language": "GERMAN"};
+  Map _settings = {"language": "GERMAN", "fontsize": "NORMAL"};
   List<IndexCardObject> _cards = [];
-  List<Score> _scoreSheet = [new Score(0, DateTime.now(), 'Erfolg', primaryColor)];
+  List<Score> _scoreSheet = [
+    new Score(0, DateTime.now(), 'Erfolg', primaryColor)
+  ];
   Score _unratedScore;
 
   PassingArgument(String name) {
@@ -26,6 +28,14 @@ class PassingArgument {
     this._settings["language"] = language;
   }
 
+  void toggleFontSize() {
+    if (this._settings["fontsize"] == "NORMAL") {
+      this._settings["fontsize"] = "BIG";
+    } else {
+      this._settings["fontsize"] = "NORMAL";
+    }
+  }
+
   void setCards(List<IndexCardObject> cards) {
     this._cards = cards;
   }
@@ -40,7 +50,8 @@ class PassingArgument {
   }
 
   void setUnratedScore(DateTime time, int numberOfRightAnswer) {
-    this._unratedScore = new Score(numberOfRightAnswer, time, 'Erfolg', primaryColor);
+    this._unratedScore =
+        new Score(numberOfRightAnswer, time, 'Erfolg', primaryColor);
   }
 
   String getName() {
@@ -86,5 +97,17 @@ class PassingArgument {
 
   List<Score> getScoreSheet() {
     return this._scoreSheet;
+  }
+
+  double getAddtoFontSize() {
+    if (this._settings["fontsize"] == "NORMAL") {
+      return 0;
+    } else {
+      return 5;
+    }
+  }
+
+  String getFontSizeName() {
+    return this._settings["fontsize"];
   }
 }

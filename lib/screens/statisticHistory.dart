@@ -32,14 +32,17 @@ class StatisticHistorie extends StatelessWidget {
                   StaticMethods.addHeader(
                       context, '${passingArgument.getName()}'),
                   StaticMethods.addText(
-                      'Dieses Diagram zeigt deine Leistung zu deinem letzten Siel.'),
+                      'Dieses Diagram zeigt deine Leistung zu deinem letzten Siel.',
+                      passingArgument),
                   Expanded(
                       child: VerticalBarLabelChart.withSampleData(
                           passingArgument.getScoreSheet())),
                   StaticMethods.addText(
-                      'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}'),
+                      'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}',
+                      passingArgument),
                   StaticMethods.addText(
-                      'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}'),
+                      'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}',
+                      passingArgument),
                   ElevatedButton(
                     onPressed: () => Navigator.popAndPushNamed(
                         context, Statistic.route,

@@ -43,10 +43,11 @@ class RouteGenerator {
           return _createRoute(Statistic(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
-        case "/statisticHistory":
+      case "/statisticHistory":
         RouteGenerator.index = 1;
         if (_passingArgument is PassingArgument) {
-          return _createRoute(StatisticHistorie(passingArgument: _passingArgument));
+          return _createRoute(
+              StatisticHistorie(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case "/help":
@@ -123,11 +124,14 @@ class RouteGenerator {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: secondaryColor,
-        textStyle: TextStyle(fontSize: 15),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16.0))),
       ),
-      child: Text(labelName),
+      child: Text(
+        labelName,
+        style: TextStyle(
+            fontSize: 15 + passingArgument.getAddtoFontSize().toDouble()),
+      ),
       onPressed: () {
         Navigator.of(context)
             .pushNamed(routingPageName, arguments: passingArgument);
@@ -145,7 +149,8 @@ class RouteGenerator {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: secondaryColor,
-        textStyle: TextStyle(fontSize: 15),
+        textStyle: TextStyle(
+            fontSize: 15 + passingArgument.getAddtoFontSize().toDouble()),
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16.0))),
       ),
@@ -171,7 +176,9 @@ class RouteGenerator {
       },
       child: Text(
         labelName,
-        style: TextStyle(color: contentColor, fontSize: 20),
+        style: TextStyle(
+            color: contentColor,
+            fontSize: 20 + passingArgument.getAddtoFontSize().toDouble()),
       ),
       color: secondaryColor,
     );
@@ -196,7 +203,9 @@ class RouteGenerator {
       },
       child: Text(
         labelName,
-        style: TextStyle(color: contentColor, fontSize: 20),
+        style: TextStyle(
+            color: contentColor,
+            fontSize: 20 + passingArgument.getAddtoFontSize().toDouble()),
       ),
       color: secondaryColor,
     );

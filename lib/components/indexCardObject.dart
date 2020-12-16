@@ -14,13 +14,24 @@ class IndexCardObject {
   String _label;
   String _content;
   String _colorName;
+  double _fontSize;
 
-  IndexCardObject(int id, String label, String content, String colorName) {
+  IndexCardObject(int id, String label, String content, String colorName,
+      String fontSizeName) {
     this._id = id;
     this._label = label;
     this._content = content;
     this._colorName = colorName;
+    this.setFontSize(fontSizeName);
     this.setWidget();
+  }
+
+  void setFontSize(String fontSizeName) {
+    if (fontSizeName == "NORMAL") {
+      this._fontSize = 12;
+    } else {
+      this._fontSize = 17;
+    }
   }
 
   void setWidget() {
@@ -59,6 +70,10 @@ class IndexCardObject {
 
   String getColorName() {
     return _colorName;
+  }
+
+  double getFontSize() {
+    return _fontSize;
   }
 
   String convertStringToColor(String colorString) {

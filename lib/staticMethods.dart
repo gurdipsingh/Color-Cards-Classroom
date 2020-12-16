@@ -7,7 +7,8 @@ import 'components/score.dart';
 class StaticMethods extends StatelessWidget {
   static Score getScore(PassingArgument passingArgument) {
     // Get the right Score from passing Argument
-    if (passingArgument.getGameMode() == "unbewertet" || passingArgument.getGameMode() == "zeit") {
+    if (passingArgument.getGameMode() == "unbewertet" ||
+        passingArgument.getGameMode() == "zeit") {
       return passingArgument.getUnratedScore();
     } else {
       return passingArgument.getLatestScore();
@@ -20,13 +21,13 @@ class StaticMethods extends StatelessWidget {
     return new Color(value);
   }
 
-  static RichText addText(String text) {
+  static RichText addText(String text, PassingArgument passingArgument) {
     return RichText(
         text: TextSpan(
             text: "\n${text} \n",
             style: TextStyle(
                 color: Colors.black,
-                fontSize: 15,
+                fontSize: 15 + passingArgument.getAddtoFontSize().toDouble(),
                 fontWeight: FontWeight.bold,
                 decoration: TextDecoration.none)));
   }
@@ -46,11 +47,12 @@ class StaticMethods extends StatelessWidget {
     );
   }
 
-  static ListView ungezeigteSeite(context) {
+  static ListView ungezeigteSeite(context, PassingArgument passingArgument) {
     return ListView(
       children: [
         StaticMethods.addHeader(context, "Fehler"),
-        StaticMethods.addText("Diese Seite konnte nicht aufgezeigt werden")
+        StaticMethods.addText(
+            "Diese Seite konnte nicht aufgezeigt werden", passingArgument)
       ],
     );
   }

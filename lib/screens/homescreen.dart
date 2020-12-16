@@ -6,9 +6,8 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-// TODO: Zeitmodus einbauen
+// TODO: Karten mit inhalt füllen
 // TODO: Eine Einstellung hinzufügen(Name ändern?)
-//TODO: Custom navigation vollenden
 //TODO: Betrachte den Navigationswechsel bei Fehler
 
 class HomeScreen extends StatelessWidget {

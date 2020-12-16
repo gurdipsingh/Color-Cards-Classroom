@@ -22,7 +22,8 @@ class GraphAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Dijkstra. Hier werden "
             "Infortmationen über Dijkstra aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -34,7 +35,8 @@ class GraphAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Kruskal. Hier werden "
             "Infortmationen über Kruskal aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -46,7 +48,8 @@ class GraphAlgorithm extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit dem Prim Algorthmus. Hier werden "
             "Infortmationen über Prim aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -60,7 +63,7 @@ class GraphAlgorithm extends StatelessWidget {
       case "prim":
         return prim(context);
       default:
-        return StaticMethods.ungezeigteSeite(context);
+        return StaticMethods.ungezeigteSeite(context, passingArgument);
     }
   }
 

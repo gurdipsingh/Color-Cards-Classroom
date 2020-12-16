@@ -1,10 +1,11 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
+import 'package:e_learning/staticMethods.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class Settings extends StatelessWidget {
+class Settings extends StatefulWidget {
   static const route = "/settings";
 
   final PassingArgument passingArgument;
@@ -14,21 +15,51 @@ class Settings extends StatelessWidget {
     @required this.passingArgument,
   }) : super(key: key);
 
+  @override
+  _Settings createState() => _Settings();
+}
+
+class _Settings extends State<Settings> {
+  void toggleFont() {
+    setState(() {
+      {
+        widget.passingArgument.toggleFontSize();
+      }
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings"),
         backgroundColor: primaryColor,
       ),
-      body: Center(
-          child: ElevatedButton(
-        child: Text('Darkmode on!'),
-        onPressed: () {
-          print("Darkmode on!");
-        },
-      )),
+      body: ListView(
+        children: [
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            StaticMethods.addText("Darkmode", widget.passingArgument),
+            ElevatedButton(
+                onPressed: () => {print("Darkmode On")},
+                child: Text("yeah",
+                    style: TextStyle(
+                        fontSize:
+                            12 + widget.passingArgument.getAddtoFontSize())))
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            StaticMethods.addText("Change Fontsize", widget.passingArgument),
+            ElevatedButton(
+              onPressed: () => toggleFont(),
+              child: Text(
+                widget.passingArgument.getFontSizeName(),
+                style: TextStyle(
+                    fontSize: 12 + widget.passingArgument.getAddtoFontSize()),
+              ),
+            )
+          ])
+        ],
+      ),
       bottomNavigationBar: MyButtomNavigationBar(
-        passingArgument: passingArgument,
+        passingArgument: widget.passingArgument,
       ),
     );
   }

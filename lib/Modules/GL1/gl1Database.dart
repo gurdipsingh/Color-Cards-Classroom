@@ -85,51 +85,51 @@ class Gl1Database extends StatelessWidget {
 
   void initializeGl1Cards(context) {
     this.gl1Cards["Sortieralgorithmen"] = [
-      new IndexCardObject(1, "bubblesort", "BC (n)", "grey"),
-      new IndexCardObject(2, "bubblesort", "Sortieren durch tauschen des Nachbars", "grey"),
-      new IndexCardObject(3, "bubblesort", "bubble", "grey"),
-      new IndexCardObject(4, "mergesort", "BC (nlogn)", "grey"),
-      new IndexCardObject(5, "mergesort", "merge", "grey"),
-      new IndexCardObject(6, "mergesort", "Divide and Conquer", "grey"),
-      new IndexCardObject(7, "selectionsort", "BC (n^2)", "grey"),
-      new IndexCardObject(8, "selectionsort", "Sortieren durch Auswahl", "grey"),
-      new IndexCardObject(9, "selectionsort", "selection", "grey"),
+      new IndexCardObject(1, "bubblesort", "BC (n)", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(2, "bubblesort", "Sortieren durch tauschen des Nachbars", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(3, "bubblesort", "bubble", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(4, "mergesort", "BC (nlogn)", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(5, "mergesort", "merge", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(6, "mergesort", "Divide and Conquer", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(7, "selectionsort", "BC (n^2)", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(8, "selectionsort", "Sortieren durch Auswahl", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(9, "selectionsort", "selection", "grey", passingArgument.getFontSizeName()),
     ];
 
     this.gl1Cards["Graphenalgorithmen"] = [
-      new IndexCardObject(1, "dijkstra", "dij", "grey"),
-      new IndexCardObject(2, "dijkstra", "dijkstra", "grey"),
-      new IndexCardObject(3, "dijkstra", "dii", "grey"),
-      new IndexCardObject(4, "Kruskal", "krus", "grey"),
-      new IndexCardObject(5, "Kruskal", "kal", "grey"),
-      new IndexCardObject(6, "Kruskal", "kruskal", "grey"),
-      new IndexCardObject(7, "Prim", "prim", "grey"),
-      new IndexCardObject(8, "Prim", "optimus", "grey"),
-      new IndexCardObject(9, "Prim", "prime", "grey")
+      new IndexCardObject(1, "dijkstra", "dij", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(2, "dijkstra", "dijkstra", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(3, "dijkstra", "dii", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(4, "Kruskal", "krus", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(5, "Kruskal", "kal", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(6, "Kruskal", "kruskal", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(7, "Prim", "prim", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(8, "Prim", "optimus", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(9, "Prim", "prime", "grey", passingArgument.getFontSizeName())
     ];
 
     this.gl1Cards["Dynamische Prog."] = [
-      new IndexCardObject(1, "belman", "bel", "grey"),
-      new IndexCardObject(2, "belman", "man", "grey"),
-      new IndexCardObject(3, "belman", "belman", "grey"),
-      new IndexCardObject(4, "floyd", "flo", "grey"),
-      new IndexCardObject(5, "floyd", "yd", "grey"),
-      new IndexCardObject(6, "floyd", "floyd", "grey"),
-      new IndexCardObject(7, "time scheduling", "time", "grey"),
-      new IndexCardObject(8, "time scheduling", "schedule", "grey"),
-      new IndexCardObject(9, "time scheduling", "time scheduling", "grey"),
+      new IndexCardObject(1, "belman", "bel", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(2, "belman", "man", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(3, "belman", "belman", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(4, "floyd", "flo", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(5, "floyd", "yd", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(6, "floyd", "floyd", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(7, "time scheduling", "time", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(8, "time scheduling", "schedule", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(9, "time scheduling", "time scheduling", "grey", passingArgument.getFontSizeName()),
     ];
 
     this.gl1Cards["Alles"] = [
-      new IndexCardObject(1, "belman", "bel", "grey"),
-      new IndexCardObject(2, "belman", "man", "grey"),
-      new IndexCardObject(3, "belman", "belman", "grey"),
-      new IndexCardObject(4, "Kruskal", "krus", "grey"),
-      new IndexCardObject(5, "Kruskal", "kal", "grey"),
-      new IndexCardObject(6, "Kruskal", "kruskal", "grey"),
-      new IndexCardObject(7, "insertionsort", "insi", "grey"),
-      new IndexCardObject(8, "insertionsort", "insertion", "grey"),
-      new IndexCardObject(9, "insertionsort", "inse", "grey"),
+      new IndexCardObject(1, "belman", "bel", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(2, "belman", "man", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(3, "belman", "belman", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(4, "Kruskal", "krus", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(5, "Kruskal", "kal", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(6, "Kruskal", "kruskal", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(7, "insertionsort", "insi", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(8, "insertionsort", "insertion", "grey", passingArgument.getFontSizeName()),
+      new IndexCardObject(9, "insertionsort", "inse", "grey", passingArgument.getFontSizeName()),
     ];
   }
 
@@ -200,7 +200,7 @@ class Gl1Database extends StatelessWidget {
         },
         child: Text(
           "Lösung abgeben",
-          style: TextStyle(color: contentColor),
+          style: TextStyle(color: contentColor, fontSize: 15+this.passingArgument.getAddtoFontSize().toDouble()),
         ),
         color: secondaryColor,
       );
@@ -242,6 +242,7 @@ class Gl1Database extends StatelessWidget {
                         verifier["firstLabel"],
                         style: TextStyle(
                           color: contentColor,
+                          fontSize: 12 + passingArgument.getAddtoFontSize().toDouble(),
                         ),
                       ),
                     )),
@@ -255,6 +256,7 @@ class Gl1Database extends StatelessWidget {
                         verifier["secondLabel"],
                         style: TextStyle(
                           color: contentColor,
+                          fontSize: 12 + passingArgument.getAddtoFontSize().toDouble(),
                         ),
                       ),
                     )),
@@ -268,6 +270,7 @@ class Gl1Database extends StatelessWidget {
                         verifier["thirdLabel"],
                         style: TextStyle(
                           color: contentColor,
+                          fontSize: 12 + passingArgument.getAddtoFontSize().toDouble(),
                         ),
                       ),
                     )),

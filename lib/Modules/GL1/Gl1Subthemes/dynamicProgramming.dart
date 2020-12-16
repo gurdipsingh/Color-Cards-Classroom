@@ -22,7 +22,8 @@ class DynamicProgramming extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit BelmanFord. Hier werden "
             "Infortmationen über BelmanFord aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -34,7 +35,8 @@ class DynamicProgramming extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Floyd. Hier werden "
             "Infortmationen über Floyd aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -46,7 +48,8 @@ class DynamicProgramming extends StatelessWidget {
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit dem Time Scheduling. Hier werden "
             "Infortmationen über Time Scheduling aufgezeigt, welches euch behilflich sein kann,"
-            "wenn ihr etwas nicht versteht oder neu lernen müsst.")
+            "wenn ihr etwas nicht versteht oder neu lernen müsst.",
+            passingArgument)
       ],
     );
   }
@@ -60,7 +63,7 @@ class DynamicProgramming extends StatelessWidget {
       case "timescheduling":
         return timeScheduling(context);
       default:
-        return StaticMethods.ungezeigteSeite(context);
+        return StaticMethods.ungezeigteSeite(context, passingArgument);
     }
   }
 

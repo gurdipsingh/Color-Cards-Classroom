@@ -89,12 +89,17 @@ class _CardWidget extends State<IndexCardWidget> {
   Widget build(BuildContext context) {
     return Container(
         child: new RaisedButton(
-          shape: RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(15.0))),
-      child: new Text(this.getContent()),
-          textColor: contentColor,
-          onPressed: () => {updateColor()},
-          color: this.getStateOfColor(),
-        ));
+      child: new Text(
+        this.getContent(),
+        style: TextStyle(
+          fontSize: widget.card.getFontSize(),
+        ),
+      ),
+      textColor: contentColor,
+      onPressed: () => {updateColor()},
+      color: this.getStateOfColor(),
+    ));
   }
 }
