@@ -44,7 +44,7 @@ class _TimeCounter extends State<TimeCounter> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(this.counter.toString())
+        Text(this.counter.toString(), style: TextStyle(fontSize: 30),)
       ],
     );
   }
