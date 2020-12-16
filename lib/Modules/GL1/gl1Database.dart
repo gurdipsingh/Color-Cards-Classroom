@@ -76,7 +76,7 @@ class Gl1Database extends StatelessWidget {
     this.cardObjects = [];
 
     this.cardObjects = this.gl1Cards[this.passingArgument.getTheme()];
-
+    this.cardObjects.shuffle();
     cardObjects.forEach((IndexCardObject element) {
       cardList.add(element.getWidget());
     });
