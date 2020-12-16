@@ -24,19 +24,24 @@ class Statistic extends StatelessWidget {
       ),
       body: Center(
           child: Container(
-              height: 600,
+              height: 700,
               padding: EdgeInsets.all(20),
               child: Column(
                 children: <Widget>[
                   StaticMethods.addHeader(
                       context, '${passingArgument.getName()}'),
+                  StaticMethods.addText('Dieses Diagram zeigt deine Leistung zu deinem letzten Siel.'),
                   Expanded(
-                      child: DonutAutoLabelChart.withSampleData(
-                          passingArgument.getLatestScore())),
+                      child: DonutAutoLabelChart.withSampleData(passingArgument.getLatestScore())),
+                  //child: VerticalBarLabelChart.withSampleData(passingArgument.getScoreSheet())),
                   StaticMethods.addText(
                       'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}'),
                   StaticMethods.addText(
-                      'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}')
+                      'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}'),
+                  ElevatedButton(
+                    onPressed: () => print('Spiel Historie'),
+                    child: Text('Siel Historie'),
+                  ),
                 ],
               ))),
       bottomNavigationBar: MyButtomNavigationBar(
