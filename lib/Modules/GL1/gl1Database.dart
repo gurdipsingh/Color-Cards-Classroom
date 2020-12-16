@@ -1,6 +1,7 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/indexCardObject.dart';
 import 'package:e_learning/components/indexCardWidget.dart';
+import 'package:e_learning/components/timeCounter.dart';
 import 'package:e_learning/constants.dart';
 import 'package:e_learning/screens/resultScreen.dart';
 import 'package:e_learning/staticMethods.dart';
@@ -169,7 +170,7 @@ class Gl1Database extends StatelessWidget {
     });
 
     // If unrated then dont set it into the ScoreSheet
-    if (this.passingArgument.getGameMode() == "unbewertet") {
+    if (this.passingArgument.getGameMode() == "unbewertet" || this.passingArgument.getGameMode() == "zeit") {
       this
           .passingArgument
           .setUnratedScore(new DateTime.now(), 9 - falseIds.length);
@@ -191,6 +192,15 @@ class Gl1Database extends StatelessWidget {
     //Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
   }
 
+  Column getTimer(context){
+    return Column(
+        children: [
+          TimeCounter(onTimeUp: ()=>{
+            verifySolution(winAlgo(), context)
+          })
+        ]);
+  }
+
   @override
   Widget build(BuildContext context) {
     initializeGl1Cards(context);
@@ -200,6 +210,7 @@ class Gl1Database extends StatelessWidget {
       children: [
         Column(
           children: [
+            (this.passingArgument.getGameMode() =="zeit")? getTimer(context) : Container(height: 0, width: 0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
