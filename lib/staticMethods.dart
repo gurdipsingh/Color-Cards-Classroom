@@ -7,7 +7,7 @@ import 'components/score.dart';
 class StaticMethods extends StatelessWidget {
   static Score getScore(PassingArgument passingArgument) {
     // Get the right Score from passing Argument
-    if (passingArgument.getGameMode() == "unbewertet") {
+    if (passingArgument.getGameMode() == "unbewertet" || passingArgument.getGameMode() == "zeit") {
       return passingArgument.getUnratedScore();
     } else {
       return passingArgument.getLatestScore();

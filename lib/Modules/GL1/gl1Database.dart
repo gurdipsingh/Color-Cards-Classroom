@@ -192,6 +192,24 @@ class Gl1Database extends StatelessWidget {
     //Navigator.of(context).pushNamed(ResultScreen.route, arguments: passingArgument);
   }
 
+  isContinueButtonNeeded(BuildContext context) {
+    if(!(passingArgument.getGameMode() =="zeit")){
+      return RaisedButton(
+        onPressed: () => {
+          verifySolution(winAlgo(), context),
+        },
+        child: Text(
+          "Lösung abgeben",
+          style: TextStyle(color: contentColor),
+        ),
+        color: secondaryColor,
+      );
+    }
+    else{
+      return Container(height: 0, width: 0,);
+    }
+  }
+
   Column getTimer(context){
     return Column(
         children: [
@@ -271,16 +289,7 @@ class Gl1Database extends StatelessWidget {
           )
         ]),
         Column(children: [
-          RaisedButton(
-            onPressed: () => {
-              verifySolution(winAlgo(), context),
-            },
-            child: Text(
-              "Lösung abgeben",
-              style: TextStyle(color: contentColor),
-            ),
-            color: secondaryColor,
-          ),
+          isContinueButtonNeeded(context)
         ])
       ],
     );

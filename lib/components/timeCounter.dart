@@ -16,7 +16,7 @@ class TimeCounter extends StatefulWidget{
 
 class _TimeCounter extends State<TimeCounter> {
 
-  int counter = 10;
+  int counter = 20;
   Timer timer ;
 
 
