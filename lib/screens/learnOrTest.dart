@@ -30,14 +30,14 @@ class LearnOrTest extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
-                height: 200,
-                width: 130,
+                height: 300,
+                width: 150,
                 child: RouteGenerator.createElevatedButton(
                     context, "Lernen", "/gl1Lernen", passingArgument),
               ),
               Container(
-                height: 200,
-                width: 130,
+                height: 300,
+                width: 150,
                 child: RouteGenerator.createElevatedButton(
                     context, "Abfragen", "/gameSelectionMode", passingArgument),
               ),
