@@ -30,7 +30,7 @@ class Gl1Database extends StatelessWidget {
       case "Sortieralgorithmen":
         this.verifier = {
           "firstLabel": "Bubblesort",
-          "secondLabel": "Insertionsort",
+          "secondLabel": "Selectionsort",
           "thirdLabel": "Mergesort",
           "firstColor": firstGameColor.toString(),
           "secondColor": secondGameColor.toString(),
@@ -85,15 +85,15 @@ class Gl1Database extends StatelessWidget {
 
   void initializeGl1Cards(context) {
     this.gl1Cards["Sortieralgorithmen"] = [
-      new IndexCardObject(1, "bubblesort", "bubble", "grey"),
-      new IndexCardObject(2, "bubblesort", "bubble", "grey"),
+      new IndexCardObject(1, "bubblesort", "BC (n)", "grey"),
+      new IndexCardObject(2, "bubblesort", "Sortieren durch tauschen des Nachbars", "grey"),
       new IndexCardObject(3, "bubblesort", "bubble", "grey"),
-      new IndexCardObject(4, "mergesort", "merge", "grey"),
+      new IndexCardObject(4, "mergesort", "BC (nlogn)", "grey"),
       new IndexCardObject(5, "mergesort", "merge", "grey"),
-      new IndexCardObject(6, "mergesort", "merge", "grey"),
-      new IndexCardObject(7, "insertionsort", "insertion", "grey"),
-      new IndexCardObject(8, "insertionsort", "insertion", "grey"),
-      new IndexCardObject(9, "insertionsort", "insertion", "grey"),
+      new IndexCardObject(6, "mergesort", "Divide and Conquer", "grey"),
+      new IndexCardObject(7, "selectionsort", "BC (n^2)", "grey"),
+      new IndexCardObject(8, "selectionsort", "Sortieren durch Auswahl", "grey"),
+      new IndexCardObject(9, "selectionsort", "selection", "grey"),
     ];
 
     this.gl1Cards["Graphenalgorithmen"] = [
