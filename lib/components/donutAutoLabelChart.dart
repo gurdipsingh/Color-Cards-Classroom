@@ -20,7 +20,7 @@ class DonutAutoLabelChart extends StatelessWidget {
     return new charts.PieChart(seriesList,
         animate: animate,
         defaultRenderer: new charts.ArcRendererConfig(
-            arcWidth: 100,
+            arcWidth: 50,
             strokeWidthPx: 8,
             arcRendererDecorators: [new charts.ArcLabelDecorator()]));
   }
@@ -28,7 +28,7 @@ class DonutAutoLabelChart extends StatelessWidget {
   static List<charts.Series<Score, String>> _createScoreData(Score score) {
     final data = [
       score,
-      new Score(score.getNumberOfWrong(), DateTime.now(), 'Misserfolg', Colors.red),
+      new Score(score.getNumberOfWrong(), DateTime.now(), 'Misserfolg', Colors.red[300]),
     ];
 
     return [
