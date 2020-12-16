@@ -1,7 +1,8 @@
 import 'package:e_learning/components/PassingArgument.dart';
-import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/components/donutAutoLabelChart.dart';
+import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/material.dart';
+
 import '../constants.dart';
 
 class Statistic extends StatelessWidget {
@@ -22,7 +23,7 @@ class Statistic extends StatelessWidget {
       ),
       body: Center(
         //child: Text('Statistic of ${passingArgument.getName()}'),
-        child: DonutAutoLabelChart.withSampleData(),
+        child: DonutAutoLabelChart.withSampleData(passingArgument.getLatestScore()),
       ),
       bottomNavigationBar: MyButtomNavigationBar(
         passingArgument: passingArgument,

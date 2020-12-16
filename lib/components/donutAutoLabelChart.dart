@@ -1,6 +1,5 @@
-/// Donut chart with labels example. This is a simple pie chart with a hole in
-/// the middle.
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:e_learning/components/score.dart';
 import 'package:flutter/material.dart';
 
 class DonutAutoLabelChart extends StatelessWidget {
@@ -9,12 +8,10 @@ class DonutAutoLabelChart extends StatelessWidget {
 
   DonutAutoLabelChart(this.seriesList, {this.animate});
 
-  /// Creates a [PieChart] with sample data and no transition.
-  factory DonutAutoLabelChart.withSampleData() {
+  factory DonutAutoLabelChart.withSampleData(Score score) {
     return new DonutAutoLabelChart(
-      _createSampleData(),
-      // Disable animations for image tests.
-      animate: false,
+      _createScoreData(score),
+      animate: true,
     );
   }
 
@@ -23,36 +20,27 @@ class DonutAutoLabelChart extends StatelessWidget {
     return new charts.PieChart(seriesList,
         animate: animate,
         defaultRenderer: new charts.ArcRendererConfig(
-            arcWidth: 60,
-            strokeWidthPx: 10,
+            arcWidth: 100,
+            strokeWidthPx: 8,
             arcRendererDecorators: [new charts.ArcLabelDecorator()]));
   }
 
-  /// Create one series with sample hard coded data.
-  static List<charts.Series<LinearSales, int>> _createSampleData() {
+  static List<charts.Series<Score, String>> _createScoreData(Score score) {
     final data = [
-      new LinearSales(0, 75),
-      new LinearSales(1, 25),
+      score,
+      new Score(score.getNumberOfWrong(), DateTime.now(), 'Misserfolg', Colors.red),
     ];
 
     return [
-      new charts.Series<LinearSales, int>(
-          id: 'Sales',
-          domainFn: (LinearSales sales, _) => sales.year,
-          measureFn: (LinearSales sales, _) => sales.sales,
+      new charts.Series<Score, String>(
+          id: 'Score',
+          domainFn: (Score score, _) => score.getDateTime().toString(),
+          measureFn: (Score score, _) => score.getNumberOfRights(),
           data: data,
-          // Set a label accessor to control the text of the arc label.
-          labelAccessorFn: (LinearSales row, _) => '${row.year}: ${row.sales}',
-          colorFn: (LinearSales color, _) =>
-              charts.Color(a: 255, r: 15, g: 196, b: 136))
+          labelAccessorFn: (Score score, _) =>
+              '${score.label}: ${score.getNumberOfRights()}',
+          colorFn: (Score score, _) =>
+              charts.ColorUtil.fromDartColor(score.color))
     ];
   }
-}
-
-/// Sample linear data type.
-class LinearSales {
-  final int year;
-  final int sales;
-
-  LinearSales(this.year, this.sales);
 }
