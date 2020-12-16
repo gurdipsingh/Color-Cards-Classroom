@@ -41,7 +41,7 @@ class StatisticHistorie extends StatelessWidget {
                   StaticMethods.addText(
                       'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}'),
                   ElevatedButton(
-                    onPressed: () => Navigator.pushNamed(
+                    onPressed: () => Navigator.popAndPushNamed(
                         context, Statistic.route,
                         arguments: passingArgument),
                     child: Text('Spiel Historie'),
