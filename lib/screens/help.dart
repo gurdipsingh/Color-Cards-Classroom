@@ -93,13 +93,4 @@ class Help extends StatelessWidget {
   }
 }
 
-/*
-TextSpan(
-                text:
-                "\nSobald ihr euch für einen Modi entschieden habt, werdet ihr "
-                    "diesen folgenden Bildschirm sehen: \n",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    decoration: TextDecoration.none))
- */
+

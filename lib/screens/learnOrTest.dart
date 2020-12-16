@@ -25,24 +25,24 @@ class LearnOrTest extends StatelessWidget {
           title: Text(passingArgument.getTheme()),
           backgroundColor: primaryColor,
         ),
-        body: GridView.count(
-          primary: false,
-          padding: const EdgeInsets.symmetric(vertical: 180, horizontal: 30),
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-          crossAxisCount: 2,
-          children: <Widget>[
-            Container(
-              color: secondaryColor,
-              child: RouteGenerator.createElevatedButton(
-                  context, "Lernen", "/gl1Lernen", passingArgument),
-            ),
-            Container(
-              color: secondaryColor,
-              child: RouteGenerator.createElevatedButton(
-                  context, "Abfragen", "/gameSelectionMode", passingArgument),
-            ),
-          ],
+        body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Container(
+                height: 200,
+                width: 130,
+                child: RouteGenerator.createElevatedButton(
+                    context, "Lernen", "/gl1Lernen", passingArgument),
+              ),
+              Container(
+                height: 200,
+                width: 130,
+                child: RouteGenerator.createElevatedButton(
+                    context, "Abfragen", "/gameSelectionMode", passingArgument),
+              ),
+            ],
+          ),
         ));
   }
 }
