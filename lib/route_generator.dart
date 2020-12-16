@@ -15,6 +15,7 @@ import 'package:e_learning/screens/resultScreen.dart';
 import 'package:e_learning/screens/settings.dart';
 import 'package:e_learning/screens/startScreen.dart';
 import 'package:e_learning/screens/statistic.dart';
+import 'package:e_learning/screens/statisticHistory.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/homescreen.dart';
@@ -40,6 +41,12 @@ class RouteGenerator {
         RouteGenerator.index = 1;
         if (_passingArgument is PassingArgument) {
           return _createRoute(Statistic(passingArgument: _passingArgument));
+        }
+        return _errorRoute(_passingArgument);
+        case "/statisticHistory":
+        RouteGenerator.index = 1;
+        if (_passingArgument is PassingArgument) {
+          return _createRoute(StatisticHistorie(passingArgument: _passingArgument));
         }
         return _errorRoute(_passingArgument);
       case "/help":

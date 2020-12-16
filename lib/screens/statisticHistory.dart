@@ -1,18 +1,18 @@
 import 'package:e_learning/components/PassingArgument.dart';
-import 'package:e_learning/components/donutAutoLabelChart.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/screens/statisticHistory.dart';
+import 'package:e_learning/components/verticalBarLabelChart.dart';
+import 'package:e_learning/screens/statistic.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
 import '../staticMethods.dart';
 
-class Statistic extends StatelessWidget {
-  static const route = "/statistic";
+class StatisticHistorie extends StatelessWidget {
+  static const route = "/statisticHistory";
 
   final PassingArgument passingArgument;
 
-  Statistic({
+  StatisticHistorie({
     Key key,
     @required this.passingArgument,
   }) : super(key: key);
@@ -34,16 +34,15 @@ class Statistic extends StatelessWidget {
                   StaticMethods.addText(
                       'Dieses Diagram zeigt deine Leistung zu deinem letzten Siel.'),
                   Expanded(
-                      child: DonutAutoLabelChart.withSampleData(
-                          passingArgument.getLatestScore())),
-                  //child: VerticalBarLabelChart.withSampleData(passingArgument.getScoreSheet())),
+                      child: VerticalBarLabelChart.withSampleData(
+                          passingArgument.getScoreSheet())),
                   StaticMethods.addText(
                       'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}'),
                   StaticMethods.addText(
                       'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}'),
                   ElevatedButton(
                     onPressed: () => Navigator.pushNamed(
-                        context, StatisticHistorie.route,
+                        context, Statistic.route,
                         arguments: passingArgument),
                     child: Text('Spiel Historie'),
                   ),
