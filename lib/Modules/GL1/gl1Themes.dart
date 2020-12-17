@@ -1,6 +1,5 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/constants.dart';
 import 'package:e_learning/route_generator.dart';
 import 'package:e_learning/screens/learnOrTest.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,12 +18,13 @@ class Gl1Themes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: passingArgument.getBackgroundColor(),
         bottomNavigationBar: MyButtomNavigationBar(
           passingArgument: passingArgument,
         ),
         appBar: AppBar(
           title: const Text('Theoretische Informatik 1'),
-          backgroundColor: primaryColor,
+          backgroundColor: passingArgument.getPrimaryColor(),
         ),
         body: ListView(
           padding: const EdgeInsets.all(20),

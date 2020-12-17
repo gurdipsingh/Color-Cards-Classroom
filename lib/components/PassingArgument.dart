@@ -6,7 +6,11 @@ import 'package:flutter/material.dart';
 class PassingArgument {
   String _name;
   Map<String, String> _navigation = {};
-  Map _settings = {"language": "GERMAN", "fontsize": "NORMAL"};
+  Map _settings = {
+    "language": "GERMAN",
+    "fontsize": "NORMAL",
+    "theme": "LIGHT"
+  };
   List<IndexCardObject> _cards = [];
   List<Score> _scoreSheet = [
     new Score(0, DateTime.now(), 'Erfolg', Colors.black)
@@ -34,6 +38,14 @@ class PassingArgument {
       this._settings["fontsize"] = "GROSS";
     } else {
       this._settings["fontsize"] = "NORMAL";
+    }
+  }
+
+  void toggleDarkmode() {
+    if (this._settings["theme"] == "LIGHT") {
+      this._settings["theme"] = "DARK";
+    } else {
+      this._settings["theme"] = "LIGHT";
     }
   }
 
@@ -106,6 +118,24 @@ class PassingArgument {
     } else {
       return 5;
     }
+  }
+
+  Color getPrimaryColor() {
+    return this._settings["theme"] == "LIGHT" ? primaryColor : primaryColorDark;
+  }
+
+  Color getBackgroundColor() {
+    return this._settings["theme"] == "LIGHT"
+        ? backgroundColor
+        : backgroundColorDark;
+  }
+
+  Color getTextColor() {
+    return this._settings["theme"] == "LIGHT" ? textColor : textColorDark;
+  }
+
+  String isDarkModeOn() {
+    return this._settings["theme"] == "LIGHT" ? "Aus" : "An";
   }
 
   String getFontSizeName() {

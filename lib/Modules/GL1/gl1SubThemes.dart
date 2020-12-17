@@ -3,7 +3,6 @@ import 'package:e_learning/Modules/GL1/Gl1Subthemes/graphAlgorithm.dart';
 import 'package:e_learning/Modules/GL1/Gl1Subthemes/sortingAlgorithms.dart';
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../route_generator.dart';
@@ -78,12 +77,13 @@ class Gl1SubThemes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: passingArgument.getBackgroundColor(),
         bottomNavigationBar: MyButtomNavigationBar(
           passingArgument: passingArgument,
         ),
         appBar: AppBar(
           title: Text(passingArgument.getTheme()),
-          backgroundColor: primaryColor,
+          backgroundColor: passingArgument.getPrimaryColor(),
         ),
         body: ListView(
           padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),

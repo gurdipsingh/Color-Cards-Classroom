@@ -4,7 +4,6 @@ import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 
 class GameScreen extends StatelessWidget {
   static const route = "/game";
@@ -34,12 +33,13 @@ class GameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       bottomNavigationBar: MyButtomNavigationBar(
         passingArgument: passingArgument,
       ),
       appBar: AppBar(
         title: Text("GAME"),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: Center(child: getCardPool()),
     );

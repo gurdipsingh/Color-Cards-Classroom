@@ -69,13 +69,19 @@ class SolutionWidget extends StatelessWidget {
                   "Diese Karte gehört zu ${this.label}, möchten Sie die Seite zu ${this.label} öffnen?"),
               actions: [
                 FlatButton(
-                    child: Text("Ja"),
+                    child: Text(
+                      "Ja",
+                      style: TextStyle(color: primaryColor),
+                    ),
                     onPressed: () => {
                           Navigator.of(context).pop(),
                           this.directToLearningPage(context)
                         }),
                 FlatButton(
-                    child: Text("Nein"),
+                    child: Text(
+                      "Nein",
+                      style: TextStyle(color: primaryColor),
+                    ),
                     onPressed: () => {Navigator.of(context).pop()})
               ],
             ));

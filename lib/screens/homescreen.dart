@@ -4,9 +4,7 @@ import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 
-// TODO: Karten mit inhalt füllen
 // TODO: Eine Einstellung hinzufügen(Name ändern?)
 //TODO: Betrachte den Navigationswechsel bei Fehler
 
@@ -28,12 +26,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       bottomNavigationBar: MyButtomNavigationBar(
         passingArgument: passingArgument,
       ),
       appBar: AppBar(
         title: Text("Hauptmenü"),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: ListView(
         children: [
@@ -45,8 +44,9 @@ class HomeScreen extends StatelessWidget {
                     child: Text(
                       "Willkommen"
                       "\n${passingArgument.getName()} ",
-                      style: TextStyle(fontSize: 27),
-                        textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 27, color: passingArgument.getTextColor()),
+                      textAlign: TextAlign.center,
                     )),
               )),
           Container(

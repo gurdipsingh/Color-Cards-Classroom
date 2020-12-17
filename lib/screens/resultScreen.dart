@@ -40,12 +40,13 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: passingArgument.getBackgroundColor(),
         bottomNavigationBar: MyButtomNavigationBar(
           passingArgument: passingArgument,
         ),
         appBar: AppBar(
           title: Text("GAME"),
-          backgroundColor: primaryColor,
+          backgroundColor: passingArgument.getPrimaryColor(),
         ),
         body:
             Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
@@ -68,7 +69,9 @@ class ResultScreen extends StatelessWidget {
                             ),
                           )),
                       Container(
-                        child: Text("  Richtig "),
+                        child: Text("  Richtig ",
+                            style: TextStyle(
+                                color: passingArgument.getTextColor())),
                       )
                     ],
                   ),
@@ -86,7 +89,9 @@ class ResultScreen extends StatelessWidget {
                             ),
                           )),
                       Container(
-                        child: Text("  Falsch "),
+                        child: Text("  Falsch ",
+                            style: TextStyle(
+                                color: passingArgument.getTextColor())),
                       )
                     ],
                   ),

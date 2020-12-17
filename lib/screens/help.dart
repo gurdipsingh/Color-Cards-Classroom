@@ -3,7 +3,6 @@ import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:e_learning/staticMethods.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 
 class Help extends StatelessWidget {
   static const route = "/help";
@@ -27,12 +26,13 @@ class Help extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       appBar: AppBar(
         title: Text("Help"),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: ListView(children: [
-        StaticMethods.addHeader(context, "Das Kartenspiel"),
+        StaticMethods.addHeader(context, "Das Kartenspiel", passingArgument),
         StaticMethods.addText(
             "Im folgen wird das Spiel erklärt. \nSobald"
             " Sie sich für einen Modi entschieden haben, wird der nachfolgende Screen angezeigt.",

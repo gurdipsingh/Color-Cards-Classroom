@@ -43,12 +43,13 @@ class ResultFeedback extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       bottomNavigationBar: MyButtomNavigationBar(
         passingArgument: passingArgument,
       ),
       appBar: AppBar(
         title: Text(this.passingArgument.getTheme()),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: Column(
         children: [
@@ -57,7 +58,8 @@ class ResultFeedback extends StatelessWidget {
               child: Center(
                 child: Text(
                   "Auswertung",
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(
+                      fontSize: 25, color: passingArgument.getTextColor()),
                 ),
               )),
           Container(
@@ -68,22 +70,28 @@ class ResultFeedback extends StatelessWidget {
                   children: [
                     Text(
                         "${StaticMethods.getScore(passingArgument).getNumberOfRightAsString()}/9",
-                        style: TextStyle(fontSize: 35)),
+                        style: TextStyle(
+                            fontSize: 35,
+                            color: passingArgument.getTextColor())),
                     Text(
                       "Karten wurden richtig zugewiesen",
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(
+                          fontSize: 15, color: passingArgument.getTextColor()),
                     ),
                     Text(
                       "Das entspricht",
-                      style: TextStyle(fontSize: 15),
+                      style: TextStyle(
+                          fontSize: 15, color: passingArgument.getTextColor()),
                     ),
                     Text(
                       "  ${StaticMethods.getScore(passingArgument).getPercentage()}%",
-                      style: TextStyle(fontSize: 35),
+                      style: TextStyle(
+                          fontSize: 35, color: passingArgument.getTextColor()),
                     ),
                     Text(
                       this.getValue(),
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(
+                          fontSize: 25, color: passingArgument.getTextColor()),
                     ),
                     RaisedButton(
                       onPressed: () => {continueToGameModeScreen(context)},

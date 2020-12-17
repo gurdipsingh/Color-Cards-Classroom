@@ -19,9 +19,10 @@ class StatisticHistorie extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       appBar: AppBar(
         title: Text("The Statistic Page"),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: Center(
           child: Container(
@@ -30,7 +31,7 @@ class StatisticHistorie extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   StaticMethods.addHeader(
-                      context, '${passingArgument.getName()}'),
+                      context, '${passingArgument.getName()}', passingArgument),
                   StaticMethods.addText(
                       'Dieses Diagram zeigt deine Leistung in vergangenen Spielen.',
                       passingArgument),
@@ -38,9 +39,11 @@ class StatisticHistorie extends StatelessWidget {
                       child: VerticalBarLabelChart.withSampleData(
                           passingArgument.getScoreSheet())),
                   StaticMethods.addText(
-                      'Mittelwert Erfolg : ${passingArgument.getAverageScore()}', passingArgument),
+                      'Mittelwert Erfolg : ${passingArgument.getAverageScore()}',
+                      passingArgument),
                   StaticMethods.addText(
-                      'Mittelwert Misserfolg : ${100 - passingArgument.getAverageScore()}', passingArgument),
+                      'Mittelwert Misserfolg : ${100 - passingArgument.getAverageScore()}',
+                      passingArgument),
                   RaisedButton(
                     onPressed: () => Navigator.popAndPushNamed(
                         context, Statistic.route,

@@ -19,9 +19,10 @@ class Statistic extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       appBar: AppBar(
         title: Text("The Statistic Page"),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: Center(
           child: Container(
@@ -30,7 +31,7 @@ class Statistic extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   StaticMethods.addHeader(
-                      context, '${passingArgument.getName()}'),
+                      context, '${passingArgument.getName()}', passingArgument),
                   StaticMethods.addText(
                       'Dieses Diagram zeigt deine Leistung zu deinem letzten Siel.',
                       passingArgument),

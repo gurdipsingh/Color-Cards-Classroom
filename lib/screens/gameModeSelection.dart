@@ -4,7 +4,6 @@ import 'package:e_learning/components/myButtomNavBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
 
 class GameModeSelection extends StatelessWidget {
   static const route = '/gameSelectionMode';
@@ -19,12 +18,13 @@ class GameModeSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: passingArgument.getBackgroundColor(),
         bottomNavigationBar: MyButtomNavigationBar(
           passingArgument: passingArgument,
         ),
         appBar: AppBar(
           title: const Text('Spiel Modus Wahl'),
-          backgroundColor: primaryColor,
+          backgroundColor: passingArgument.getPrimaryColor(),
         ),
         body: GameModes(
           passingArgument: passingArgument,

@@ -28,11 +28,20 @@ class _Settings extends State<Settings> {
     });
   }
 
+  void toggleTheme() {
+    setState(() {
+      {
+        widget.passingArgument.toggleDarkmode();
+      }
+    });
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: widget.passingArgument.getBackgroundColor(),
       appBar: AppBar(
         title: Text("Settings"),
-        backgroundColor: primaryColor,
+        backgroundColor: widget.passingArgument.getPrimaryColor(),
       ),
       body: ListView(
         children: [
@@ -49,14 +58,14 @@ class _Settings extends State<Settings> {
             )
           ]),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            StaticMethods.addText("Darkmode", widget.passingArgument),
+            StaticMethods.addText("Darkmode (Beta)", widget.passingArgument),
             ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: secondaryColor),
-                onPressed: () => {print("Darkmode On")},
-                child: Text("Aus",
+                onPressed: () => {toggleTheme()},
+                child: Text(widget.passingArgument.isDarkModeOn(),
                     style: TextStyle(
                         fontSize:
-                        12 + widget.passingArgument.getAddtoFontSize())))
+                            12 + widget.passingArgument.getAddtoFontSize())))
           ]),
         ],
       ),

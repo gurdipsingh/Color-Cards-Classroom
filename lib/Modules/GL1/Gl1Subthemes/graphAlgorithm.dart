@@ -1,6 +1,5 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../staticMethods.dart';
@@ -18,7 +17,8 @@ class GraphAlgorithm extends StatelessWidget {
   ListView dijkstra(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Algorithmus von Dijkstra "),
+        StaticMethods.addHeader(
+            context, "Algorithmus von Dijkstra ", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Dijkstra. Hier werden "
             "Infortmationen über Dijkstra aufgezeigt, welches euch behilflich sein kann,"
@@ -31,7 +31,8 @@ class GraphAlgorithm extends StatelessWidget {
   ListView kruskal(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Algorithmus von Kruskal "),
+        StaticMethods.addHeader(
+            context, "Algorithmus von Kruskal ", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Kruskal. Hier werden "
             "Infortmationen über Kruskal aufgezeigt, welches euch behilflich sein kann,"
@@ -44,7 +45,8 @@ class GraphAlgorithm extends StatelessWidget {
   ListView prim(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Algorithmus von Prim "),
+        StaticMethods.addHeader(
+            context, "Algorithmus von Prim ", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit dem Prim Algorthmus. Hier werden "
             "Infortmationen über Prim aufgezeigt, welches euch behilflich sein kann,"
@@ -70,12 +72,13 @@ class GraphAlgorithm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       bottomNavigationBar: MyButtomNavigationBar(
         passingArgument: passingArgument,
       ),
       appBar: AppBar(
         title: const Text('Theoretische Informatik 1'),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: showSubThemeContent(context),
     );

@@ -16,7 +16,7 @@ class StaticMethods extends StatelessWidget {
   }
 
   static Color getColorFromString(String color) {
-    String valueString = color.split('(0x')[1].split(')')[0]; // kind of hacky..
+    String valueString = color.split('(0x')[1].split(')')[0];
     int value = int.parse(valueString, radix: 16);
     return new Color(value);
   }
@@ -26,13 +26,13 @@ class StaticMethods extends StatelessWidget {
         text: TextSpan(
             text: "\n${text} \n",
             style: TextStyle(
-                color: Colors.black,
+                color: passingArgument.getTextColor(),
                 fontSize: 20 + passingArgument.getAddtoFontSize().toDouble(),
                 fontWeight: FontWeight.normal,
                 decoration: TextDecoration.none)));
   }
 
-  static RichText addHeader(context, String header) {
+  static RichText addHeader(context, String header, PassingArgument passingArgument) {
     return RichText(
       text: TextSpan(
           style: DefaultTextStyle.of(context).style,
@@ -41,8 +41,8 @@ class StaticMethods extends StatelessWidget {
                 text: "${header} \n",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    decorationColor: Colors.black)),
+                    color: passingArgument.getTextColor(),
+                    decorationColor: passingArgument.getTextColor())),
           ]),
     );
   }
@@ -50,7 +50,7 @@ class StaticMethods extends StatelessWidget {
   static ListView ungezeigteSeite(context, PassingArgument passingArgument) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Fehler"),
+        StaticMethods.addHeader(context, "Fehler", passingArgument),
         StaticMethods.addText(
             "Diese Seite konnte nicht aufgezeigt werden", passingArgument)
       ],

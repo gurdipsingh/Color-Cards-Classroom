@@ -211,11 +211,26 @@ class RouteGenerator {
     );
   }
 
-  static Route<dynamic> _errorRoute(args) {
+  // Prevents error on calling null for colors
+  static checkPassingArgumentForColor(
+      PassingArgument passingArgument, bool isBackGroundColor) {
+    if (isBackGroundColor) {
+      return (passingArgument != null)
+          ? passingArgument.getBackgroundColor()
+          : backgroundColor;
+    } else {
+      return (passingArgument != null)
+          ? passingArgument.getPrimaryColor()
+          : primaryColor;
+    }
+  }
+
+  static Route<dynamic> _errorRoute(PassingArgument passingArgument) {
     return MaterialPageRoute(builder: (_) {
       return Scaffold(
+        backgroundColor: checkPassingArgumentForColor(passingArgument, true),
         appBar: AppBar(
-          backgroundColor: primaryColor,
+          backgroundColor: checkPassingArgumentForColor(passingArgument, false),
           title: Text("Error"),
         ),
         body: Center(
@@ -225,29 +240,31 @@ class RouteGenerator {
     });
   }
 
-  static Route<dynamic> _notImplementedYet(args) {
+  static Route<dynamic> _notImplementedYet(PassingArgument passingArgument) {
     return MaterialPageRoute(builder: (_) {
       return Scaffold(
+        backgroundColor: checkPassingArgumentForColor(passingArgument, true),
         appBar: AppBar(
-          backgroundColor: primaryColor,
+          backgroundColor: checkPassingArgumentForColor(passingArgument, false),
           title: Text("Habe bitte noch etwas Geduld"),
         ),
         body: Center(
             child: Container(
-              height: 500,
+                height: 500,
                 width: 300,
                 child: Card(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              const ExpansionTile(
-                leading: Icon(Icons.error_outline, size: 50),
-                title: Text('In Bearbeitung ...'),
-                subtitle: Text('Dieser Bereich wurde noch nicht implementiert'),
-              )
-            ],
-          ),
-        ))),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      const ExpansionTile(
+                        leading: Icon(Icons.error_outline, size: 50),
+                        title: Text('In Bearbeitung ...'),
+                        subtitle: Text(
+                            'Dieser Bereich wurde noch nicht implementiert'),
+                      )
+                    ],
+                  ),
+                ))),
       );
     });
   }

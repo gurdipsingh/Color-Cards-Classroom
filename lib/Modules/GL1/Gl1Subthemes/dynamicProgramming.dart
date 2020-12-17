@@ -1,6 +1,5 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../staticMethods.dart';
@@ -18,7 +17,7 @@ class DynamicProgramming extends StatelessWidget {
   ListView belmanFord(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Belman Ford"),
+        StaticMethods.addHeader(context, "Belman Ford", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit BelmanFord. Hier werden "
             "Infortmationen über BelmanFord aufgezeigt, welches euch behilflich sein kann,"
@@ -31,7 +30,7 @@ class DynamicProgramming extends StatelessWidget {
   ListView floyd(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Floyd "),
+        StaticMethods.addHeader(context, "Floyd ", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit Floyd. Hier werden "
             "Infortmationen über Floyd aufgezeigt, welches euch behilflich sein kann,"
@@ -44,7 +43,7 @@ class DynamicProgramming extends StatelessWidget {
   ListView timeScheduling(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "Time Scheduling "),
+        StaticMethods.addHeader(context, "Time Scheduling ", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit dem Time Scheduling. Hier werden "
             "Infortmationen über Time Scheduling aufgezeigt, welches euch behilflich sein kann,"
@@ -70,12 +69,13 @@ class DynamicProgramming extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: passingArgument.getBackgroundColor(),
       bottomNavigationBar: MyButtomNavigationBar(
         passingArgument: passingArgument,
       ),
       appBar: AppBar(
         title: const Text('Theoretische Informatik 1'),
-        backgroundColor: primaryColor,
+        backgroundColor: passingArgument.getPrimaryColor(),
       ),
       body: showSubThemeContent(context),
     );

@@ -48,26 +48,26 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
-          backgroundColor: primaryColor,
+          backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.stacked_bar_chart),
           label: 'Statistic',
-          backgroundColor: primaryColor,
+          backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.help),
           label: 'Help',
-          backgroundColor: primaryColor,
+          backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
           label: 'Settings',
-          backgroundColor: primaryColor,
+          backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
       ],
       currentIndex: _selectedIndex,

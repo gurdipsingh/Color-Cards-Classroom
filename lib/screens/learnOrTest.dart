@@ -1,6 +1,5 @@
 import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/myButtomNavBar.dart';
-import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../route_generator.dart';
@@ -18,12 +17,13 @@ class LearnOrTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: passingArgument.getBackgroundColor(),
         bottomNavigationBar: MyButtomNavigationBar(
           passingArgument: passingArgument,
         ),
         appBar: AppBar(
           title: Text(passingArgument.getTheme()),
-          backgroundColor: primaryColor,
+          backgroundColor: passingArgument.getPrimaryColor(),
         ),
         body: Center(
           child: Row(
