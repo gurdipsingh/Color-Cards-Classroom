@@ -1,4 +1,5 @@
 import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:e_learning/components/PassingArgument.dart';
 import 'package:e_learning/components/score.dart';
 import 'package:e_learning/constants.dart';
 import 'package:flutter/material.dart';
@@ -6,13 +7,15 @@ import 'package:flutter/material.dart';
 class VerticalBarLabelChart extends StatelessWidget {
   final List<charts.Series> seriesList;
   final bool animate;
+  final PassingArgument passingArgument;
 
-  VerticalBarLabelChart(this.seriesList, {this.animate});
+  VerticalBarLabelChart(this.seriesList, this.passingArgument,{this.animate});
 
   /// Creates a [BarChart] with sample data and no transition.
-  factory VerticalBarLabelChart.withSampleData(List<Score> score) {
+  factory VerticalBarLabelChart.withSampleData(PassingArgument passingArgument) {
     return new VerticalBarLabelChart(
-      _createSampleData(score),
+      _createSampleData(passingArgument.getScoreSheet()),
+      passingArgument,
       // Disable animations for image tests.
       animate: true,
     );
@@ -36,7 +39,20 @@ class VerticalBarLabelChart extends StatelessWidget {
       //          insideLabelStyleSpec: new charts.TextStyleSpec(...),
       //          outsideLabelStyleSpec: new charts.TextStyleSpec(...)),
       barRendererDecorator: new charts.BarLabelDecorator<String>(),
-      domainAxis: new charts.OrdinalAxisSpec(),
+      domainAxis: new charts.OrdinalAxisSpec(
+        renderSpec: new charts.SmallTickRendererSpec(
+          labelStyle: new charts.TextStyleSpec(
+            color: charts.ColorUtil.fromDartColor(this.passingArgument.getTextColor())
+          ),
+        )
+      ),
+      primaryMeasureAxis: new charts.NumericAxisSpec(
+        renderSpec: new charts.GridlineRendererSpec(
+          labelStyle: new charts.TextStyleSpec(
+            color: charts.ColorUtil.fromDartColor(this.passingArgument.getTextColor())
+          ),
+        )
+      ),
     );
   }
 
@@ -57,4 +73,5 @@ class VerticalBarLabelChart extends StatelessWidget {
       )
     ];
   }
+
 }

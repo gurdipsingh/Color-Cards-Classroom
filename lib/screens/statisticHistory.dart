@@ -37,7 +37,7 @@ class StatisticHistorie extends StatelessWidget {
                       passingArgument),
                   Expanded(
                       child: VerticalBarLabelChart.withSampleData(
-                          passingArgument.getScoreSheet())),
+                          passingArgument)),
                   StaticMethods.addText(
                       'Mittelwert Erfolg : ${passingArgument.getAverageScore()}%',
                       passingArgument),
