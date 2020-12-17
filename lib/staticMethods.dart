@@ -26,8 +26,8 @@ class StaticMethods extends StatelessWidget {
             text: "\n${text} \n",
             style: TextStyle(
                 color: Colors.black,
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
                 decoration: TextDecoration.none)));
   }
 
@@ -39,7 +39,7 @@ class StaticMethods extends StatelessWidget {
             TextSpan(
                 text: "${header} \n",
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.normal,
                     color: Colors.black,
                     decorationColor: Colors.black)),
           ]),

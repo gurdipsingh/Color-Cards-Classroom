@@ -1,5 +1,6 @@
 import 'package:e_learning/components/indexCardObject.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../constants.dart';
 
@@ -93,7 +94,10 @@ class _CardWidget extends State<IndexCardWidget> {
           borderRadius: BorderRadius.all(Radius.circular(15.0))),
       child: new Text(this.getContent()),
           textColor: contentColor,
-          onPressed: () => {updateColor()},
+          onPressed: () => {
+            updateColor(),
+            HapticFeedback.vibrate(),
+          },
           color: this.getStateOfColor(),
         ));
   }
