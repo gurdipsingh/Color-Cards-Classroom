@@ -52,7 +52,7 @@ class VerticalBarLabelChart extends StatelessWidget {
           data: scoreList,
           // Set a label accessor to control the text of the bar label.
           labelAccessorFn: (Score score, _) =>
-          'Erfolge: ${score.getNumberOfRights().toString()}',
+          '${score.getPercentage().toString()}%',
         colorFn: (Score score, _) => charts.ColorUtil.fromDartColor(primaryColor),
       )
     ];

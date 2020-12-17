@@ -1,13 +1,16 @@
 import 'package:e_learning/components/indexCardObject.dart';
 import 'package:e_learning/components/score.dart';
 import 'package:e_learning/constants.dart';
+import 'package:flutter/material.dart';
 
 class PassingArgument {
   String _name;
   Map<String, String> _navigation = {};
   Map _settings = {"language": "GERMAN"};
   List<IndexCardObject> _cards = [];
-  List<Score> _scoreSheet = [new Score(0, DateTime.now(), 'Erfolg', primaryColor)];
+  List<Score> _scoreSheet = [
+    new Score(0, DateTime.now(), 'Erfolg', Colors.black)
+  ];
   Score _unratedScore;
 
   PassingArgument(String name) {
@@ -40,7 +43,8 @@ class PassingArgument {
   }
 
   void setUnratedScore(DateTime time, int numberOfRightAnswer) {
-    this._unratedScore = new Score(numberOfRightAnswer, time, 'Erfolg', primaryColor);
+    this._unratedScore =
+        new Score(numberOfRightAnswer, time, 'Erfolg', primaryColor);
   }
 
   String getName() {
@@ -86,5 +90,10 @@ class PassingArgument {
 
   List<Score> getScoreSheet() {
     return this._scoreSheet;
+  }
+
+  int getAverageScore() {
+    int result = 50;
+    return result;
   }
 }

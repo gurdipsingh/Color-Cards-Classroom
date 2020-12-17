@@ -86,13 +86,15 @@ class Gl1Database extends StatelessWidget {
   void initializeGl1Cards(context) {
     this.gl1Cards["Sortieralgorithmen"] = [
       new IndexCardObject(1, "bubblesort", "BC (n)", "grey"),
-      new IndexCardObject(2, "bubblesort", "Sortieren durch tauschen des Nachbars", "grey"),
+      new IndexCardObject(
+          2, "bubblesort", "Sortieren durch tauschen des Nachbars", "grey"),
       new IndexCardObject(3, "bubblesort", "bubble", "grey"),
       new IndexCardObject(4, "mergesort", "BC (nlogn)", "grey"),
       new IndexCardObject(5, "mergesort", "merge", "grey"),
       new IndexCardObject(6, "mergesort", "Divide and Conquer", "grey"),
       new IndexCardObject(7, "selectionsort", "BC (n^2)", "grey"),
-      new IndexCardObject(8, "selectionsort", "Sortieren durch Auswahl", "grey"),
+      new IndexCardObject(
+          8, "selectionsort", "Sortieren durch Auswahl", "grey"),
       new IndexCardObject(9, "selectionsort", "selection", "grey"),
     ];
 
@@ -170,12 +172,15 @@ class Gl1Database extends StatelessWidget {
     });
 
     // If unrated then dont set it into the ScoreSheet
-    if (this.passingArgument.getGameMode() == "unbewertet" || this.passingArgument.getGameMode() == "zeit") {
+    if (this.passingArgument.getGameMode() == "unbewertet" ||
+        this.passingArgument.getGameMode() == "zeit") {
       this
           .passingArgument
           .setUnratedScore(new DateTime.now(), 9 - falseIds.length);
     } else {
       this.passingArgument.addScore(new DateTime.now(), 9 - falseIds.length);
+      if (this.passingArgument.getScoreSheet().first.color == Colors.black)
+        this.passingArgument.getScoreSheet().remove(0);
     }
 
     this.cardObjects.forEach((IndexCardObject element) {
@@ -193,7 +198,7 @@ class Gl1Database extends StatelessWidget {
   }
 
   isContinueButtonNeeded(BuildContext context) {
-    if(!(passingArgument.getGameMode() =="zeit")){
+    if (!(passingArgument.getGameMode() == "zeit")) {
       return RaisedButton(
         onPressed: () => {
           verifySolution(winAlgo(), context),
@@ -204,19 +209,18 @@ class Gl1Database extends StatelessWidget {
         ),
         color: secondaryColor,
       );
-    }
-    else{
-      return Container(height: 0, width: 0,);
+    } else {
+      return Container(
+        height: 0,
+        width: 0,
+      );
     }
   }
 
-  Column getTimer(context){
-    return Column(
-        children: [
-          TimeCounter(onTimeUp: ()=>{
-            verifySolution(winAlgo(), context)
-          })
-        ]);
+  Column getTimer(context) {
+    return Column(children: [
+      TimeCounter(onTimeUp: () => {verifySolution(winAlgo(), context)})
+    ]);
   }
 
   @override
@@ -228,7 +232,12 @@ class Gl1Database extends StatelessWidget {
       children: [
         Column(
           children: [
-            (this.passingArgument.getGameMode() =="zeit")? getTimer(context) : Container(height: 0, width: 0,),
+            (this.passingArgument.getGameMode() == "zeit")
+                ? getTimer(context)
+                : Container(
+                    height: 0,
+                    width: 0,
+                  ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -288,9 +297,7 @@ class Gl1Database extends StatelessWidget {
             ),
           )
         ]),
-        Column(children: [
-          isContinueButtonNeeded(context)
-        ])
+        Column(children: [isContinueButtonNeeded(context)])
       ],
     );
   }
