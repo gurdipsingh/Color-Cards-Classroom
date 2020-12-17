@@ -144,7 +144,18 @@ class PassingArgument {
 
   // TODO: wofür?
   int getAverageScore() {
-    int result = 50;
-    return result;
+    if(_scoreSheet.length == 1){
+      return 0;
+    }
+    else{
+    int result = 0;
+    _scoreSheet.forEach((element) {
+      result += element.getNumberOfRights();
+    });
+      double avg = (result/((_scoreSheet.length -1)*9));
+
+    return (avg*100).toInt();
+
+    }
   }
 }
