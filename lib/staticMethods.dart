@@ -38,7 +38,7 @@ class StaticMethods extends StatelessWidget {
           style: DefaultTextStyle.of(context).style,
           children: <TextSpan>[
             TextSpan(
-                text: "${header} \n",
+                text: "${header}\n",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: passingArgument.getTextColor(),

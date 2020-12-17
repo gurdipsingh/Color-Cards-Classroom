@@ -56,17 +56,17 @@ class _MyButtomNavigationBarState extends State<MyButtomNavigationBar> {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.stacked_bar_chart),
-          label: 'Statistic',
+          label: 'Statistik',
           backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.help),
-          label: 'Help',
+          label: 'Hilfe',
           backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
-          label: 'Settings',
+          label: 'Einstellung',
           backgroundColor: widget.passingArgument.getPrimaryColor(),
         ),
       ],

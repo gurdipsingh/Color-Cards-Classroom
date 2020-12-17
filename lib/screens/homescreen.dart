@@ -5,7 +5,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 
-// TODO: Eine Einstellung hinzufügen(Name ändern?)
 //TODO: Betrachte den Navigationswechsel bei Fehler
 
 class HomeScreen extends StatelessWidget {
