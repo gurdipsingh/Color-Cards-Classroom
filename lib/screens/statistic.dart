@@ -40,10 +40,10 @@ class Statistic extends StatelessWidget {
                           passingArgument.getLatestScore())),
                   //child: VerticalBarLabelChart.withSampleData(passingArgument.getScoreSheet())),
                   StaticMethods.addText(
-                      'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}',
+                      'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}%',
                       passingArgument),
                   StaticMethods.addText(
-                      'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}',
+                      'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}%',
                       passingArgument),
                   RaisedButton(
                     onPressed: () => Navigator.popAndPushNamed(

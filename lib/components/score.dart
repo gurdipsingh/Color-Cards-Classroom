@@ -29,6 +29,10 @@ class Score {
     return this._date;
   }
 
+  String getDayAndMonthAsString(){
+    return("${this._date.day}.${this._date.month} ${this._date.hour}:${this._date.minute}");
+  }
+
   int getPercentage() {
     return ((this._numberOfRight / 9) * 100).toInt();
   }

@@ -18,7 +18,6 @@ class VerticalBarLabelChart extends StatelessWidget {
     );
   }
 
-
   // [BarLabelDecorator] will automatically position the label
   // inside the bar if the label will fit. If the label will not fit,
   // it will draw outside of the bar.
@@ -42,18 +41,19 @@ class VerticalBarLabelChart extends StatelessWidget {
   }
 
   /// Create one series with sample hard coded data.
-  static List<charts.Series<Score, String>> _createSampleData(List<Score> scoreList) {
-
+  static List<charts.Series<Score, String>> _createSampleData(
+      List<Score> scoreList) {
     return [
       new charts.Series<Score, String>(
-          id: 'Score',
-          domainFn: (Score score, _) => score.getDateTime().toString(),
-          measureFn: (Score score, _) => score.getNumberOfRights(),
-          data: scoreList,
-          // Set a label accessor to control the text of the bar label.
-          labelAccessorFn: (Score score, _) =>
-          '${score.getPercentage().toString()}%',
-        colorFn: (Score score, _) => charts.ColorUtil.fromDartColor(primaryColor),
+        id: 'Score',
+        domainFn: (Score score, _) => score.getDayAndMonthAsString(),
+        measureFn: (Score score, _) => score.getNumberOfRights(),
+        data: scoreList,
+        // Set a label accessor to control the text of the bar label.
+        labelAccessorFn: (Score score, _) =>
+            '${score.getPercentage().toString()}%',
+        colorFn: (Score score, _) =>
+            charts.ColorUtil.fromDartColor(primaryColor),
       )
     ];
   }

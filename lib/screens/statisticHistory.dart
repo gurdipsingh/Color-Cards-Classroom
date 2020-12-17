@@ -39,10 +39,10 @@ class StatisticHistorie extends StatelessWidget {
                       child: VerticalBarLabelChart.withSampleData(
                           passingArgument.getScoreSheet())),
                   StaticMethods.addText(
-                      'Mittelwert Erfolg : ${passingArgument.getAverageScore()}',
+                      'Mittelwert Erfolg : ${passingArgument.getAverageScore()}%',
                       passingArgument),
                   StaticMethods.addText(
-                      'Mittelwert Misserfolg : ${100 - passingArgument.getAverageScore()}',
+                      'Mittelwert Misserfolg : ${100 - passingArgument.getAverageScore()}%',
                       passingArgument),
                   RaisedButton(
                     onPressed: () => Navigator.popAndPushNamed(

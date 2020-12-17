@@ -16,7 +16,7 @@ class SortingAlgorithm extends StatelessWidget {
   ListView bubbleSort(context) {
     return ListView(
       children: [
-        StaticMethods.addHeader(context, "BubbleSort", passingArgument),
+        StaticMethods.addHeader(context, "Bubblesort", passingArgument),
         StaticMethods.addText(
             "Diese Seite Beschäftigt sich mit BubbleSort. Hier werden "
             "Infortmationen über Bubblesort aufgezeigt, welches euch behilflich sein kann,"
