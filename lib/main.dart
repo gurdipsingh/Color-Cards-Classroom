@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'E-Learning App',
+      title: 'Color Cards Classroom',
       initialRoute: '/startScreen',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
