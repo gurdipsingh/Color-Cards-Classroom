@@ -230,11 +230,24 @@ class RouteGenerator {
       return Scaffold(
         appBar: AppBar(
           backgroundColor: primaryColor,
-          title: Text("Haben Sie bitte etwas Geduld"),
+          title: Text("Habe bitte noch etwas Geduld"),
         ),
         body: Center(
-          child: Text("Dieser Bereich wurde noch nicht implementiert"),
-        ),
+            child: Container(
+              height: 500,
+                width: 300,
+                child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              const ExpansionTile(
+                leading: Icon(Icons.error_outline, size: 50),
+                title: Text('In Bearbeitung ...'),
+                subtitle: Text('Dieser Bereich wurde noch nicht implementiert'),
+              )
+            ],
+          ),
+        ))),
       );
     });
   }

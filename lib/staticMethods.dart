@@ -27,8 +27,8 @@ class StaticMethods extends StatelessWidget {
             text: "\n${text} \n",
             style: TextStyle(
                 color: Colors.black,
-                fontSize: 15 + passingArgument.getAddtoFontSize().toDouble(),
-                fontWeight: FontWeight.bold,
+                fontSize: 20 + passingArgument.getAddtoFontSize().toDouble(),
+                fontWeight: FontWeight.normal,
                 decoration: TextDecoration.none)));
   }
 

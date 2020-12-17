@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         passingArgument: passingArgument,
       ),
       appBar: AppBar(
-        title: Text("Home"),
+        title: Text("Hauptmenü"),
         backgroundColor: primaryColor,
       ),
       body: ListView(
@@ -40,10 +40,14 @@ class HomeScreen extends StatelessWidget {
           Container(
               height: getHeightSizeAccordingToPercent(context, 15),
               child: Center(
-                child: Text(
-                  "Willkommen ${passingArgument.getName()}",
-                  style: TextStyle(fontSize: 19),
-                ),
+                child: FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      "Du befindest dich aktuell"
+                      "\nim Modul Auswahlmenü "
+                      "\n${passingArgument.getName()} ",
+                      style: TextStyle(fontSize: 27),
+                    )),
               )),
           Container(
             height: getHeightSizeAccordingToPercent(context, 60),

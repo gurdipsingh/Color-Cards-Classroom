@@ -1,6 +1,7 @@
 import 'package:e_learning/components/indexCardObject.dart';
 import 'package:e_learning/components/score.dart';
 import 'package:e_learning/constants.dart';
+import 'package:flutter/material.dart';
 
 class PassingArgument {
   String _name;
@@ -8,7 +9,7 @@ class PassingArgument {
   Map _settings = {"language": "GERMAN", "fontsize": "NORMAL"};
   List<IndexCardObject> _cards = [];
   List<Score> _scoreSheet = [
-    new Score(0, DateTime.now(), 'Erfolg', primaryColor)
+    new Score(0, DateTime.now(), 'Erfolg', Colors.black)
   ];
   Score _unratedScore;
 
@@ -109,5 +110,11 @@ class PassingArgument {
 
   String getFontSizeName() {
     return this._settings["fontsize"];
+  }
+
+  // TODO: wofür?
+  int getAverageScore() {
+    int result = 50;
+    return result;
   }
 }
