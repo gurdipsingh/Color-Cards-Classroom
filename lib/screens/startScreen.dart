@@ -10,7 +10,7 @@ import 'homescreen.dart';
 class StartScreen extends StatelessWidget {
   final TextEditingController userNameController = TextEditingController();
 
-  var entry = 'Benutzernamen eingeben';
+  var entry = 'Bitte gib deinen Benutzernamen ein.';
 
   TextField textField() {
     return TextField(
@@ -52,12 +52,22 @@ class StartScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text(
-                "Willkommen",
-                style: TextStyle(fontSize: 30, color: contentColor),
-              )
-            ]),
+            FittedBox(
+                fit: BoxFit.fitWidth,
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    "Willkommen in der \n"
+                    "E-Learning App \n"
+                    "Color Cards Classroom",
+                    style: TextStyle(fontSize: 30, color: contentColor),
+                  ),
+                  Icon(
+                    Icons.phone_android_outlined,
+                    color: Colors.white,
+                    size: 30.0,
+                  ),
+                ])),
             Column(
               children: [
                 textField(),

@@ -41,11 +41,15 @@ class Statistic extends StatelessWidget {
                       'Erfolgsrate : ${passingArgument.getLatestScore().getPercentage()}'),
                   StaticMethods.addText(
                       'Misserfolgsrate : ${100 - passingArgument.getLatestScore().getPercentage()}'),
-                  ElevatedButton(
+                  RaisedButton(
                     onPressed: () => Navigator.popAndPushNamed(
                         context, StatisticHistorie.route,
                         arguments: passingArgument),
-                    child: Text('Spiel Historie'),
+                    child: Text(
+                      'Spiel Historie',
+                      style: TextStyle(color: contentColor),
+                    ),
+                    color: secondaryColor,
                   ),
                 ],
               ))),
