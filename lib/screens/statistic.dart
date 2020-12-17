@@ -33,7 +33,7 @@ class Statistic extends StatelessWidget {
                   StaticMethods.addHeader(
                       context, '${passingArgument.getName()}', passingArgument),
                   StaticMethods.addText(
-                      'Dieses Diagram zeigt deine Leistung zu deinem letzten Siel.',
+                      'Dieses Diagram zeigt deine Leistung zu deinem letzten Spiel.',
                       passingArgument),
                   Expanded(
                       child: DonutAutoLabelChart.withSampleData(
