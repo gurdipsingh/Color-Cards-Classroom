@@ -37,17 +37,9 @@ class _Settings extends State<Settings> {
       body: ListView(
         children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            StaticMethods.addText("Darkmode", widget.passingArgument),
-            ElevatedButton(
-                onPressed: () => {print("Darkmode On")},
-                child: Text("yeah",
-                    style: TextStyle(
-                        fontSize:
-                            12 + widget.passingArgument.getAddtoFontSize())))
-          ]),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             StaticMethods.addText("Change Fontsize", widget.passingArgument),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: secondaryColor),
               onPressed: () => toggleFont(),
               child: Text(
                 widget.passingArgument.getFontSizeName(),
@@ -55,7 +47,17 @@ class _Settings extends State<Settings> {
                     fontSize: 12 + widget.passingArgument.getAddtoFontSize()),
               ),
             )
-          ])
+          ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+            StaticMethods.addText("Darkmode", widget.passingArgument),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(primary: secondaryColor),
+                onPressed: () => {print("Darkmode On")},
+                child: Text("Aus",
+                    style: TextStyle(
+                        fontSize:
+                        12 + widget.passingArgument.getAddtoFontSize())))
+          ]),
         ],
       ),
       bottomNavigationBar: MyButtomNavigationBar(

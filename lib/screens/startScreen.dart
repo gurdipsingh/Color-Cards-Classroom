@@ -10,7 +10,7 @@ import 'homescreen.dart';
 class StartScreen extends StatelessWidget {
   final TextEditingController userNameController = TextEditingController();
 
-  var entry = 'Bitte gib deinen Benutzernamen ein.';
+  var entry = 'Bitte gebe deinen Benutzernamen ein.';
 
   TextField textField() {
     return TextField(

@@ -31,7 +31,7 @@ class PassingArgument {
 
   void toggleFontSize() {
     if (this._settings["fontsize"] == "NORMAL") {
-      this._settings["fontsize"] = "BIG";
+      this._settings["fontsize"] = "GROSS";
     } else {
       this._settings["fontsize"] = "NORMAL";
     }

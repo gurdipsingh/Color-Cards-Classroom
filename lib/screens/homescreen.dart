@@ -43,10 +43,10 @@ class HomeScreen extends StatelessWidget {
                 child: FittedBox(
                     fit: BoxFit.fitWidth,
                     child: Text(
-                      "Du befindest dich aktuell"
-                      "\nim Modul Auswahlmenü "
+                      "Willkommen"
                       "\n${passingArgument.getName()} ",
                       style: TextStyle(fontSize: 27),
+                        textAlign: TextAlign.center,
                     )),
               )),
           Container(
