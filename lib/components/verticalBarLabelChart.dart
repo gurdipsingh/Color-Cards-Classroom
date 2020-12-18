@@ -13,8 +13,11 @@ class VerticalBarLabelChart extends StatelessWidget {
 
   /// Creates a [BarChart] with sample data and no transition.
   factory VerticalBarLabelChart.withSampleData(PassingArgument passingArgument) {
+    List <Score> scoreSheet = [];
+    scoreSheet = passingArgument.getScoreSheet();
+    scoreSheet.removeAt(0);
     return new VerticalBarLabelChart(
-      _createSampleData(passingArgument.getScoreSheet()),
+      _createSampleData(scoreSheet),
       passingArgument,
       // Disable animations for image tests.
       animate: true,
